@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Creator Lab™ — AI Literacy for Gen Alpha | Ages 8–17 | ASEAN</title>
+<meta name="description" content="AI Creator Lab™ by Volare Consultants. Digital AI literacy programme for children ages 8–17 across ASEAN. Books, interactive games, and learning tools. Singapore.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#059669;--green-dark:#064e3b;--green-light:#34d399;--green-pale:#d1fae5;--green-bg:#f0fdf4;
+  --amber:#f59e0b;--amber-light:#fef3c7;
+  --dark:#1c1917;--slate:#64748b;--white:#ffffff;
+  --font-display:'Space Grotesk',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --max-w:960px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.6}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--green-pale);z-index:100;padding:12px 0}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--green-dark)}
+.nav-logo span{color:var(--green)}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{text-decoration:none;font-size:.85rem;font-weight:600;color:var(--slate);transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:var(--white)!important;padding:8px 18px;border-radius:8px;font-size:.85rem!important}
+.nav-cta:hover{background:var(--green-dark)!important}
+
+/* HERO */
+.hero{padding:120px 20px 60px;background:linear-gradient(180deg,var(--green-bg) 0%,var(--white) 100%);text-align:center}
+.hero-inner{max-width:var(--max-w);margin:0 auto}
+.hero-badge{display:inline-block;background:var(--green-dark);color:var(--green-light);padding:6px 18px;border-radius:20px;font-family:var(--font-display);font-size:.75rem;font-weight:600;letter-spacing:.5px;margin-bottom:20px}
+.hero h1{font-family:var(--font-display);font-size:2.8rem;font-weight:700;color:var(--green-dark);line-height:1.15;margin-bottom:16px}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero-sub{font-size:1.1rem;color:var(--slate);max-width:600px;margin:0 auto 28px;line-height:1.6}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:.95rem;padding:14px 28px;border-radius:10px;transition:all .2s}
+.btn-primary{background:var(--green);color:var(--white)}
+.btn-primary:hover{background:var(--green-dark);transform:translateY(-1px)}
+.btn-secondary{background:var(--white);color:var(--green-dark);border:2px solid var(--green-pale)}
+.btn-secondary:hover{border-color:var(--green);background:var(--green-bg)}
+.hero-stats{display:flex;gap:32px;justify-content:center;margin-top:40px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--green)}
+.stat-label{font-size:.8rem;color:var(--slate);font-weight:500}
+
+/* SECTIONS */
+section{padding:60px 20px}
+.section-inner{max-width:var(--max-w);margin:0 auto}
+.section-title{font-family:var(--font-display);font-size:1.8rem;font-weight:700;color:var(--green-dark);text-align:center;margin-bottom:8px}
+.section-sub{text-align:center;color:var(--slate);font-size:.95rem;max-width:600px;margin:0 auto 36px}
+
+/* WHY */
+.why{background:var(--green-bg)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.why-card{background:var(--white);border-radius:14px;padding:24px;border:1px solid var(--green-pale)}
+.why-icon{font-size:1.8rem;margin-bottom:10px}
+.why-card h3{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--green-dark);margin-bottom:6px}
+.why-card p{font-size:.85rem;color:var(--slate);line-height:1.5}
+
+/* JOURNEY */
+.journey-steps{display:flex;flex-direction:column;gap:16px}
+.step{display:flex;gap:16px;align-items:flex-start;background:var(--white);border-radius:14px;padding:20px;border:1px solid var(--green-pale)}
+.step-num{width:36px;height:36px;background:var(--green);color:var(--white);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:.9rem;flex-shrink:0}
+.step h3{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--green-dark);margin-bottom:4px}
+.step p{font-size:.85rem;color:var(--slate);line-height:1.5}
+
+/* PRODUCTS */
+.products{background:var(--green-bg)}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px}
+.product-card{background:var(--white);border-radius:14px;padding:20px;border:1px solid var(--green-pale);transition:all .2s}
+.product-card:hover{border-color:var(--green);transform:translateY(-2px);box-shadow:0 4px 16px rgba(5,150,105,.1)}
+.product-tag{display:inline-block;background:var(--green-pale);color:var(--green-dark);padding:3px 10px;border-radius:6px;font-size:.7rem;font-weight:700;margin-bottom:8px}
+.product-tag.story{background:var(--amber-light);color:#92400e}
+.product-tag.game{background:#dbeafe;color:#1e40af}
+.product-tag.bundle{background:var(--amber);color:var(--dark)}
+.product-card h3{font-family:var(--font-display);font-size:.95rem;font-weight:700;color:var(--green-dark);margin-bottom:6px}
+.product-card p{font-size:.8rem;color:var(--slate);line-height:1.4;margin-bottom:12px}
+.product-footer{display:flex;justify-content:space-between;align-items:center}
+.product-price{font-family:var(--font-display);font-weight:700;color:var(--green);font-size:1rem}
+.product-link{font-size:.8rem;font-weight:600;color:var(--green);text-decoration:none;padding:6px 14px;border:2px solid var(--green);border-radius:8px;transition:all .15s}
+.product-link:hover{background:var(--green);color:var(--white)}
+
+/* BUNDLE HIGHLIGHT */
+.bundle-highlight{background:var(--green-dark);border-radius:18px;padding:28px;margin-bottom:28px;color:var(--white);display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.bundle-info{flex:1;min-width:250px}
+.bundle-badge{display:inline-block;background:var(--amber);color:var(--dark);padding:4px 14px;border-radius:8px;font-family:var(--font-display);font-weight:700;font-size:.75rem;margin-bottom:10px}
+.bundle-info h3{font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:6px}
+.bundle-info p{font-size:.9rem;color:var(--green-light);line-height:1.5;margin-bottom:14px}
+.bundle-pricing{text-align:center;min-width:160px}
+.bundle-original{color:var(--green-light);text-decoration:line-through;font-size:.9rem}
+.bundle-price{font-family:var(--font-display);font-size:2.2rem;font-weight:700;color:var(--amber)}
+.bundle-save{font-size:.8rem;color:var(--green-light);margin-bottom:12px}
+.btn-bundle{background:var(--amber);color:var(--dark);font-weight:700;padding:12px 28px;border-radius:10px;text-decoration:none;font-family:var(--font-display);font-size:.9rem;display:inline-block;transition:all .2s}
+.btn-bundle:hover{background:#d97706;transform:translateY(-1px)}
+
+/* ABOUT */
+.about-card{background:var(--green-bg);border-radius:14px;padding:28px;border:1px solid var(--green-pale);max-width:700px;margin:0 auto}
+.about-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--green-dark);margin-bottom:10px}
+.about-card p{font-size:.9rem;color:var(--slate);line-height:1.6;margin-bottom:10px}
+
+/* FOOTER */
+footer{background:var(--green-dark);color:rgba(255,255,255,.6);padding:40px 20px;text-align:center}
+.footer-inner{max-width:var(--max-w);margin:0 auto}
+.footer-logo{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--green-light);margin-bottom:6px}
+.footer-links{display:flex;gap:16px;justify-content:center;margin:12px 0;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.5);text-decoration:none;font-size:.8rem;transition:color .2s}
+.footer-links a:hover{color:var(--green-light)}
+.footer-copy{font-size:.75rem;margin-top:12px}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .hero h1{font-size:2rem}
+  .hero-stats{gap:20px}
+  .nav-links a:not(.nav-cta){display:none}
+  .bundle-highlight{flex-direction:column;text-align:center}
+  .product-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">AI Creator <span>Lab™</span></div>
+    <div class="nav-links">
+      <a href="#why">Why AI Literacy</a>
+      <a href="#journey">The Journey</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+      <a href="https://volareconsultants.gumroad.com" target="_blank" class="nav-cta">Shop Now →</a>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">AI LITERACY FOR GEN ALPHA · AGES 8–17 · ASEAN</div>
+    <h1>Your child will grow up<br>with AI. Will they be<br><em>ready?</em></h1>
+    <p class="hero-sub">AI Creator Lab™ is a digital AI literacy programme designed for children across all 11 ASEAN countries. Books, interactive games, and learning tools that teach children to understand, question, create with, and stay safe around AI.</p>
+    <div class="hero-buttons">
+      <a href="https://volareconsultants.gumroad.com/l/awareness-complete-bundle" target="_blank" class="btn btn-primary">Get the Complete Bundle — SGD 29 →</a>
+      <a href="#products" class="btn btn-secondary">Browse All Products</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">72</div><div class="stat-label">Products</div></div>
+      <div class="stat"><div class="stat-num">12</div><div class="stat-label">Books</div></div>
+      <div class="stat"><div class="stat-num">60</div><div class="stat-label">Interactive Games</div></div>
+      <div class="stat"><div class="stat-num">11</div><div class="stat-label">ASEAN Countries</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="section-title">Why AI Literacy Matters Now</div>
+    <div class="section-sub">Your child already uses AI every day — recommendation algorithms, smart assistants, chatbots. The question isn't whether they'll encounter AI. It's whether they'll understand it.</div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🧠</div>
+        <h3>Understand, Don't Just Use</h3>
+        <p>Most children use AI without understanding what it is. Our programme teaches what AI actually does — pattern matching, not thinking — so your child isn't fooled by it.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔍</div>
+        <h3>Question, Don't Just Trust</h3>
+        <p>AI hallucinations are real. AI confidently states wrong facts. Your child learns to catch these errors — a critical thinking skill that protects them for life.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🎨</div>
+        <h3>Create, Don't Just Consume</h3>
+        <p>The difference between a consumer and a creator? A consumer copies AI output. A creator uses AI as a tool and adds their own knowledge. We teach the creator mindset.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🛡️</div>
+        <h3>Stay Safe Online</h3>
+        <p>Privacy, scams, stranger danger, digital footprints — your child needs safety instincts for the AI age. Our programme builds these instincts through practice, not lectures.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">👨‍👩‍👧</div>
+        <h3>Learn Together as a Family</h3>
+        <p>Some of our games are designed for parent and child to play together. Children bring tech comfort. Parents bring life wisdom. Together, you make better decisions.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🌏</div>
+        <h3>Made for ASEAN</h3>
+        <p>Set in Singapore, Malaysia, and the Philippines with cultural framing from across Southeast Asia. Your child sees themselves in the stories — nasi lemak, tuk-tuks, wet markets, and all.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="section-inner">
+    <div class="section-title">The AWARENESS Journey (Ages 8–11)</div>
+    <div class="section-sub">Six books. Six game sets. One complete pathway from "What is AI?" to "I am a maker." Follow Aisyah, a 9-year-old from Tiong Bahru, Singapore.</div>
+    <div class="journey-steps">
+      <div class="step"><div class="step-num">1</div><div><h3>What Is AI, Really?</h3><p>Understand what AI actually is — pattern matching, not magic. Learn the 3 Safety Rules every child needs.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h3>Ask Better Questions</h3><p>The 3-Step Method: Specific → Role → Iterate. Better questions = better AI output. The most practical AI skill.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h3>Make Your First AI Project</h3><p>Go from consumer to creator. Choose a real project about your neighbourhood and build something tangible.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><h3>Spot the Mistake</h3><p>Become an Error Hunter. Learn to catch AI hallucinations, bias, overconfidence, and wrong facts.</p></div></div>
+      <div class="step"><div class="step-num">5</div><div><h3>Build With Your Parents</h3><p>The only book designed for the whole family. Three generations, three superpowers, one project together.</p></div></div>
+      <div class="step"><div class="step-num">6</div><div><h3>Code Your First Tool</h3><p>The FINALE. Build a real digital tool. From user to maker. "I am a maker." — Aisyah</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="section-inner">
+    <div class="section-title">Products</div>
+    <div class="section-sub">Everything your child needs for AI literacy. Individual products at SGD 5 each, or save 68% with the Complete Bundle.</div>
+
+    <div class="bundle-highlight">
+      <div class="bundle-info">
+        <div class="bundle-badge">⭐ BEST VALUE</div>
+        <h3>AWARENESS Complete Bundle</h3>
+        <p>All 12 books + all 60 interactive games in one download. The complete AI literacy journey for ages 8–11. Everything included.</p>
+      </div>
+      <div class="bundle-pricing">
+        <div class="bundle-original">SGD 90</div>
+        <div class="bundle-price">SGD 29</div>
+        <div class="bundle-save">Save 68% — that's SGD 61 off</div>
+        <a href="https://volareconsultants.gumroad.com/l/awareness-complete-bundle" target="_blank" class="btn-bundle">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:1.2rem;margin-bottom:16px;text-align:left">📚 Instructional Books</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-tag">BOOK 1</div>
+        <h3>What Is AI, Really?</h3>
+        <p>Your child's first step into AI literacy. Patterns, safety rules, and real ASEAN examples.</p>
+        <div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book1" target="_blank" class="product-link">Buy →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">BOOK 2</div>
+        <h3>Ask Better Questions</h3>
+        <p>The 3-Step Method: Specific → Role → Iterate. The most practical AI skill your child can learn.</p>
+        <div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book2" target="_blank" class="product-link">Buy →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">BOOK 3</div>
+        <h3>Make Your First AI Project</h3>
+        <p>From consumer to creator. Choose a project about your neighbourhood and build something real.</p>
+        <div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book3" target="_blank" class="product-link">Buy →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">BOOK 4</div>
+        <h3>Spot the Mistake</h3>
+        <p>Become an Error Hunter. Catch AI hallucinations, bias, and overconfidence.</p>
+        <div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book4" target="_blank" class="product-link">Buy →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">BOOK 5</div>
+        <h3>Build With Your Parents</h3>
+        <p>The only book for the whole family. Three generations building one project together.</p>
+        <div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book5" target="_blank" class="product-link">Buy →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-tag">BOOK 6 · FINALE</div>
+        <h3>Code Your First Tool</h3>
+        <p>The maker identity. Build a real digital tool. "I am a maker." — Aisyah</p>
+        <div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book6" target="_blank" class="product-link">Buy →</a></div>
+      </div>
+    </div>
+
+    <div class="section-title" style="font-size:1.2rem;margin-bottom:16px;text-align:left">📖 Storybook Editions</div>
+    <div class="section-sub" style="text-align:left;margin-bottom:16px">Same AI concepts told through Aisyah's story. Perfect for bedtime reading or children who learn better through narrative.</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag story">STORYBOOK 1</div><h3>Aisyah's Discovery</h3><p>"How does the app know?" The day Aisyah found out what AI really is.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book1-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag story">STORYBOOK 2</div><h3>Aisyah's Second Discovery</h3><p>The homework disaster that taught her to talk to AI properly.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book2-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag story">STORYBOOK 3</div><h3>Aisyah's Third Discovery</h3><p>The week she built something real in Tiong Bahru.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book3-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag story">STORYBOOK 4</div><h3>Aisyah's Fourth Discovery</h3><p>"The Merlion in Jakarta..." — the week she became an Error Hunter.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book4-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag story">STORYBOOK 5</div><h3>Aisyah's Fifth Discovery</h3><p>Three generations, three superpowers, one project together.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book5-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag story">STORYBOOK 6 · FINALE</div><h3>Aisyah's Sixth Discovery</h3><p>"Someone built every app you use. Why not me?" — The maker FINALE.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book6-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
+
+    <div class="section-title" style="font-size:1.2rem;margin-bottom:16px;text-align:left">🎮 Interactive Game Sets</div>
+    <div class="section-sub" style="text-align:left;margin-bottom:16px">10 HTML5 games per set. Play in any browser — phone, tablet, or computer. No install needed, no data collected.</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag game">SET 1 · 10 GAMES</div><h3>Pattern Makers</h3><p>Spot patterns like AI does. Nasi lemak predictor, wet market memory, durian sorter, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set1-pattern-makers" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag game">SET 2 · 10 GAMES</div><h3>Project Lab</h3><p>From consumer to creator. Idea generator, project planner, fact checker, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set2-project-lab" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag game">SET 3 · 10 GAMES</div><h3>Error Hunters</h3><p>Catch AI when it's wrong. Hallucination hunter, bias spotter, overconfidence meter, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set3-error-hunters" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag game">SET 4 · 10 GAMES</div><h3>Family Builders</h3><p>Play with your parents! Family quiz night, generation gap game, PDPA detective, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set4-family-builders" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag game">SET 5 · 10 GAMES</div><h3>Tool Makers</h3><p>From user to maker. Schedule builder, if-then machine, reminder creator, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set5-tool-makers" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag game">SET 6 · 10 GAMES</div><h3>AI Safety Zone</h3><p>Stay safe with AI. Scam spotter, stranger danger, password power, plus a Parent Safety Guide.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set6-safety-zone" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-title">About AI Creator Lab™</div>
+    <div class="about-card">
+      <h3>Volare Consultants · Singapore</h3>
+      <p>AI Creator Lab™ is a digital AI literacy programme by Volare Consultants, a Singapore sole proprietorship. We create educational content for Generation Alpha (ages 8–17) across all 11 ASEAN countries.</p>
+      <p>Our mission: affordable, accessible AI literacy education that teaches children to understand, question, create with, and stay safe around artificial intelligence. Every product is priced at SGD 5 to ensure accessibility across Southeast Asia.</p>
+      <p>All content features ASEAN cultural framing — stories set in Singapore, Malaysia, and the Philippines with references from across the region. Our three protagonists (Aisyah in Singapore, Kai in KL, and Anya in Manila) are connected by ripple effects across ASEAN.</p>
+      <p style="font-size:.8rem;color:var(--slate);margin-top:14px">All products created with AI assistance. · PDPA compliant — zero data collection. · English language with plans to add Bahasa Melayu, Bahasa Indonesia, and Tagalog.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">AI Creator Lab™</div>
+    <div style="font-size:.8rem;margin-bottom:8px">by Volare Consultants · Singapore</div>
+    <div class="footer-links">
+      <a href="https://volareconsultants.gumroad.com" target="_blank">Shop on Gumroad</a>
+      <a href="mailto:hello@aicreatorlab.store">Contact</a>
+      <a href="#products">Products</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="footer-copy">© 2026 Volare Consultants. All rights reserved. AI Creator Lab™ is a trademark of Volare Consultants.<br>Created with AI assistance.</div>
+  </div>
+</footer>
+
+</body>
+</html>
