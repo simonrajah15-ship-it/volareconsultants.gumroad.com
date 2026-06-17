@@ -1,183 +1,516 @@
-None selected 
-
-Skip to content
-Using Gmail with screen readers
-simon 
-Conversations
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI All Around Me | Digital Smarts Lab™</title>
+<title>AI Creator Lab™ — AI Literacy for Gen Alpha | Ages 8–17 | ASEAN</title>
+<meta name="description" content="AI Creator Lab™ by Volare Consultants. Digital AI literacy programme for children ages 8–17 across ASEAN. 30 books, interactive games, and learning tools. Singapore.">
+<!-- Open Graph for social sharing -->
+<meta property="og:title" content="AI Creator Lab™ — AI Literacy for Gen Alpha">
+<meta property="og:description" content="Complete digital AI literacy programme for children ages 8–17 across all 11 ASEAN countries. 30 books, 60 interactive games, 3 age tiers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.aicreatorlab.store">
+<!-- Favicon - inline SVG -->
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23059669'/><text x='16' y='22' text-anchor='middle' font-family='Arial' font-weight='bold' font-size='16' fill='white'>AI</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --primary: #38BDF8;
-    --primary-dark: #0EA5E9;
-    --accent: #FBBF24;
-    --bg: #F0F9FF;
-    --card: #FFFFFF;
-    --text: #0F172A;
-    --text-light: #475569;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: 'Nunito', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
-  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+:root{
+  --font-display:'Fraunces',serif;
+  --font-body:'Libre Franklin',sans-serif;
+  --max-w:1000px;
+  /* Neutral base */
+  --dark:#1a1a1a;--slate:#5a6373;--pale:#f7f8fa;--white:#ffffff;--border:#e5e7eb;
+  /* Awareness — warm green */
+  --aw:#059669;--aw-dark:#064e3b;--aw-light:#34d399;--aw-pale:#ecfdf5;--aw-border:#a7f3d0;
+  /* Thinking — violet */
+  --th:#7c3aed;--th-dark:#4c1d95;--th-light:#c4b5fd;--th-pale:#f5f3ff;--th-border:#ddd6fe;
+  /* Leverage — navy/gold */
+  --lv-navy:#0f172a;--lv-gold:#d97706;--lv-gold-light:#fbbf24;--lv-pale:#fffbeb;--lv-border:#fde68a;--lv-slate:#94a3b8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--dark);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
 
-  .hero { background: linear-gradient(160deg, #E0F2FE 0%, #F0F9FF 100%); padding: 40px 0 50px; }
-  .eyebrow { font-family: 'Fredoka', sans-serif; font-size: 13px; font-weight: 600; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 8px; }
-  h1 { font-family: 'Fredoka', sans-serif; font-size: 44px; font-weight: 700; text-align: center; margin: 0 0 8px; }
-  .tagline { text-align: center; font-size: 17px; color: var(--text-light); max-width: 520px; margin: 0 auto 28px; }
-  .hero-grid { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; justify-content: center; }
-  .hero-image { width: 240px; max-width: 80vw; border-radius: 20px; box-shadow: 0 10px 30px rgba(15,23,42,0.15); }
-  .hero-buy { background: var(--card); border-radius: 18px; padding: 24px; box-shadow: 0 6px 20px rgba(56,189,248,0.15); text-align: center; width: 240px; }
-  .price { font-family: 'Fredoka', sans-serif; font-size: 40px; font-weight: 700; color: var(--primary-dark); }
-  .price-note { font-size: 13px; color: var(--text-light); margin-bottom: 16px; }
-  .btn-buy { display: inline-block; font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 16px; background: var(--accent); color: var(--text); text-decoration: none; padding: 14px 28px; border-radius: 12px; width: 100%; }
-  .btn-buy:hover { background: #F59E0B; }
-  .instant { font-size: 12px; color: var(--text-light); margin-top: 10px; }
+/* ─── NAV ─── */
+nav{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;padding:14px 0}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center}
+.nav-logo{font-family:var(--font-display);font-weight:800;font-size:1.15rem;color:var(--dark)}
+.nav-logo span{color:var(--aw)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{text-decoration:none;font-size:.82rem;font-weight:600;color:var(--slate);transition:color .2s}
+.nav-links a:hover{color:var(--aw)}
+.nav-cta{background:var(--dark);color:var(--white)!important;padding:9px 20px;border-radius:8px;font-size:.82rem!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--aw-dark)!important}
 
-  section { padding: 48px 0; }
-  h2 { font-family: 'Fredoka', sans-serif; font-size: 28px; text-align: center; margin: 0 0 32px; color: var(--primary-dark); }
+/* ─── HERO ─── */
+.hero{padding:130px 24px 70px;text-align:center;background:var(--pale);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-40%;left:-20%;width:60%;height:120%;background:radial-gradient(ellipse,rgba(5,150,105,.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;top:-30%;right:-15%;width:50%;height:100%;background:radial-gradient(ellipse,rgba(124,58,237,.04) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:var(--max-w);margin:0 auto;position:relative}
+.hero-badge{display:inline-block;background:var(--dark);color:var(--white);padding:7px 20px;border-radius:20px;font-size:.7rem;font-weight:700;letter-spacing:.8px;margin-bottom:22px;text-transform:uppercase}
+.hero h1{font-family:var(--font-display);font-size:2.9rem;font-weight:800;color:var(--dark);line-height:1.15;margin-bottom:18px}
+.hero h1 .accent-g{color:var(--aw)}
+.hero h1 .accent-v{color:var(--th)}
+.hero h1 .accent-n{color:var(--lv-gold)}
+.hero-sub{font-size:1.05rem;color:var(--slate);max-width:620px;margin:0 auto 32px;line-height:1.7}
+.hero-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:.9rem;padding:14px 28px;border-radius:10px;transition:all .2s}
+.btn-dark{background:var(--dark);color:var(--white)}
+.btn-dark:hover{background:var(--aw-dark);transform:translateY(-1px)}
+.btn-outline{background:var(--white);color:var(--dark);border:2px solid var(--border)}
+.btn-outline:hover{border-color:var(--dark)}
+.hero-stats{display:flex;gap:36px;justify-content:center;flex-wrap:wrap}
+.stat{text-align:center}
+.stat-num{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--dark)}
+.stat-label{font-size:.78rem;color:var(--slate);font-weight:500;margin-top:2px}
 
-  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
-  .step-card { background: var(--card); border-radius: 16px; padding: 20px; box-shadow: 0 4px 12px rgba(15,23,42,0.06); }
-  .step-num { font-family: 'Fredoka', sans-serif; font-weight: 700; font-size: 13px; color: var(--primary-dark); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
-  .step-title { font-family: 'Fredoka', sans-serif; font-weight: 600; font-size: 18px; margin-bottom: 6px; }
-  .step-desc { font-size: 14px; color: var(--text-light); }
+/* ─── SECTION BASE ─── */
+section{padding:70px 24px}
+.section-inner{max-width:var(--max-w);margin:0 auto}
+.section-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.section-title{font-family:var(--font-display);font-size:1.9rem;font-weight:800;color:var(--dark);margin-bottom:10px}
+.section-sub{color:var(--slate);font-size:.95rem;max-width:640px;margin-bottom:36px;line-height:1.65}
 
-  .audience { background: var(--card); border-radius: 20px; padding: 32px; text-align: center; }
-  .audience-grid { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; margin-top: 20px; }
-  .audience-item { max-width: 200px; }
-  .audience-emoji { font-size: 36px; display: block; margin-bottom: 8px; }
-  .audience-title { font-family: 'Fredoka', sans-serif; font-weight: 600; margin-bottom: 4px; }
-  .audience-desc { font-size: 14px; color: var(--text-light); }
+/* ─── WHY SECTION ─── */
+.why{background:var(--white)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.why-card{background:var(--pale);border-radius:14px;padding:24px;border:1px solid var(--border);transition:border-color .2s}
+.why-card:hover{border-color:var(--aw)}
+.why-card h3{font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--dark);margin-bottom:6px}
+.why-card p{font-size:.84rem;color:var(--slate);line-height:1.55}
+.why-icon{font-size:1.6rem;margin-bottom:10px}
 
-  .passport { background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: 22px; padding: 36px; text-align: center; color: #fff; }
-  .passport .badge-icon { font-size: 48px; }
-  .passport h2 { color: #fff; }
-  .passport p { max-width: 500px; margin: 0 auto; font-size: 15px; }
+/* ─── TIER SECTION ─── */
+.tier{border-top:4px solid var(--border)}
+.tier-aw{border-color:var(--aw);background:var(--aw-pale)}
+.tier-th{border-color:var(--th);background:var(--th-pale)}
+.tier-lv{border-color:var(--lv-navy);background:var(--lv-pale)}
 
-  .included { background: var(--card); border-radius: 20px; padding: 32px; }
-  .included ul { margin: 0; padding-left: 20px; }
-  .included li { margin-bottom: 8px; font-size: 15px; }
+.tier-badge{display:inline-block;padding:5px 14px;border-radius:8px;font-size:.72rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:14px}
+.tier-aw .tier-badge{background:var(--aw-dark);color:var(--aw-light)}
+.tier-th .tier-badge{background:var(--th-dark);color:var(--th-light)}
+.tier-lv .tier-badge{background:var(--lv-navy);color:var(--lv-gold-light)}
 
-  footer { text-align: center; padding: 32px 0 48px; font-size: 13px; color: var(--text-light); }
-  footer .brand { font-family: 'Fredoka', sans-serif; font-weight: 600; color: var(--primary-dark); margin-bottom: 4px; }
+.tier-aw .section-title{color:var(--aw-dark)}
+.tier-th .section-title{color:var(--th-dark)}
+.tier-lv .section-title{color:var(--lv-navy)}
 
-  @media (max-width: 540px) { h1 { font-size: 32px; } .hero-image { width: 200px; } }
+.tier-aw .section-eyebrow{color:var(--aw)}
+.tier-th .section-eyebrow{color:var(--th)}
+.tier-lv .section-eyebrow{color:var(--lv-gold)}
+
+.product-group-title{font-family:var(--font-display);font-size:1.1rem;font-weight:700;margin:28px 0 14px;color:var(--dark)}
+
+/* ─── PRODUCT CARDS ─── */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-bottom:8px}
+.product-card{background:var(--white);border-radius:12px;padding:18px;border:1px solid var(--border);transition:all .2s}
+.product-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.06)}
+
+.product-tag{display:inline-block;padding:3px 10px;border-radius:6px;font-size:.68rem;font-weight:700;margin-bottom:8px;letter-spacing:.3px}
+/* Awareness tags */
+.tag-aw-book{background:var(--aw-pale);color:var(--aw-dark);border:1px solid var(--aw-border)}
+.tag-aw-story{background:#fef3c7;color:#92400e;border:1px solid #fde68a}
+.tag-aw-game{background:#dbeafe;color:#1e40af;border:1px solid #bfdbfe}
+/* Thinking tags */
+.tag-th-book{background:var(--th-pale);color:var(--th-dark);border:1px solid var(--th-border)}
+.tag-th-story{background:#fce7f3;color:#9d174d;border:1px solid #fbcfe8}
+/* Leverage tags */
+.tag-lv-book{background:#f1f5f9;color:var(--lv-navy);border:1px solid #cbd5e1}
+.tag-lv-story{background:var(--lv-pale);color:#92400e;border:1px solid var(--lv-border)}
+
+.product-card h3{font-family:var(--font-display);font-size:.92rem;font-weight:700;color:var(--dark);margin-bottom:5px}
+.product-card p{font-size:.8rem;color:var(--slate);line-height:1.45;margin-bottom:12px}
+.product-footer{display:flex;justify-content:space-between;align-items:center}
+.product-price{font-family:var(--font-display);font-weight:700;font-size:.95rem}
+.tier-aw .product-price{color:var(--aw)}
+.tier-th .product-price{color:var(--th)}
+.tier-lv .product-price{color:var(--lv-gold)}
+.product-link{font-size:.78rem;font-weight:700;text-decoration:none;padding:7px 16px;border-radius:8px;transition:all .15s;border:2px solid}
+.tier-aw .product-link{color:var(--aw);border-color:var(--aw)}
+.tier-aw .product-link:hover{background:var(--aw);color:var(--white)}
+.tier-th .product-link{color:var(--th);border-color:var(--th)}
+.tier-th .product-link:hover{background:var(--th);color:var(--white)}
+.tier-lv .product-link{color:var(--lv-navy);border-color:var(--lv-navy)}
+.tier-lv .product-link:hover{background:var(--lv-navy);color:var(--white)}
+
+/* ─── JOURNEY STEPS ─── */
+.journey{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:28px}
+.j-step{background:var(--white);border-radius:10px;padding:14px;border:1px solid var(--border);text-align:center}
+.j-num{font-family:var(--font-display);font-weight:800;font-size:1.3rem;margin-bottom:4px}
+.tier-aw .j-num{color:var(--aw)}
+.tier-th .j-num{color:var(--th)}
+.tier-lv .j-num{color:var(--lv-gold)}
+.j-step h4{font-size:.75rem;font-weight:700;color:var(--dark);line-height:1.3}
+
+/* ─── PROTAGONIST CARD ─── */
+.protagonist{display:flex;gap:16px;align-items:center;background:var(--white);border-radius:12px;padding:16px;border:1px solid var(--border);margin-bottom:20px}
+.protagonist-dot{width:40px;height:40px;border-radius:50%;flex-shrink:0}
+.protagonist h4{font-family:var(--font-display);font-size:.9rem;font-weight:700;color:var(--dark)}
+.protagonist p{font-size:.78rem;color:var(--slate);line-height:1.4}
+
+/* ─── ABOUT ─── */
+.about-card{background:var(--pale);border-radius:14px;padding:28px;border:1px solid var(--border);max-width:720px;margin:0 auto}
+.about-card h3{font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--dark);margin-bottom:10px}
+.about-card p{font-size:.88rem;color:var(--slate);line-height:1.65;margin-bottom:10px}
+
+/* ─── FOOTER ─── */
+footer{background:var(--dark);color:rgba(255,255,255,.5);padding:44px 24px;text-align:center}
+.footer-inner{max-width:var(--max-w);margin:0 auto}
+.footer-logo{font-family:var(--font-display);font-size:1.2rem;font-weight:800;color:var(--white);margin-bottom:6px}
+.footer-links{display:flex;gap:18px;justify-content:center;margin:14px 0;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,.4);text-decoration:none;font-size:.8rem;transition:color .2s}
+.footer-links a:hover{color:var(--aw-light)}
+.footer-copy{font-size:.72rem;margin-top:14px;line-height:1.6}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:640px){
+  .hero h1{font-size:2rem}
+  .hero-stats{gap:20px}
+  .nav-links a:not(.nav-cta){display:none}
+  .product-grid{grid-template-columns:1fr}
+  .journey{grid-template-columns:repeat(3,1fr)}
+  .protagonist{flex-direction:column;text-align:center}
+}
+
+/* ─── CONTACT POPUP ─── */
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);backdrop-filter:blur(4px);z-index:999;align-items:center;justify-content:center;padding:20px}
+.popup-overlay.open{display:flex}
+.popup-box{background:var(--white);border-radius:18px;padding:40px 36px;max-width:480px;width:100%;position:relative;box-shadow:0 24px 60px rgba(0,0,0,.18);animation:popIn .25s ease}
+@keyframes popIn{from{opacity:0;transform:scale(.94) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.popup-close{position:absolute;top:14px;right:18px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--slate);line-height:1;transition:color .2s}
+.popup-close:hover{color:var(--dark)}
+.popup-box h2{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--dark);margin-bottom:6px}
+.popup-box p{font-size:.875rem;color:var(--slate);margin-bottom:22px}
+.popup-box p a{color:var(--aw);text-decoration:none}
+.popup-field{margin-bottom:14px}
+.popup-field label{display:block;font-size:.78rem;font-weight:700;color:var(--dark);margin-bottom:5px;letter-spacing:.3px}
+.popup-field input,.popup-field select,.popup-field textarea{width:100%;border:1.5px solid var(--border);border-radius:9px;padding:10px 13px;font-family:var(--font-body);font-size:.88rem;color:var(--dark);background:var(--pale);outline:none;transition:border-color .2s}
+.popup-field input:focus,.popup-field select:focus,.popup-field textarea:focus{border-color:var(--aw)}
+.popup-field textarea{resize:vertical;min-height:100px}
+.popup-submit{width:100%;background:var(--dark);color:var(--white);border:none;border-radius:10px;padding:13px;font-family:var(--font-body);font-size:.92rem;font-weight:700;cursor:pointer;transition:background .2s;margin-top:4px}
+.popup-submit:hover{background:var(--aw-dark)}
+.popup-submit:disabled{background:var(--slate);cursor:not-allowed}
+.popup-success{display:none;text-align:center;padding:20px 0}
+.popup-success .success-icon{font-size:3rem;margin-bottom:14px}
+.popup-success h3{font-family:var(--font-display);font-size:1.3rem;font-weight:800;color:var(--dark);margin-bottom:8px}
+.popup-success p{font-size:.88rem;color:var(--slate)}
 </style>
 </head>
 <body>
 
-  <div class="hero">
-    <div class="wrap">
-      <div class="eyebrow">Digital Smarts Lab™ · Awareness Tier · Product 2 of 6</div>
-      <h1>AI All Around Me</h1>
-      <p class="tagline">Go on an AI scavenger hunt through a typical day — for curious kids ages
-      8&ndash;11, with grown-ups along for the ride.</p>
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">AI Creator <span>Lab™</span></div>
+    <div class="nav-links">
+      <a href="#awareness">Awareness</a>
+      <a href="#thinking">Thinking</a>
+      <a href="#leverage">Leverage</a>
+      <a href="#about">About</a>
+      <a href="#" onclick="openContact();return false;">Contact</a>
+      <a href="https://volareconsultants.gumroad.com" target="_blank" class="nav-cta">Shop on Gumroad →</a>
+    </div>
+  </div>
+</nav>
 
-      <div class="hero-grid">
-        <img class="hero-image" src="cover-image.png" alt="AI All Around Me - Digital Smarts Lab cover">
-        <div class="hero-buy">
-          <div class="price">$5</div>
-          <div class="price-note">One-time purchase &middot; instant download</div>
-          <!-- TODO: replace # with your Gumroad product link once published -->
-          <a class="btn-buy" href="#">Get It Now</a>
-          <div class="instant">Works in any web browser &middot; no installs</div>
+<!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">AI Literacy for Generation Alpha · Ages 8–17 · ASEAN</div>
+    <h1>Your child will grow up with AI.<br>Will they <span class="accent-g">understand</span> it,<br><span class="accent-v">question</span> it, and <span class="accent-n">shape</span> it?</h1>
+    <p class="hero-sub">AI Creator Lab™ is a complete digital AI literacy programme for children across all 11 ASEAN countries. Three tiers, three protagonists, one journey — from understanding AI to designing the systems that shape our world.</p>
+    <div class="hero-buttons">
+      <a href="https://volareconsultants.gumroad.com" target="_blank" class="btn btn-dark">Browse All Products →</a>
+      <a href="#awareness" class="btn btn-outline">Explore the Journey</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">30</div><div class="stat-label">Books</div></div>
+      <div class="stat"><div class="stat-num">60</div><div class="stat-label">Interactive Games</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Age Tiers</div></div>
+      <div class="stat"><div class="stat-num">11</div><div class="stat-label">ASEAN Countries</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ WHY ═══════════════════════════════════════ -->
+<section class="why" id="why">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color:var(--slate)">THE CASE FOR AI LITERACY</div>
+    <div class="section-title">Why This Matters Now</div>
+    <div class="section-sub">Your child already uses AI every day — recommendation algorithms, smart assistants, chatbots. The question isn't whether they'll encounter AI. It's whether they'll be ready.</div>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">🧠</div><h3>Understand, Don't Just Use</h3><p>Most children use AI without understanding what it is. We teach what AI actually does — pattern matching, not thinking — so your child isn't fooled by it.</p></div>
+      <div class="why-card"><div class="why-icon">🔍</div><h3>Question, Don't Just Trust</h3><p>AI hallucinations are real. AI confidently states wrong facts. Your child learns to catch errors — a critical thinking skill that protects them for life.</p></div>
+      <div class="why-card"><div class="why-icon">🎨</div><h3>Create, Don't Just Consume</h3><p>A consumer copies AI output. A creator uses AI as a tool and adds their own thinking. We teach the creator mindset from age 8.</p></div>
+      <div class="why-card"><div class="why-icon">🛡️</div><h3>Stay Safe Online</h3><p>Privacy, scams, stranger danger, digital footprints — your child needs safety instincts for the AI age. Built through practice, not lectures.</p></div>
+      <div class="why-card"><div class="why-icon">👨‍👩‍👧</div><h3>Learn Together as a Family</h3><p>Some products are designed for parent and child to use together. Children bring tech comfort. Parents bring life wisdom. Together, better decisions.</p></div>
+      <div class="why-card"><div class="why-icon">🌏</div><h3>Made for ASEAN</h3><p>Set in Singapore, Malaysia, and the Philippines with cultural framing from across Southeast Asia. Your child sees themselves in the stories.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ AWARENESS ═══════════════════════════════════════ -->
+<section class="tier tier-aw" id="awareness">
+  <div class="section-inner">
+    <div class="tier-badge">AWARENESS TIER</div>
+    <div class="section-eyebrow">AGES 8–11 · I UNDERSTAND AI</div>
+    <div class="section-title">The Awareness Journey</div>
+    <div class="section-sub">Six books, six storybook editions, six interactive game sets. Follow Aisyah, a 9-year-old from Tiong Bahru, Singapore, from "What is AI?" to "I am a maker."</div>
+
+    <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNiAwIFIgL0Y0IDggMCBSCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMSAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtQm9sZCAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjIgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago0IDAgb2JqCjw8Ci9Db250ZW50cyAxMyAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNSAwIG9iago8PAovQ29udGVudHMgMTQgMCBSIC9NZWRpYUJveCBbIDAgMCA0OTguODk3NiA3MDguNjYxNCBdIC9QYXJlbnQgMTIgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago3IDAgb2JqCjw8Ci9Db250ZW50cyAxNSAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKOCAwIG9iago8PAovQmFzZUZvbnQgL1N5bWJvbCAvTmFtZSAvRjQgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago5IDAgb2JqCjw8Ci9Db250ZW50cyAxNiAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTAgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyAxMiAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjExIDAgb2JqCjw8Ci9BdXRob3IgKGFub255bW91cykgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDUxNTAxNTgwOCswMCcwMCcpIC9DcmVhdG9yIChhbm9ueW1vdXMpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MDUxNTAxNTgwOCswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0ICh1bnNwZWNpZmllZCkgL1RpdGxlIChBSSBDcmVhdG9yIExhYiBcMjA0IEF3YXJlbmVzcyBUaWVyIEZyZWUgUHJldmlldykgL1RyYXBwZWQgL0ZhbHNlCj4+CmVuZG9iagoxMiAwIG9iago8PAovQ291bnQgNCAvS2lkcyBbIDQgMCBSIDUgMCBSIDcgMCBSIDkgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iagoxMyAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA4MTYKPj4Kc3RyZWFtCkdhdCR1OWknTS8mQUBzQmJjc1VlRyVeTjw5KkkuQ09aNjxKXzFkZVcoPzQ+bE9fbUFacERyIVtTTCxlbVo+PFo+XUM0IldIK08/Ris3LWM8IW9RMXBZRW9NY08/Tl9cVGNxKyQ4WF1vVmIicikzViIoJEFPQCYlQ2U1KzJsaGxNR0g0dWBwRkg9OEM/VyQ9RXIsVS1AVF1FVmYscyNeUmRdOkpvPyI5U3Q0XWEkJ2EjWy5JOCxZSGNSWEEha29ZY0wmdSRIJSVQKCFfJzFLQ0lsTDlxRT42alVPYS5PSTlOZi1iRWdlPyxJSCJHQT5yQ0FWL2JFWkQ5dSFoKjFebE4tLS5NalVTYGRCT3AiRElIWGIoYlMsMDEqdWI1aTU7amckMUgoZ001Tzo2XF5zL2ZMM29SYkw+YlZxWDQhKm5uNSRfSmotTGcmQUVdXWlJST43QUFVYUkyIUw2dWRJWFJLTSkxZFFCLGVKW0IpYT1uMHQ6I1ZoLD1eMEVxUS1CZjxkPEYrLFFKRyNpVV5HJFBvQW04RTo8cFM2LVA7MEBVbiY1Z2RMODBUPVdOajZCY28hOl1ydUsuZE5AYVYvV0AhOlVTUkNMa3M9Sl0yVzQlXC9BJD1rY0c8WjJYTCVgbElvQG5qWjtqb0YsNmMwJko5TiNVO0FgcEwnbEhjRlk2XzBHVDpvQEZgQyM8JSphcilMY09GRi4jQURjQSt1WHFOTkNLVTw8ZENAcjM4cjBXRlI7MitUb0UyPUxOVzhmNlUhMEcjTi4+JTcydFBEP1FZUlRxVEBLRUokazt1ZSkrX3FPRyFwaExyKzhnNi4qS0pOaXRtITQ4aTpKVyk7LSZKRDpdXi9Wb0kqN3Q2XlM8W0QqNkZnWmFARnBSUk9tXmQjLiVDYyc4WSUoTHVsWWg6Q2InOVY6UipmcmMhb1gxQSU5cE47RDBVaShFc2Vqc21tV0ZBWUheOSM+YkNFUSs0OTVsbmEjdWRtMVheMSNScykzWFwtbCM+WkFvL1YvM0pMZ1VuS0BFQTFeZG1LUER1PzBRTk8vaD9MRF5XXjthTXElMDQ4OkNSb1xTVkJ+PmVuZHN0cmVhbQplbmRvYmoKMTQgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMTgyNwo+PgpzdHJlYW0KR2F0bTtnTVliOCY6TzpTJS9Oalw6cSspRXIiQFk0JmZBbGlGYkJyJnFRXztIJm4+cmBqWSFcIW1zQVk8M0Rwa1ZOX3AoZEE5LDUlaysiNGBiRSlkUTZOPU9bTG9xTmNiSCRgQUxfX0tKJzlVWiQlRiNdJStwY0BDLXFMLiYmXUgyVSxSajhxVjEqaWluUnJzSCwjJVRtUC1QV2ZSOmZLVDFsMD03VmRAZDlgUyVWOl86dDgicXRAMTsrSW9ZXk9bdWFbVWIlRW0qOTg3cDNdX2I1MVM8LTcydEs4Oms5JnJsMFtLIlNqNW5QYGg+Ry5xPiRUQmxgYlNaRWh1Pz0tOlVLbWJNXGRBXSIsU0YiST1mRiQmOzYqOl9ZK0NsNmtrRHIqXjl1Vy5SZDxrWW05aT4sOTomb10iRldeTktTLmpJc0RgKCdOOWttIz4iQC8hS3JTVFVDQDxmKE84PWJpZVZcI21JLkBkT2piS2o4V287TCRiJlA9VkhLI15ET1FkakApbm9uYW87TitUUy5rT3MucFMoTnFyUF1TYzxDLilRWCFgO0tvLnU7X0BgcXBoSkVeMmliN2JGSzxaSClGby85QiFgTnQwNWA+X1tUQmNrZG9RMSZiX2wrK2tjJkUiOGZWRkI0JEkjcCFsKW5IYzY8YD84T0kkJihySzk2KC4yZWo2OUZHMyU4Ii1IQzFZSiI6MjJMN2VWcko9V2tyPT80LWpiaGk9K0NKXWlHbj9YM1hQZkBBZlxRPDgmQHUkOTQmckwxTShyT1BuSTVDTGJxdFU6NS9ZST10NSRlXi1wRD5BYU50VjAwRm5EWyosUmxxTitNOW0kaTJnUHNVPEcpYjc4MGl0W086ZiFnV3BTb3VhaC9HV1wzbmU2JGF1c29OYj4rMkxbPyJJWURNcjBrUkkoY1pDTTFhPWVXSzZsZkYxRTdIYyo5XG1jRmhNLHQyaSJnOFZoIig4QmpbJC5DUzpYOVdVJmpFYidEM2twOU0yQD9tMjdgKFUzQ08uQTlfZ2RZUD9dYD1LUHJpaSs1LlpnYi5QIUdzZyVoSlI9PXBEaHBRPGVkZylYNWtvUjJaPTMrTU0lbXMlaiZZVDhUYE01RypkQllIbWNgbWIuWj1LaStlV21OXFFeYVRiSENKMFlhYyoycDxTSmRmPmU0MipdJ1hYNjBEcjw8V1dmP1NKOjxhTm9rXTVwJC9tWU83M25EZk1bSUkmJWBjLk03RU8jc2hqO2tuMTwvWzRPYjBpNVsxInVKOEcmJSo+KmkmST9jVF1eUi9zQ1Nsb1VYTEctYnI1Pj5MMHNhJkRhdFNEJSlsUXJEJzteOj5YdHNZTmkhKjUyWytQJ1A1VSghWEdjU1YlJiklTi9Kc0FIa0hoXCFxWThuJFgkTy1Kc3Q1Z1w1VDMiRDVeRzc6K0okKzZvVl9oOHU+KVFlbkZcQkluUU8vYWFSZDlSU0gwRDtuXD5CYz9ZWC5HUDUoZm9SaWJCXTtCR2NmTlckRig4VSREPmMsYlFya01PNHA5XD1hXzRGZlAtI0M0OFBkTyRWZkpRYzIydF5uOyopaCdlJCZkLXNHXGVFQWxvNy9IUlFEWFQjSVY5Sjpqa2dsK0lyMEAyYXQ1aUw5JFRuXSEyb2s4OlxZXk5NZDdwMEBTSy9EIWFeMDdZaEpRNTdPOShlWkBSKkI9QlpxUTs9ZVE6ZDBCLzcxWjc2MS5SWUQ7WTM4WFBoWFszY21ucDAoaWBrRSIlSllCbDpDXDNiX28+bS5nN1Qia3BTQSI9cSpXWkxTbVZKNXJEVXQxZEgzVllfXTxpYF0qdVwtST9mOD87ZjhucEZHLkNgZCldKURTXWxfX2BJaFUlITI2MTZkKz4xJUVuaztRRSMoJ089IV9vRjVaZ0g6NGI3RFAtSVBcKENEaFpTU3A/Ll9oYz86T1kpTHFfRSxnN05IUl1XaWxNUD4vZSZgVjQmQFdWYW9RWF4xJj5MUig0VCcwRmNTI0BTYXBmTmdLIzgnKl4jKiFtJSxzPWoiVUFGSTFnMkEhUUolTj8tbS9ATDFRTExfWU4tXHFGO084WywkOVAwY2h1KS9VPjsjJ2kkRjlRWjZwdHE3K2NCOW9LTVEzOV5xU1hgPWFWPGpLLTJOVSVSXiUjZSEqRCVVVyphN0lwVUs0OlZHTjNbaGlCbW9hLmk1XFlPZzw5IWhNQl1cPDRKVEdPRyMlXzNgIyNkV09CT0QxbGFwPWBbI1dPZCciI3UyVyJlajFwTEFKMmlVQzZcZG9kJmhYUz5jIkNgYVdwN0VObiE2al1lUF45XHE4T3BSZk0wY2orNU1YUGs2JDAuLSlNZGY6ViZaODJfXitnVltQcnBlaSlSVTdOPilkLy1uKVlrODQuZTM7O2teMFBlJGo/SC9BQlhIQy0pNHNYISNrdX4+ZW5kc3RyZWFtCmVuZG9iagoxNSAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxNjMwCj4+CnN0cmVhbQpHYXRtO2dNWWIqJjpNbCslLl9uIjtRY3QxU2VgZCtoJDJcUF04PGRZSlxLSkRENl1CdD0vO2ttbXJzTU5lKGZpUiMoX0NkMGgnQlUxWyEhLyokVGNNczFAXCI/OCg5aDJdUiZOYjtKZFJWNktrMig8W0AsbkxCU2w/cy1YUDhIcGEtXVo7bEcyQ0JFUCgvYCJwPGIuOm0scUgjP0xRWjRHO0MpSlQnJVNeM2smWDBWW1VUJl5UOEZUX04lTCNsTDxpa11rNlhlVUsjPW1MKE4xb0IkaSJ0V3B1YysrJUEub0NfIm1bIWpsNjZ1bDNgZ25NcChWQ2VhZ1c+VnEzIlNdRUEtQC9BSyFrLSxvT2pAYzNbI1pGaUpVKHVibFYjMm9SdS1UaWlAVDslL20oMDxXZ0JbMm4hTXRWMzNgdGosKltQbSUoWWVNODchP1YmbW5LREAma0ZcVj9QW1dYMyNpUyItTGIpVkE+NTx1dDxeSiYpKz1XSWhRLzRjPWJaNlhLVzphPSg7RU1uTi9JOEdKSzlfWzRNWFFkQClHNTVmLDpnI107NF8vTGklMUFAcFwhU0pRbjYsZj0oUjhwXy49RFIvMikpKi81KiNMXFAnL2dCbFBlaSNaQVAtJ2MqMitxS2QvP15jRjIwIkAiP2VKcTEmIlpxX0pKX0xdVHU+OzohViEmXEBHYVAwa3JOTllrIU9VZSI2L3E0OU5CMTVaZCghOiZKJ0gvPCw1bWcsYGY8KSdeO1QjL0IpO3F1W0Y9ZUtHOWVFTU05TCdQUGxPP3RGYj45ZVYjLCp1PSFFU2NROmRkJD9TN1hKZGlDNypzbmojTXQuKHBxKFxka2crNFdgYnBDcGZacklNXUVYcCkiPTRvb2FpT1pqcV4zIywtbixRIT45MC02Qk4hLm9eUkNBdDI4N2lGPDReYmc4JWdCNk5SKiFTbGUzcEhqTVxybStTJzkkQm06JWFpSDhZXWFkSSskOlhRZ1ZdWWBCQ004USR1L1dZLyZwUTFQYTBxWiQyZTZxUiw1I1txOygjT1ZWV0BtaF9LTDlvcHJmYyFaTkA5KD0nOF5nRjo/WCg3I0MlVVJvTEtiTiE1JnBAYTknQ3AsbVY3NixjaEIhPkIzJ0dgPUJfIUU+J3BVcThuQVVvZ01XL2M8UW5cPE50K0BmNFpyMjxiKTc0XW9dOjk+N2hxZypAJ2I7IVozUGIoZnNYVVxCVSxacGMtS11LdWIoMTdjWERLMyczWi48QkdsYG9kTGhCYGBnMFY8R2deWHRgbjEnSVEtX1M3NW9TYFU2UDl0TlxMV2NuQjpDR0k0Y1NSaCssOVMzXU03U0ZLJVpXU1gmT1Q8QkEpWFU7NFIuMy1mRVIlRUg7SyRES3EvU0lkO0BZWkZTXjpubTlYKCdob00odERgS2xzQ1BPNUZJJjw2Tz5maCEyMEdMbjFUKS1xVEJyL3JnYDJZZHNISlk3Om9mUSNPUWFwJmxMQmlHMV0xWDtqWCFhTTxdLyVFQyREMjMsO25YciZoKHI/V05nMSZnLGwuciRETic+NWY4YzRnXVAvS1ImKWdScmJnbTtxTjE9cDlpXSFJIzQ6YmM1aC9DQCYiJGdRV2wqVkZhRm86dWwkX1EjaDZyQkJQIlc6LVs8LE49c05ZbihQbWBxXVlDJytVOyxEPUdvKkc2U3NQN2FuP2JAUHJkT1NhJygkQ1YhSzhkRzQ7MGElcVZNZzVQNi9MVWVkKm1wVmA6Kj9NJFhtbHBzZTZwKFp0PXJGZCIzJWYjZEg3UVRKYV1uRUMyaG1HMGljbXEzcClNVXJQR2BRKjgmYipBOWgsOyVlPWtXJCdyWExbLnIjOjVPMjo4JldmcE9STW5RUm1LOkVrTGJ1ZDEzR2wzTDk0aF5SZicxcScsZFFcbEZVYWhtS0FmUGNfS2Fkb0Izc0swZidRMzBcbmRtJGhiMlJCMjNXMGYlTSFfYDIpbS89XUdCUGNaa3VOQl9wLycpbiw1Qyk5cSNiNlsodUlXIWZucyw0VmAvaE1NKjpuOmlkcFJdZ09KPC43XWNNcD9VZjk2aGZSOVpkWW9KVFJPJUs5Kjpfc0orQjxuaUVhbk5uJSprXj5LdWhOQz9WdD0tQzhsTnBdOyQ2KVohdCdhRFpQTlRJZlpRKVdRUH4+ZW5kc3RyZWFtCmVuZG9iagoxNiAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA4NTUKPj4Kc3RyZWFtCkdhc2JYOWknTS8mO0taUSdtJD5XKjEkUVtGWT9hZjVgbnQ7SkFpdChgUnVMaE5hNm9OJkhCSk5OZj9iIldsZTNSTkJQViNaVEliNlRfUGJaMnI9W0FBVDJxPEo4clkyXmEsJihjL0MhQiNqIkRDJ1NyRik9cTYybi1CKkllU1EmbiM5SipOS2Q5cm4hPXUtSkVMWGVpQSFCRyo7SlVHN0EiYWkhQT9hRiY/O1pjNDdLJHAqYDRDc1VraUc7Z19IWytBVig+ZTxzMT5WTlUzRm9sSl04MnRDMCdoUipfP1tXQU1OamwwYkRmSTBMZCFBJSUmKS9YOmxKajpSV2xgVk5KSDJmQ09HNTJKPzg1TCdOSkstUTlLXXBVaFxLcGo4XDxMQUlwPnEtYEwiXCk6ci4zJUpOazlScEZrZEZsYzYqV3BBajtPWnMjSjwkNEdgLkgkbyVTJHNjaEs6P0VhMGRsUFBUZGddWkUmNVY2VzFgZ0M2Tm8rYUlVa1wrJExaXiMjP1cqMnBia0JzWGpQLGAuOVMpU25aRzlbN2RSMy0hQUVgc21RMmlkMCZOMklBRSxYWFpDKV1UWTZOUmwib21TT1tydFxMQ0tUK11hMjUpY1MtPVs3W0pmWV4mUDRpOzxvV2QtcitDUlcpOTklUGIoTHBEYixBMjE4JTIxcTQsZkddaTAqJFY6MUFnaUlxPUdFRVozQCgyZ0kwdUwsUjFHYlh1PWlOTDluKXAwV2R0TC5GTVVDPlcxPCNbQEhtTShzRUwrIVlCLmtzTVQ3LFc5YSRkWUZ1ZGNSVmRMYWdmMlhUKClRazFTVTgsJ1RbSjg9RzNFJig6UGc+WGJaPE8wNW9xUW81KTcubWJdJjlxbGs/W3BQJz1YXlsnL1dVVEc7Vio+O1NZYU8qZ1w7PGFaQ0xyckkkWEFxWlhmRyZZZEhoTCo8VS9VLV9IRnBKKjw/JyMqW3IjbGgsXkknZEZwZXNAZ1gvaS81SSswKldtRmlfYFBAVGApTXBWVkJOJm5eSENMQVpfdEA9cWJoV3BgZCoxRlE7WmtYSFM6MTs5MnApIllmYyRkUEs5Ql9bTiVpSEtUJWgqWyZtZ0s+IidFZCQ6XXQ9a1NrTFBvcXVxS2xGPF5+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDE3CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDA2MSAwMDAwMCBuIAowMDAwMDAwMTIyIDAwMDAwIG4gCjAwMDAwMDAyMjkgMDAwMDAgbiAKMDAwMDAwMDM0MSAwMDAwMCBuIAowMDAwMDAwNTQ2IDAwMDAwIG4gCjAwMDAwMDA3NTEgMDAwMDAgbiAKMDAwMDAwMDg2NiAwMDAwMCBuIAowMDAwMDAxMDcxIDAwMDAwIG4gCjAwMDAwMDExNDggMDAwMDAgbiAKMDAwMDAwMTM1MyAwMDAwMCBuIAowMDAwMDAxNDIzIDAwMDAwIG4gCjAwMDAwMDE3MjQgMDAwMDAgbiAKMDAwMDAwMTgwMiAwMDAwMCBuIAowMDAwMDAyNzA5IDAwMDAwIG4gCjAwMDAwMDQ2MjggMDAwMDAgbiAKMDAwMDAwNjM1MCAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzwyY2U5ZGUyMzgxMjZjMWFkZjhjNTUzMjIyZmZmZjk5NT48MmNlOWRlMjM4MTI2YzFhZGY4YzU1MzIyMmZmZmY5OTU+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDExIDAgUgovUm9vdCAxMCAwIFIKL1NpemUgMTcKPj4Kc3RhcnR4cmVmCjcyOTYKJSVFT0YK" download="AI-Creator-Lab-Awareness-Free-Preview.pdf" style="display:inline-block;background:var(--aw);color:white;padding:10px 22px;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none;margin-bottom:18px;transition:opacity .2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">📄 Free Preview — Peek Inside Before You Buy</a>
+
+    <div class="protagonist">
+      <div class="protagonist-dot" style="background:linear-gradient(135deg,var(--aw),var(--aw-dark))"></div>
+      <div><h4>Aisyah binte Ibrahim, 9 · Singapore</h4><p>Singaporean-Malay girl from Tiong Bahru. Lives with her parents and Nenek (grandmother). Curious, creative, brave. The builder who starts the ripple across ASEAN.</p></div>
+    </div>
+
+    <div class="journey">
+      <div class="j-step"><div class="j-num">1</div><h4>What Is AI?</h4></div>
+      <div class="j-step"><div class="j-num">2</div><h4>Ask Better Questions</h4></div>
+      <div class="j-step"><div class="j-num">3</div><h4>First AI Project</h4></div>
+      <div class="j-step"><div class="j-num">4</div><h4>Spot the Mistake</h4></div>
+      <div class="j-step"><div class="j-num">5</div><h4>Build With Parents</h4></div>
+      <div class="j-step"><div class="j-num">6</div><h4>Code Your Tool</h4></div>
+    </div>
+
+    <div class="product-group-title">⭐ Best Value Bundle</div>
+    <div class="product-grid">
+      <div class="product-card" style="border:2px solid var(--aw);background:var(--aw-pale)">
+        <div class="product-tag" style="background:var(--aw);color:white;border:none">BEST VALUE · SAVE 68%</div>
+        <h3>Awareness Complete Bundle</h3>
+        <p>All 12 books + all 60 interactive games in one download. The complete AI literacy journey for ages 8–11. Everything included.</p>
+        <div style="margin:8px 0">
+          <span style="font-size:.8rem;color:var(--slate);text-decoration:line-through">SGD 90</span>
+          <span class="product-price" style="font-size:1.2rem;margin-left:8px">SGD 29</span>
+        </div>
+        <div class="product-footer">
+          <span style="font-size:.75rem;color:var(--aw)">Save SGD 61</span>
+          <a href="https://volareconsultants.gumroad.com/l/awareness-complete-bundle" target="_blank" class="product-link" style="background:var(--aw);color:white;border-color:var(--aw)">Get the Bundle →</a>
         </div>
       </div>
     </div>
+
+    <div class="product-group-title">📚 Instructional Books</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag tag-aw-book">BOOK 1</div><h3>What Is AI, Really?</h3><p>Your child's first step into AI literacy. Patterns, safety rules, and real ASEAN examples.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book1" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-book">BOOK 2</div><h3>Ask Better Questions</h3><p>The 3-Step Method: Specific → Role → Iterate. The most practical AI skill your child can learn.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book2" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-book">BOOK 3</div><h3>Make Your First AI Project</h3><p>From consumer to creator. Choose a project about your neighbourhood and build something real.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book3" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-book">BOOK 4</div><h3>Spot the Mistake</h3><p>Become an Error Hunter. Catch AI hallucinations, bias, and overconfidence.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book4" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-book">BOOK 5</div><h3>Build With Your Parents</h3><p>The only book for the whole family. Three generations building one project together.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book5" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-book">BOOK 6 · FINALE</div><h3>Code Your First Tool</h3><p>The maker identity. Build a real digital tool. "I am a maker." — Aisyah</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book6" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
+
+    <div class="product-group-title">📖 Storybook Editions</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag tag-aw-story">STORYBOOK 1</div><h3>Aisyah's Discovery</h3><p>"How does the app know?" The day Aisyah found out what AI really is.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book1-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-story">STORYBOOK 2</div><h3>Aisyah's Second Discovery</h3><p>The homework disaster that taught her to talk to AI properly.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book2-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-story">STORYBOOK 3</div><h3>Aisyah's Third Discovery</h3><p>The week she built something real in Tiong Bahru.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book3-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-story">STORYBOOK 4</div><h3>Aisyah's Fourth Discovery</h3><p>"The Merlion in Jakarta..." — the week she became an Error Hunter.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book4-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-story">STORYBOOK 5</div><h3>Aisyah's Fifth Discovery</h3><p>Three generations, three superpowers, one project together.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book5-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-story">STORYBOOK 6 · FINALE</div><h3>Aisyah's Sixth Discovery</h3><p>"Someone built every app you use. Why not me?" — The maker FINALE.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book6-storybook" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
+
+    <div class="product-group-title">🎮 Interactive Game Sets (10 games each)</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag tag-aw-game">SET 1 · 10 GAMES</div><h3>Pattern Makers</h3><p>Spot patterns like AI does. Nasi lemak predictor, wet market memory, durian sorter, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set1-pattern-makers" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-game">SET 2 · 10 GAMES</div><h3>Project Lab</h3><p>From consumer to creator. Idea generator, project planner, fact checker, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set2-project-lab" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-game">SET 3 · 10 GAMES</div><h3>Error Hunters</h3><p>Catch AI when it's wrong. Hallucination hunter, bias spotter, overconfidence meter, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set3-error-hunters" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-game">SET 4 · 10 GAMES</div><h3>Family Builders</h3><p>Play with your parents! Family quiz night, generation gap game, PDPA detective, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set4-family-builders" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-game">SET 5 · 10 GAMES</div><h3>Tool Makers</h3><p>From user to maker. Schedule builder, if-then machine, reminder creator, and more.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set5-tool-makers" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-aw-game">SET 6 · 10 GAMES</div><h3>AI Safety Zone</h3><p>Stay safe with AI. Scam spotter, stranger danger, password power, plus a Parent Safety Guide.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set6-safety-zone" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
   </div>
+</section>
 
-  <div class="wrap">
+<!-- ═══════════════════════════════════════ THINKING ═══════════════════════════════════════ -->
+<section class="tier tier-th" id="thinking">
+  <div class="section-inner">
+    <div class="tier-badge">THINKING TIER</div>
+    <div class="section-eyebrow">AGES 11–14 · I PRACTISE WITH AI</div>
+    <div class="section-title">The Thinking Journey</div>
+    <div class="section-sub">Five instructional books and five storybook editions. Follow Kai Nakamura, 13, from Bangsar, Kuala Lumpur — the thinker who questions everything.</div>
 
-    <section>
-      <h2>What's Inside</h2>
-      <div class="steps">
-        <div class="step-card">
-          <div class="step-num">Step 1</div>
-          <div class="step-title">AI All Day Long</div>
-          <div class="step-desc">A "day in the life" reveal &mdash; tap to find AI moments from breakfast to bedtime.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">Step 2</div>
-          <div class="step-title">Spot It At Home</div>
-          <div class="step-desc">Explore four rooms and uncover the AI helpers hiding in each one.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">Step 3</div>
-          <div class="step-title">Sort the AI Helpers</div>
-          <div class="step-desc">A 4-category sorting game: Learn, Create, Stay Safe, or Have Fun?</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">Step 4</div>
-          <div class="step-title">Try It! Find More AI</div>
-          <div class="step-desc">A guided prompt to discover even more AI examples, plus a family conversation starter.</div>
-        </div>
-        <div class="step-card">
-          <div class="step-num">Step 5</div>
-          <div class="step-title">My AI Detective Badge</div>
-          <div class="step-desc">A personalized, printable badge &mdash; the 2nd entry in their Digital Smarts Passport.</div>
-        </div>
-      </div>
-    </section>
+    <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNiAwIFIgL0Y0IDggMCBSCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMSAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtQm9sZCAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjIgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago0IDAgb2JqCjw8Ci9Db250ZW50cyAxMyAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNSAwIG9iago8PAovQ29udGVudHMgMTQgMCBSIC9NZWRpYUJveCBbIDAgMCA0OTguODk3NiA3MDguNjYxNCBdIC9QYXJlbnQgMTIgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago3IDAgb2JqCjw8Ci9Db250ZW50cyAxNSAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKOCAwIG9iago8PAovQmFzZUZvbnQgL1N5bWJvbCAvTmFtZSAvRjQgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago5IDAgb2JqCjw8Ci9Db250ZW50cyAxNiAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTAgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyAxMiAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjExIDAgb2JqCjw8Ci9BdXRob3IgKGFub255bW91cykgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDUxNTAxNTgwOCswMCcwMCcpIC9DcmVhdG9yIChhbm9ueW1vdXMpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MDUxNTAxNTgwOCswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0ICh1bnNwZWNpZmllZCkgL1RpdGxlIChBSSBDcmVhdG9yIExhYiBcMjA0IFRoaW5raW5nIFRpZXIgRnJlZSBQcmV2aWV3KSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjEyIDAgb2JqCjw8Ci9Db3VudCA0IC9LaWRzIFsgNCAwIFIgNSAwIFIgNyAwIFIgOSAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjEzIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDg0Mgo+PgpzdHJlYW0KR2F0JHViQVEmZyZBNzxacD1TTkNFcXM8YjhhNjpGRiF0S0BeI1ZMMTlbI3U3JHFYNFFeW0ZlY1gxIktVJjBNNidFY3UpPTgtRFp1cD91SCNFMU9uNT42R1klNTZFQzQrTVdQK1NoXTFFUVFAITxacEZsRDouXERdXkxXN09aZ3MsOkRbZmg6UW5kRiMjZ1g7KW83Z0pJSi9QLjkjRTcrcUMmPGwtSEdQaGQlTGhPRS8qMTMyOFQnUW0xOD5sNjgxalAmNykqIz1SKzRxUitMSlhjO2UyZS5IJTYzMzhCZTtOKE06UyFsWD5cYyNKRyNbMS4udC0wTEcuXVspX05bQURidWY8WllYUTc9NGExbDtQSFRDbUw0LHJSXzVxcDEnOltDclNyLlVrY1VbImg1R1hpMEhDJC0rMWdeRmQ+S1pMSlBEUlVDaG1nKyRHUVE1PF9JNidDcSdBP3BjSj03a0YxOUBhcHUwOUFPO0pfO1RoY14pRm1gKkNGJl1FIzVDTGVFQXIuRW0mOW9BclNVYCFqZUNQOCcxOi1UWE1uW2E5alQmIihfb1RLJ1UtUTUiZ2djWyE3LWFgVlIqcVxRSmw9L100IUJNSj5gLiovL19OcChBPGJyKSY4Jm0+a3A0SGphWltZbVAmbV1ARDs+M25GVClnTl89Qzktb181UGRpX1RJN1tQXHBeMWBfVW8rTGMvQWVjbz81ajAuLVlVVFsnVXE9Zm1IQmRFKjJOYnIvUzFKaGxmZCYqQlZDRVpSKS1AO2VQT0lmcSNrUCdiW19xNEZfWGhlYiZSciI+LTF1PClQOmQ3XWJJZDY2XU1NTGUnVmAnVE8/S2MrWSlOU1kxMTdtTmMtQkddKTZja1poPjldY289KDc6LCwlKV07KSFPcTZIZWhXTlBCJjl0Z1g3T3NKW2tCIVE9LjM8LEojPXUuSjMsQVBWQTNoYChqITdvVS4wLXUxJCtXQGpiRmpuNFplLmdHO1hPakBqcVk5cktWVmBmTTd1PVQ/K087KDkrYy1fMCk8YEVdVz48YVlDcjt1YSMoL2FwX202PCZIK0FOOVZuOEVmLE5EK1pfODI0akpcTVVsZWNrSlwyZTlaKDw3Pypjfj5lbmRzdHJlYW0KZW5kb2JqCjE0IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDE4MjEKPj4Kc3RyZWFtCkdhdG07OWxvJkknWU88RV1WQ3M5Omshb2hkWVRiUGxBOl8zWTFkLSxKT2k9IjlFSGI5PjEoK1IhW01WU1tOITk5bl50LTQhOlJVTF0qbHQ1JW1SZio+O1NfYTlEXElUOk9ZUlAyPklpQkJSKiUpalUkak4sWTJFUzYnK1JAOkZtJUkjZF9iOzZ0J2ZwSC1EPz40Tl1JR2pfNyUhTW5MZVQ7X2lzVVk+MXNDMVY3TUxQNC5qcyJvYWBqJ1g2NjlQRlJkXUE+LEBkWnUic3VoPVk1Q15LaU1sXG0wV1ZeXHAhY2pmYiNDNSRXUF86V3ByI29mLidgcT09al5KImwlKz4vJTlTPm9qJUJaKV1PSW8qRm1xZmIzb1QwRmErPlM0MCtuNGRlZyVAdGMjOTRQaj5rWkJGS0JXWFxwM2xbJHMjSGd0M20namE/XCRZLlxAY1QnKyJCWitiKzZdXCdIKUd1KUcvPW5RbWtOInFpMyI5IjM3NixbSmEiNmA/LFlKLEUqOUNLbC9HLkM6OHJxRT9EaS1dP1g2aTB0YG1SNk9Hc3FiV28vT25ecnRfRy1rNmA/Yk9qWkNAKlAuaCUndFVQOmQ3XlQ0WUdwV1xtaGZAKEcjaHJWNEI/M0Vnc0phZD45T14jRlhRPU5EY0FfQWlqaCUkLllbLDVZIkIpVTMtVGs9VT5mbzQzaV9oPEcnXWZWI1NPVmBtIThaRkA9Lk1DTmg9QCJvJkNQJSdMYmc3IlBzO1JSVis4T1wmX0ZAIWEjP0BsUW11WlhqJTtINzM7Xz9GMU45WUZ0Yl5DKC5vZnI/MTNUUW9bJE5UXDVbWWg6MUtQSyE2SmpwI2lVYyYwciFlP1JTKCRfKzlPbmdhUVE5Tlk/SGQuYURQM2tidGFMOS9rYEhVIidkVWVELzAtcCRfdD49SFVARFI0Oig+Ti5IRy8wY2FAVmQiZVFeNEwwYyJgWkp0SilHO1orZ1xvRDtgNW9JQGFeXmluYSpqdHUkbycmPUdDPS43LnJOLVsuLzAlJlZgK01taGIrZW87Ljwoa0BvZ10zT249P1wtUGAlLDcxazlZNixAQVBycCxoUUlBKyRlUigzPVQxKFZJREVkK0pIXXBSXlsjPSxfPDhMV0hqOG10RWNsI3UpZlJsa3MxNmFXOzpbUCEzOWZRWzw0akYzMnVeLVBXLVZPQTxQaTQiQFhXMFFiZ1M3KThqakRfP05aXGE/KTk4Zis1WzZUNTtpO3RgPUQxYjJGaFU5bTdlXF8xQVskIjk0QiE/QTorYTkpbmw6QF1mVGRnL3M2alFIMiopcGt1MVphLydwaF4jOXM+JS1WbDkhZUFrLTZPX2pLdElpVDxVajptI0JOQUk3JD43TWQrVF51NnFOW0trbkcuVChraDNmTytwSTNaJl5BNktwQzhsNWROT1g4NyM2KjtuUzRyInM8clZfSWMlbylGMUE1RGhNKy9DNDVGR2NPMEx0RmgjdXJuc3FMZzVITEpJI1ZUaTxOdVIuLk5TbW5XZCI7cDJrZjBVOCY4ZzxxSW04Y0RNNFMwZmtnIkY9R3FlJWowUVBQSFlRcCJJVWBXZFNbO09bPmBgZV5taWFjLUFPZXVQQz1OUy1EZzYxZ1Rbc01RYUgnazRVXVduN3JDX0g/RytIR0pSWmM4LjxVXUBBMy9VMS4nbzprPlAtXjpIT19mJCssM1ZPQiMnRiFddGVOJ3EiUi1vdEE5P2lhYSMoJ1Y1VytdXkk+TFBQVyNRLnNsOGBxXG5uaSZwO11ybDIuRzopO1ZXM3M/aj07aFdfZUZFZnMuZy8/clM4SFUyOmwlYjtvVWtNRCwnYDZDKjlFXyZqYmFqNTJUPCtPZkwwVSswQyY0RyxHXXE/J1hpLydZLEs8ZShucU1zW1YtUEkjRD89OzY+MDI7QGxgNk1ENl5OJSxeWF5lXiw1TUdhXTpTSGJkQVQ+Xl4hOWBfKT1IW0RsLGxBXTktPVpgbD4iLyo9aDcibURpWS8rQC1zQVtzXlxcJ0ckXSVEMVUjSDZdX0ZIWzovY1AoPCZsKV5SdSo9ZXRiPS1XN0BSMic5LVtAPzNtR1lJLFdSNFxFUVtnXDs+ZEhFL102MClBSzhTKlQqRjUqazs4PkdeXSklPGBmcyVDIVpWL2orPm08KTwuMFI2b2orUiNXMV8lcDZTIlIiMlZSLy1rTGExNUMuWi5RKSwyY11mVzEobk9EVm5CZlVgM0xLZGotbFgjTl0zQzEnIS8nTj08TyJyaGlPZyxTZWRSK3BUPkpJcjtpciVOaVpqMj8xSG1fKilgOlE2VzQkMy48cC1VSzZJZCNPcVtaSTVOS2xJZmUwL1c6Xkw+Llg8WFY9dS9uJjlQSzY5UjJyYVAkaTtRKi5hUWU5bzRySSM+Vm1raT8oU2ZIUFZ+PmVuZHN0cmVhbQplbmRvYmoKMTUgMCBvYmoKPDwKL0ZpbHRlciBbIC9BU0NJSTg1RGVjb2RlIC9GbGF0ZURlY29kZSBdIC9MZW5ndGggMTg1Nwo+PgpzdHJlYW0KR2F0biY+QXI6VCY7QiQ/LmdDSDo+Jjc7PEdOSGZKOygkUDlgMyReZCYwTlg1YCpHKUpNJlZXS0IoUD44OD9Fb2VFPWdfLSUvOyNMUzIydFlTQylBN25BVzw+XGdLUC1lKmVxTW5YL0dIaVtJTjdyWUhVJHBLMVZdRUtMaWtqISlgLVlwdW5TcjBMUlMlPSM3OSwvdUZvOlRLWUQ8S1U1JVo3KV04SnJITUVEZ1QqOzk3TGNzbmZPS10jUF8ldSlSR0IoR3QhIk1ZVHRcWGMkT2QxbykvOU1yXVdSR3BbbjUkSUdkT1tvOTdZNFk+PSZpVUE9J0RxL2trMUlXa19pa2o3WG5uUiQjME9sakZTWVgoclY0Oj1gSGY0KmE+S09lUF4tVWVHQD1kXlUhck47TnRfQG8kPEBVOUg4K2NeJiowOXJmJnJfVSZTPTQxcFIjPkwiRStfWjclIT87bD9gNnUjSzEnR29JPmk9S0tNRTRnUT4oclhAPG1qSVsncUo1TUtjK0RnOjZVcyttKys1Tj5LNTtJIU5iKDEuWyg5UGBtOl87ailmJXA5bl1UOUhfTlZnLixsZjRbSTtUJDJjP3BpL1shNTFmXGVaR0gnWGRXM2dsZ0UnR0YsYU9mLTEzNDxkRDJuaihpLExWVk5KO2IsQ0ZqLGgpSFxYIUAtZzhUZStLaTw8LVNdIWJmSDpTSSpULSxKOysmXXVXME5uTSIyUElESjxpZVxSKUY1PE5hWFpLJ1lUdUFuNmlHbzRjWShhImRKLkxabVxPajxPVmpCYihfUjMoJUdBPkNcc3EqRVBsbkc6Pz1zckkhJWM6YS4lWG5NPjxQTmcqNT9sYCVBT1NKV1U+R0labyEpNjtyJWROWF86N1M/P2B0SFdCPVVBPi4zaSZgUTJwOiUhNTwhWFZGS0NCLWInS2AyK08yU1ZZVilDYiowSCg4O21KZ3BCXCc+LE1uWWtjcmg7VTwkczVVZ1xAJVdtOSNSZW90Qy9vKGElUDVNJzEuOTReLlJWWlUzaVZjW15aKyFXW2hQMV1cQCZwUjw+SCNaMydYYzthMDVBKVFvWj45VUVcMSRISD5PPHNkNUVmUWloUCZCJDQ2Y1hoQ1JASEVXaWY0LW0/IyNROXFZaTNoblFja15kP01XJG8rK0pBLlteaSpcPC9BVGMtayhfNERLQzAwMElBVFllY1YlQSZCWCpbZi8zVGJBcmwiPS4lIWZAWjRhQ01hLU46Pl5ucTBHTEcvbmYnWCgsMzA/Mi89SyIpJ0gvPigjOUJgRVleQFpWWiphcEsrXmwiWG9DUW02WnAnKF4nPlNvTWdrQEJtaCRZVXRtUDIkZnI8JVVMWTkhLi0tdTRvPjpBK0JEPClZZ2BMVkw3Tlw0Oygyak8iVytKRW8+dSFvbjlkblZNbDNdcUluUWtbPy1eIlE/Z3FYMyVOXiNpYF1mPUVkJCVSPmpbTzlVS0tiU15vPWAkMC9aUF0oXiktZSdzOyZbTGVjWzBASD5NXmguN0MjNSREYWJAMD10XyctWU49ITBHUDYjWENmVGxBOWYpUWNrWjNAcSMzWy03LS9bLTJDPz1IWHJXL2skOWhnK2Y/dEglbUZbaTVtVjAyTUpdKUNARF5jSWhXSCYrTk9BOV5aUy8+b2s7UlZORVhsSVwySHJVQDpjcFgpYEVLI2smQ1ttXS5AV2xJLllCcUxFU0d1bDRwQnMldGd0PktKMGxUT2pWLjQ1SS1IWFJCbEI2RS1JU3ApK3JYU0UtZGo7aGBKJUhyYj1VNUJvSDZtcD9mWmhFV05iZ202Uz1DMlFPbVZROUpqXjRgJDoyTmorRjxxXzZuJCotNSFzTDFca1xKUjJhZ2lMKiZsaigjSWVWaTZAWzswbFYsbnRNImMoNCMqdCkvLDUlRk5aMEA2WFMtVShlZlknPiI6VyIlPHEpPD9nJUZCMCEpQC1BJWokZEMuOFNib2RQWHI9WDMlPl1AWHQ1KDVSNTxmVCJjMF8uMUFKIW1MT19MLXRvWyVfXFw6JFtrOXFsU1VUJFZDUTRHKEtSQU5dPS9gZnM1T0krcSw9YEdfc1xQaiw4T2owciQ1Z1xuI1xYOCYrdSRWN0lAPDRxQ1IrNlY9ZFsycC1VakI6aU1adEc6MmotYzdtczwqcitoMS82LFMwJUxqYzNMLVoxQT9uIzYlVmd0O3JENzsmQ2dIVWtIPSEjRTdoLmw1X0orXSNCTk1uUyxHTzc8QGhSdDY2TWhNcmEkWHFaTGtGSE44P2pMPm9NZjJvZHFMY2hRMzZjcyw1ZiVfMXFPLW1cR1FfNWoscSNiMzdZSCYjIXNFPGdeWSgtTDpDOildLnE3Vz9xVjhxdHMuS18hNE8kdWtWK0l0PkNJYyIkRzw0Nz45JCVPOz0rN1BDYmxTQ0RhMjteSF8oVT8/VSUhKEdFMj01N2JoblBsIk9jLlYvJTQhX34+ZW5kc3RyZWFtCmVuZG9iagoxNiAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA4MDQKPj4Kc3RyZWFtCkdhdCR1Yj4tZWcmRGQ0NkFrPyw2R09HP087WlZSWlBvVVZqMlRASi4pYT5oLC5IOWVYMk5JL006b1VhMmcjcTNQRjY2JTpwbj9aO1EyanVAPmhmc1JLX1BeQVVQQU9iRFcxcTVuM1I6RCwzPlUkMWdWXVxkJmEhVzBcNCg4JidmYj8qaitnajEzYmc/IyFyVm9vUnE2XGB1YiJhQG02YmUhWj9cYUdScWV0JG8vQzQtKE5mU2dDLkNJOEknMixOXUU8UltrQTxtSykhIkFmdXAzWFkhVFtjbGBAU0QhQlMnLjIuLV1RTickYXMnbCVJOSw3MFVXYi8lVCNhV1RJJGVNYVZeJkVkMHVIJ0svVzxSdVd0XyIvKlJhYV81VEtnTUltL286WV5QJzY+KGkzJGgsQXNbW2Q+cFRZWmViLUA2akJpT2VUVTghRi0sRHJNMmZJI1kjPC9dclZ0bmgrRSNzPCs3J2xpJzsjazglaVEkLXJPPHMvUkBxLjgwWF8tYEdSK184Qy9yS0s/SU83KGYxaicsbD5NRV8jJGYrIWI+biVcT1VlPThyWERqYmhAPlZgXVRccFNgNlcnaz4+WDVEb1VwPUtyYiIwbzc8Xl1QcGo+TDRNOSgkVVhMIj5QbEFBIipxMVVgQD5Rbl4vcTNcPlskT14zbjhldGNfQGRUUG1oJ29YU1o+LVlsYSpqXFlgVWstKUNaLjxCQE49ZW5PO3EuYEA4dSMqOyYpPjgwSikkS0dMQGk/Lj9laV03YnJbT2gyS1clKjZPPkRgb2IkQj9QO0lHRjQ4KmtQLEBOUERrbDVFWC0kL1Q+IlxMQVItJGRXcEo3VEo7MVViITA6WU9BPVsnI0lLLmxwaTVXSmRSbztQJytZZDNWZkVpZCtaYUZnQWxrL2wuOFdvdHBbPyI4MTxVPiEkLzsoRTEtKmFWbzQ9XWVrVjUkQXJQcz5pKjxpXTVZOFVUJkdOcks/JDdlPmdJSEluSFUsLmpTLFJHOGA9bzcsX25pW1QmLylbNWI+KzkyPUVIPWNCPldcPk5TVTg+ZC1LYyhUcW1pTXV+PmVuZHN0cmVhbQplbmRvYmoKeHJlZgowIDE3CjAwMDAwMDAwMDAgNjU1MzUgZiAKMDAwMDAwMDA2MSAwMDAwMCBuIAowMDAwMDAwMTIyIDAwMDAwIG4gCjAwMDAwMDAyMjkgMDAwMDAgbiAKMDAwMDAwMDM0MSAwMDAwMCBuIAowMDAwMDAwNTQ2IDAwMDAwIG4gCjAwMDAwMDA3NTEgMDAwMDAgbiAKMDAwMDAwMDg2NiAwMDAwMCBuIAowMDAwMDAxMDcxIDAwMDAwIG4gCjAwMDAwMDExNDggMDAwMDAgbiAKMDAwMDAwMTM1MyAwMDAwMCBuIAowMDAwMDAxNDIzIDAwMDAwIG4gCjAwMDAwMDE3MjMgMDAwMDAgbiAKMDAwMDAwMTgwMSAwMDAwMCBuIAowMDAwMDAyNzM0IDAwMDAwIG4gCjAwMDAwMDQ2NDcgMDAwMDAgbiAKMDAwMDAwNjU5NiAwMDAwMCBuIAp0cmFpbGVyCjw8Ci9JRCAKWzw2ZDRjNDEzYTc3NTJkZjNjMjc2NmZjYzhmNDM1MzRkYT48NmQ0YzQxM2E3NzUyZGYzYzI3NjZmY2M4ZjQzNTM0ZGE+XQolIFJlcG9ydExhYiBnZW5lcmF0ZWQgUERGIGRvY3VtZW50IC0tIGRpZ2VzdCAob3BlbnNvdXJjZSkKCi9JbmZvIDExIDAgUgovUm9vdCAxMCAwIFIKL1NpemUgMTcKPj4Kc3RhcnR4cmVmCjc0OTEKJSVFT0YK" download="AI-Creator-Lab-Thinking-Free-Preview.pdf" style="display:inline-block;background:var(--th);color:white;padding:10px 22px;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none;margin-bottom:18px;transition:opacity .2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">📄 Free Preview — Peek Inside Before You Buy</a>
 
-    <section>
-      <div class="audience">
-        <h2>Who It's For</h2>
-        <div class="audience-grid">
-          <div class="audience-item">
-            <span class="audience-emoji">🧒</span>
-            <div class="audience-title">Curious Kids, Ages 8&ndash;11</div>
-            <div class="audience-desc">No prior tech knowledge needed — just curiosity!</div>
-          </div>
-          <div class="audience-item">
-            <span class="audience-emoji">👨‍👩‍👧</span>
-            <div class="audience-title">Parents & Teachers</div>
-            <div class="audience-desc">Family conversation starters and a printable guide make this easy to share together.</div>
-          </div>
-          <div class="audience-item">
-            <span class="audience-emoji">💻</span>
-            <div class="audience-title">Any Device</div>
-            <div class="audience-desc">Works on a computer, tablet, or phone — right in the browser.</div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div class="protagonist">
+      <div class="protagonist-dot" style="background:linear-gradient(135deg,var(--th),var(--th-dark))"></div>
+      <div><h4>Kai Nakamura, 13 · Kuala Lumpur</h4><p>Japanese-Malaysian-Chinese teenager from Bangsar. Systems thinker, product builder, data detective. Discovers Aisyah's viral study scheduler and asks: why did it spread?</p></div>
+    </div>
 
-    <section>
-      <div class="passport">
-        <div class="badge-icon">🕵️</div>
-        <h2>Keep Building Your Digital Smarts Passport</h2>
-        <p>This is the 2nd of 6 badges in the Awareness Tier. Complete all 6 products to fill your
-        Digital Smarts Passport — and join Maya, Jordan, and Diego in the Digital Smarts Club!</p>
-      </div>
-    </section>
+    <div class="journey">
+      <div class="j-step"><div class="j-num">1</div><h4>Systems Thinking</h4></div>
+      <div class="j-step"><div class="j-num">2</div><h4>Product Building</h4></div>
+      <div class="j-step"><div class="j-num">3</div><h4>Data Literacy</h4></div>
+      <div class="j-step"><div class="j-num">4</div><h4>Communication</h4></div>
+      <div class="j-step"><div class="j-num">5</div><h4>Ethics</h4></div>
+    </div>
 
-    <section>
-      <div class="included">
-        <h2>What You'll Receive</h2>
-        <ul>
-          <li>1 interactive HTML5 tool — "AI All Around Me" (5 guided steps)</li>
-          <li>1 printable AI Detective Badge (Digital Smarts Passport entry #2)</li>
-          <li>1 Parent &amp; Teacher Guide (PDF) — discussion questions and tips</li>
-          <li>Instant digital download — yours to keep, no account needed</li>
-        </ul>
-      </div>
-    </section>
+    <div class="product-group-title">📚 Instructional Books</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag tag-th-book">BOOK 1</div><h3>AI Thinking Systems</h3><p>Systems thinking, feedback loops, emergence, and leverage points. See the hidden connections in everything.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-book1" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-th-book">BOOK 2</div><h3>AI Product Building</h3><p>Prototyping, iteration, user testing. Build something real and learn from what breaks.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-book2" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-th-book">BOOK 3</div><h3>AI and Data Literacy</h3><p>Read data critically. Question assumptions. Spot bias. Understand what's missing.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-book3" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-th-book">BOOK 4</div><h3>AI Communication</h3><p>Communicate complex ideas to different audiences. Use AI as a writing partner, not a replacement.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-book4" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-th-book">BOOK 5</div><h3>AI Ethics</h3><p>Transparency, accountability, proportionality. When a system works perfectly but causes harm.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-book5" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
 
+    <div class="product-group-title">📖 Storybook Editions</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag tag-th-story">STORYBOOK 1</div><h3>Kai's First Discovery</h3><p>The week Kai learned to see systems — through the KL MRT and a viral study app from Singapore.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook1" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-th-story">STORYBOOK 2</div><h3>The Prototype</h3><p>Fifteen versions. Five neighbours. One real product. The week Kai built something real.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook2" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-th-story">STORYBOOK 3</div><h3>The Data Detective</h3><p>The numbers looked perfect. The truth was hiding in the silence.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook3" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-th-story">STORYBOOK 4</div><h3>The Story Communicator</h3><p>He knew everything about it. He just couldn't explain it. Until he learned to listen first.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook4" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-th-story">STORYBOOK 5</div><h3>The Ethics Navigator</h3><p>The system worked perfectly. That was exactly the problem.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook5" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
   </div>
+</section>
 
-  <footer>
-    <div class="brand">Digital Smarts Lab™</div>
-    <div>An AI Creator Lab™ series &middot; Product 2 of 18</div>
-  </footer>
+<!-- ═══════════════════════════════════════ LEVERAGE ═══════════════════════════════════════ -->
+<section class="tier tier-lv" id="leverage">
+  <div class="section-inner">
+    <div class="tier-badge">LEVERAGE TIER</div>
+    <div class="section-eyebrow">AGES 14–17 · I ARCHITECT AI SYSTEMS</div>
+    <div class="section-title">The Leverage Journey</div>
+    <div class="section-sub">Five instructional books and three storybook editions. Follow Anya Reyes, 16, from Quezon City, Manila — the architect who designs the future.</div>
 
+    <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNiAwIFIgL0Y0IDggMCBSCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMSAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtQm9sZCAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjIgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago0IDAgb2JqCjw8Ci9Db250ZW50cyAxMyAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNSAwIG9iago8PAovQ29udGVudHMgMTQgMCBSIC9NZWRpYUJveCBbIDAgMCA0OTguODk3NiA3MDguNjYxNCBdIC9QYXJlbnQgMTIgMCBSIC9SZXNvdXJjZXMgPDwKL0ZvbnQgMSAwIFIgL1Byb2NTZXQgWyAvUERGIC9UZXh0IC9JbWFnZUIgL0ltYWdlQyAvSW1hZ2VJIF0KPj4gL1JvdGF0ZSAwIC9UcmFucyA8PAoKPj4gCiAgL1R5cGUgL1BhZ2UKPj4KZW5kb2JqCjYgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtT2JsaXF1ZSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjMgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago3IDAgb2JqCjw8Ci9Db250ZW50cyAxNSAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKOCAwIG9iago8PAovQmFzZUZvbnQgL1N5bWJvbCAvTmFtZSAvRjQgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago5IDAgb2JqCjw8Ci9Db250ZW50cyAxNiAwIFIgL01lZGlhQm94IFsgMCAwIDQ5OC44OTc2IDcwOC42NjE0IF0gL1BhcmVudCAxMiAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKMTAgMCBvYmoKPDwKL1BhZ2VNb2RlIC9Vc2VOb25lIC9QYWdlcyAxMiAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjExIDAgb2JqCjw8Ci9BdXRob3IgKGFub255bW91cykgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MDUxNTAxNTgwOCswMCcwMCcpIC9DcmVhdG9yIChhbm9ueW1vdXMpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MDUxNTAxNTgwOCswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0ICh1bnNwZWNpZmllZCkgL1RpdGxlIChBSSBDcmVhdG9yIExhYiBcMjA0IExldmVyYWdlIFRpZXIgRnJlZSBQcmV2aWV3KSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjEyIDAgb2JqCjw8Ci9Db3VudCA0IC9LaWRzIFsgNCAwIFIgNSAwIFIgNyAwIFIgOSAwIFIgXSAvVHlwZSAvUGFnZXMKPj4KZW5kb2JqCjEzIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDg0Ngo+PgpzdHJlYW0KR2F0JHU5bEpjPyUpKU8+bkA4LmFNNl08bENWKDkvY2lITERbJFApNT0mJD1nRyRxcCZvJ10pbEVLZUBFXCYhUzw0R10nWml0RSJhSTJOIlspVzNCJzBAcElYK0Y9PFc5TDxuMVpSZk5pPVh0YU9tUG02OiUoLm9zNmFLSWQoYkQ0aGVlbnBPPkdhOE1CRUM7Zy0tVShALy1UYnFqLUJzXU1RKUdgI3MsbnVaa2JMXWJYcSYsU1lUTDRAOl9iOzlXKE1MWW5aIz05L0U/RTNeRG5MXVRYXkFYPz05JDEqZ0phWk89SFZKJDM5S25xMSs5WEEkdGotOGBqOE5oSklGaF1yJDBWSEErb04/LkU+YTApPWRqaUp0cVEvZ0wiK05DW185XktiZ1BHRjhIVkAwbVFbR1pkQlgmOkYwMUxnbFJHUl46Sm1xK0JOSVErbVJSNj5xUGxqJSc2NGkqLlxrYWpjUSV1Ri5EQWRxYjwiPCEhLEpiXDQvWSsiOlxccSspI1FyOV5IV0NcWyk+MFUzVSNXXW1xYHMiSXQrclltImJFMmRWQFxxSUcjZC5YPmdbR3NzXkM2Mj1UZkdramIxNFoqZTU2XU1JakEpN0pQKlE3Pl9fQmtqQlwwb0IkJmRwP2QkZS9mOnJscSU2VUA+RSlDS05FO0pedFVAXWZfaTNAa0U8QV4zcCxTYTg1XXI3Oy0yQmZedTs3NEFBSjhRKjA7OmRIUXEhJi9oZF5CR0tuKEhSXkFCTC0zL0k2IWY5ayxEUlwrMVBdXzwzPyRldW9OJzZVZVQ2VGEnRThYLmZ1SSM7aiM4Z05JI106LTNJIyZeb11oVkMlQkc3O2s+P0pnbFM1YFM/REgnZU82am41YjQ3a0M2OVA7RUpgMDBmX24oUCJhNVxtY2luYF1kW1kzMj4laz84TW42U145ZFheKTEybTFaKW1wSVNwJUthLzNSR29RbTdNXyNqOCNeRy1QUSVCSWpzcEhJRUB1ZEc8W0JzKDRHSHFkIXVPWT1AdU9IO29PW21kJjxNY0ZwNllwOWo3N2VbNUtDMDwxbCtlNGhwWSw8WzZKcU9PQEJFS1ROUDFnZjtHSipAY04ycVZPcSxlaj0+ZFcnc34+ZW5kc3RyZWFtCmVuZG9iagoxNCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAxNzY0Cj4+CnN0cmVhbQpHYXRtO2hmSTcrJjpYKFRaJl8mRmtrbTZGcW5lUkBvSjYmaC5saXVkaUMxJDU3KVo/ZixjQl88XkpAYC8kKylPMkJLRTgqYWtHUWhwXFQrUztoUnM1czQvXXBrPlY2S0FQQCkxZSFCIVBBTWgpcG5hcUwiR3VVJ0laNFZObUBTcjxOOE9bclNkYzhGbk1ISEFiM0Z1NDRiLFE6VWFtcGpeZFhuaiFwO3RHTWZbPzxvWi1lMlpAWGwmYC81JyhkPS8xWEJVUWhUUCZedGhqVl8+Nm9Ac1dKYklRbl4iVFQ9KGlkKy5waXEiaXVqOVtoLFkzbyMmXGswNUU2cy5KVShSUWJdcV1jLjlzXFc8b0tcSW1xN1I6Tk8vN0JmMDIqYkBic10lPCI9QFMlPDRoTipSJF4iWEFTPGVhb2QsTm8jczItKzE5S19TLlUoPSJSYyo9cGxcRT1qX0QsLDVhT1leP2kya0VAIlNrK2RgRD1dUVxBPUN0LXBPJU1DJGpCMzNEYDZ1L0dnWVkiMzs8bVtsaSlfSV9TXCJpJmM7b2dJIVEkRlpybkNaMTs2T2xgQlZQYzhuP25wVyYzWSQlJUMwYyZCKFh0dVRiQ10qVSo2Uk5rY25ZTG1pL2oqUy5SXFE0RChfQm9RXyJmOSVCRTsqP3BXUCdFYTpEKUouYz9YVGMxY0RSQjZjQzI7Ky4vW1Q9UVVddTAlXEY2aWozXi1JXF01VGBnbkEyKz5eK2wpS0EvQmlwSW5hN2FSXzY/Wy50bkpZTV9AI1tkXDhiK0hZUG01Yz9xYipma15rMjt0YjAzWCNXcGxXOFglKFpgRFgnYk0oajpOU2wtY24rZy5BSURSVUlEOmkxI3MyIW0kVXVBP01qZVFKXmpRdU5IXShJZiciRkxvJk1SXWYqZEs3LS1TOG1vbk4+NyxQYylObiVFZisqWVo+RzoySUkxZGloQiVuV2FQTk4jLFJyUyZHJkQ3TmYxPixFXCNqN1ZjPXFpKylhdEVEbllKNGQtLVBqJ00xVCRvXzlmPTRiQGJxJUosNlcxYlgpYVpNVWNQUDcwKWVUblJQJzhOUFo8YDQ0WUtgXnFXWTg9Z3BDOTt0RWJPX19SWnI/QWohanI0OjZqQElVKGQhUzwnMDAiIm8mWi9XP0k2L0lLOm9CXzpfUGdTT1csbCstLz5XUTBtZXUpU3MiJTZNK0VrLCU6M150MUw5TkY8blJDSTRVbiNobTdhaWMxKCNgXzRBJUZlalZOJi5DQjtYPzlZVjk6bVFNKF10cFdXZTc1LlpAN1hLaiJyVyJndWQ4TzowOGRSUCYtYyxoNHE1PTxbJ2VsIlc7Vk87UmYkJm5POWxMKyUmUCNKY20tVS5KPSg6c1dGM0hcbzZTMUhHc29NOWQ+UiNlRUdmSCYpKiQ0L0ohMDtVPllNUV9DXkQmQUcwRylYPCJhPitkbzYpITIiSD4sU142PFlFbydpZT1NUzFRIi1JanEqWllLZUlaJDRpJVBgMj5CNV1aOiJIXlFHQjRgWTwiUHUzI0JBX0EoMytfTVsrN0ZiJG4/NE8yYGIzVl5qV2tvdD9fWUpcXlxXKVY5QTAjVk5oXCJPKSpMPSdGPTNsTjtHdTprPllxYGcoOUFxIStbVV1xSXAuTFViST88PnAiOzt1Sk1HSlZbVTgzWDIrJW9GTnU6KWNdYihgSypKOTRmOSowQDZaN2pmLzojdVw0IjRuIT8nTWFCJiNANlhRSGVuOlVcTFo0aD51VC0rWmYkNmtkIU42TSNLXFNbPWtPNkUkdWAtPz1ZNT4wL3NtUUpRIVVCOzFsSl1eaEctUHBaPUVHaV9BWjxsTGooYXJDZG5jJkw4QCJwWSQpLlA/RmJFSDcsZ2tvRSRKaFJPLGhKUVwlX2tJTG4vWCZEQ0c+NkRyWz5hKSlrUGhfITZAUSpLJlc2ZVpwciJTNlElTlxRLlhkRDEyRztoPyZnJE0iTzU/XG1YKy9XQEFgYiJnVllqdWtINy50YEtxayVQZkpjYlVHLydrKHVXQS9fIjNhIysyTF9mVFVqJ2FoU0ssITw2JVRbJEgrbT0lUyg5X0wyb1FDVEhJOC85SVhAcic2bjldTGJQYlhTIVoyJjxMKztbQTxBIS0mZ05TIUVzXiwoJ1ZrKltvcT9wMVMuKHRgdTonSSg0MD1qMiU5Sk9qcHRgQXNmOHFqZSgyNiFfUl9xRVpoIWdbXkI1W1hIYyxdXkhGX0oqITRPOjFPI15RVnMtVTFzYVY+WHR0NF1gXDMsQk03IiYsTiVSTzEnSzZXTzlXOT1oLVg/TWE/PjdYTyUnPGBsNGtKb1lJbFAlMj42fj5lbmRzdHJlYW0KZW5kb2JqCjE1IDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDE5OTQKPj4Kc3RyZWFtCkdhdG07PyNTYV0oNEZONFxCKi04aUgiVSo5RF9VdFxvJ1VeQnI9W2IoJ1hQJDk9MnIkOWttNkxMQVU8Mj5mbiwrbCkncFZBcUdrTE03T2VsU3BUbSo6KVNOT29YZDByXWo5JUNeV0BvWEJYT1BIJmYlUCpkcktSVVJRPjQnJyVKISUoKnAyW1hHYERCcDtaKzY3QCZlQz9JVnJeTkcuJWJTL1A3O0FRcGUuLykjQWpGI01kV2VRMG9vWT5MaDljXU00XVc6UDJoZFg1QVkxMGBoSDNtYUA3bVskVENuVUM7V11CLTZnSGJOVi9xcktLU3FuJGQ1WyFLM29ULl4pVHFKY0poZ0NHRCo3SlloU29sIiNeXy1VJWsibSdsIVorN2Y5ZVAvdEEjYm9UJU5eUSg3KD44Vz1AI0B1IUQtailJPF1gYG9ePiVuTl0oamNSOFU2VWEnYzBYXC83YjgvKjdRUEAuOXNyZG9gVCpjV2JPYkUzXCVQOEdAWnMxPHFSLkkiZjRhbzFAaDVnJjQvSmQ1cjw0ZSU3PydHUk9RS1xcO3JpPSMiP1lyLShJZ2JsPnRBUEY3Wjs7bERiVkJnSm0pPERNb15CazcrWEZsRGkpOSZuU2NXQy82ViRycm0zX0kmOS5aLUpWOG5JI21AM1tPaE8pRUQjWWw2QkdFXXBbMTlzKkA5UC01OXRDQlRMX09NN1FpMENJcCdKQGBJSDglU05ZKDRpMzNQalNEPD1CbUE3N0NeNlkpIjtzM1hgRjtJV1ZqPTgkczouWitDZTB1PiJUL1xoIWgzJTI4W0c/OiNEYHA5MlA9PyYwJUhAJ25ZV3ErMElmTkcqTWNUbVg8UjFgMk1sXEFqRmU2SjRBRWRFazwxajQiYGR1PUk8a1kwcFBVQUlwaHVcSCwiXCxfK1ZaWGVzTUZNQiNPVE9JVjc6XlMrSltXXl1nKyUwVEprKztvU0A2USRkNiJyVE8lUjZMOEssVVZkRzRzbjQ4UCcoX21tRkc/SjtNRCZTMGY8QGcpXFhXO15iJV49TWcyLEFJJGpeTm4/XlJjSEBcZEddb2sqYUZNK2BeKiZHVGBIRW9NMWlrKVdoWjUyUyM+ZTE0X005RSpZRmNKUUhUY29YYzVDMkpTUiJEamc/JVtHWDZKUScpTSpzZUxnQ1VhQnQzRDtiW1N1TiFSaEgsYGN1TDtXTEFbVmlALUJMYl9pdE4sUFckOF9KW1FARjE9bmIwVkoxTnNGTGlwWDNlJDhTWD0nbUNYQ0k0Mi0nJEZqaVUpV2NMLFduWTdvZk9QQjdyJUlcckFuR3A1XFQ6TlJAb05ZLWU1PWQ7JV1ILEpGaU5WSk5bNHVjRklmQ2hBP0RrbD0iUjw9L2AhPXVfamQsP3Joa1FfKThwUEZtV1BQJ0QnMV5ZYV8iWz5tZz5wNCdDQGJOVDFuV3NVVj0+YHRRQmdXbG8zIT1jQFU1MFtuXXVHK3FcKmc5QGclNFA6XlY8bzM0NSZmWGIqNEI2L3EjcEs4Xl1aNSwlJTdsP0hiLGcsUl06XW1zT0VyR0pPRTRVZytDPDZDcldyRkIkSVstXmZAbipuQComMWE3SjFGJz9MUyNXJj5Ga3ItcEtsWmtuL1slMm03I19aXFZlZm8/Q3M+SiU5Qm9PMDZZb109TzE6MSlFI2ZlXk9kWFUxJU5VWz9zLmtFP3MuQ0g5bjtgTj5JZlQ0MG9USzBjS0tOZytJdF9dJ2dYcTRJKFE1QW87ZVdXakJea0BIWzhFI0g6JGNTLyU4UFtRVysvMFc7OjY/PDZGMXQob1FnbFpjJVRRSFZiN0k3OipIVj5wXCdmQlQlQGhJOk85PVxXLE5TVTFuLSVjQVFdNi0ka0M5Q2o5WFMjV0FuPCsickYuOl9RMU1vOipvWGVLW2IlVWQlaykuXFxJWSwpTFdrSlNIbD8yRkhGXjxIQjtGMUQ4SUIvbThROmdeJ2VFQGJZYXJaJnB1XF1Wcm0xN3MvQFc+X19Vamk5KTloaVwnM1QubkAzZUFHJk9UX29PJEVMbyonYjddcjc0JXImJiFhWTxsV2NDRUJtcyVNSkkuMDdmanIoUz5iNmphcV43MVNZUipdUVdyOEJOJDUnOW1PXzdgKEopciFvPlZuUXNjSSYsSk4yTztDWU5CIkQqVytdZkRrNVQtK0JwJ3FxTSRWaypgKFxRN2s6KkdnPlEwSzVDdV1bc0RIQC9XNygyTT1HOWNQcGpPYSxrdGJRVCw4WWpSTHI0QShkY05CR3VgdVJgJC5mIk07LTdTP1dCTD5iWSZJQERMZW9paEFMXGtRPTlnVDdlVCRCRFRXc1FRKWs2LDNiV2IiJVFhaEhqT2VNWk1nbENxL3RqI1hZcW5OSVwwNUJYRjZeZF4hQylcUXFvYmZMWjJIOyZTT1YtYVUuRGtdUicyN2osT0lOaEhLWGpNcyRTQzEmczJqY0xhYCcyZSluK11PbV88JWU7Ry4uOFAwMDJiMkEpVSplSTFbKCNcVjNzP1pkJj0qW1FuUyg0WT9PWVxSNVVNcHFHdFpCaUlLUlNCTERRYmxgYTNrPD5zZWpwLUg+aDBkKEhFLlgvOWRuZVVVYVo6TVY5aE8kOE8tUC4xUzEkYmlBV2BDRGxlImRvcyhnQX4+ZW5kc3RyZWFtCmVuZG9iagoxNiAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA4MjAKPj4Kc3RyZWFtCkdhczFdOWknZTclKShoKnBwZU1gTjk+UV1aMnRkUTtLInNuXDRrQXVBa0FJbFAoTksnbFwlKSQvWUdXcF1HV3B1Ty5ULGhwblJoXEQjbDdmMzU2VVokMGArYjdMZVNgWTEhTi1uUW9ycSZIaTdGODYuZlxUakIrWTUkLyZONHVgcEZHZE5ibmUyXVheLHNAcSkuNjllQFRdNklZRUEvS2ArRyNKPC0rakltL0khJ3VkT2tCISdbSmVQRElOdWxlWGVlXWxNIihGcyREJV9uSnBVZjAzPWkwYToySCtlcHBMIyteKG9vRXFWSmQtXjoyXitVT0NVYiEnN0ZhXkw9SGpFNF9qTzs8Kk5gQGBcOFgxXDkkOGBJSDhQMkRLTUtnTUtDLzhZR1xQLiZcR2ksNy9Sb2ZkL0xDKTlPUVhLKElHLFFGOkwiTjpMSTlgdGdrZ1QjXixFWkE+Zk1ONmhXR1ZUY05GVFNBLmlwWmA8TVZUMVMwKTJsOF0rcyo4LzEkKTokIkAlaCchVjovPEMjL1k5KkksVj8+cG1ubE1nSmYocyQzcVIwQCopX0trUitBSE43YjxvT2xEZjM5WEgoSnNGWGM0NyViOWJcVVhBWVB0aUcxZDombm8yYyRac0o1SUwtJk5uQDBhQClLUDtVXi4mKVY+ZlgyUTZOPmI4M1MkXDJYYWQ/UGBNQVxuV1IhaEBsJUVyQ0VbP2JsTVcrXV1gWCQxczgvRDI7dF1VXUsja0xMbjhVaEBmXSpeMTk0ZElzYSwqMHJ0TF9YZV5wYDsvRmopRVhIMGtQSHFYVGcnLlEmJG91XzprPURNbnQxL2wzKF8sRUByOUckXWlDYFQ5TnMmJz8zKVVYTihbdEpIIWJnUSltbGNLTiZzJ2leSm5kR284RyYuP2FhdCsyUnFVXmxSSyVrWDEicURtNWozVD4oTSJoWGxkbEAhaGVkOWlRMmpWKVNJdGJRTzhVaVdFZTVwZVtvZCZgJElPL0Y3QFBXSlpEQWY0Kz5MQyk/NStmUk06YzA3cmk8c11ZV0k2QTVBZiNpM2Q1V15yXic3J0ZmK3EzUjFfTHElKjNnQCxNfj5lbmRzdHJlYW0KZW5kb2JqCnhyZWYKMCAxNwowMDAwMDAwMDAwIDY1NTM1IGYgCjAwMDAwMDAwNjEgMDAwMDAgbiAKMDAwMDAwMDEyMiAwMDAwMCBuIAowMDAwMDAwMjI5IDAwMDAwIG4gCjAwMDAwMDAzNDEgMDAwMDAgbiAKMDAwMDAwMDU0NiAwMDAwMCBuIAowMDAwMDAwNzUxIDAwMDAwIG4gCjAwMDAwMDA4NjYgMDAwMDAgbiAKMDAwMDAwMTA3MSAwMDAwMCBuIAowMDAwMDAxMTQ4IDAwMDAwIG4gCjAwMDAwMDEzNTMgMDAwMDAgbiAKMDAwMDAwMTQyMyAwMDAwMCBuIAowMDAwMDAxNzIzIDAwMDAwIG4gCjAwMDAwMDE4MDEgMDAwMDAgbiAKMDAwMDAwMjczOCAwMDAwMCBuIAowMDAwMDA0NTk0IDAwMDAwIG4gCjAwMDAwMDY2ODAgMDAwMDAgbiAKdHJhaWxlcgo8PAovSUQgCls8MGQwMDNmZTVkMDAxZmI4OGJlNWIzYWE0Mzg0N2UxYjA+PDBkMDAzZmU1ZDAwMWZiODhiZTViM2FhNDM4NDdlMWIwPl0KJSBSZXBvcnRMYWIgZ2VuZXJhdGVkIFBERiBkb2N1bWVudCAtLSBkaWdlc3QgKG9wZW5zb3VyY2UpCgovSW5mbyAxMSAwIFIKL1Jvb3QgMTAgMCBSCi9TaXplIDE3Cj4+CnN0YXJ0eHJlZgo3NTkxCiUlRU9GCg==" download="AI-Creator-Lab-Leverage-Free-Preview.pdf" style="display:inline-block;background:var(--lv-navy);color:white;padding:10px 22px;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none;margin-bottom:18px;transition:opacity .2s" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">📄 Free Preview — Peek Inside Before You Buy</a>
+
+    <div class="protagonist">
+      <div class="protagonist-dot" style="background:linear-gradient(135deg,var(--lv-gold),var(--lv-navy))"></div>
+      <div><h4>Anya Reyes, 16 · Manila</h4><p>Filipino-Spanish teenager from Quezon City. Self-taught, ambitious, strategic. Systems architect, startup founder, and the voice demanding youth agency in AI governance.</p></div>
+    </div>
+
+    <div class="journey">
+      <div class="j-step"><div class="j-num">1</div><h4>Systems Design</h4></div>
+      <div class="j-step"><div class="j-num">2</div><h4>AI Startup</h4></div>
+      <div class="j-step"><div class="j-num">3</div><h4>Prompt Engineering</h4></div>
+      <div class="j-step"><div class="j-num">4</div><h4>AI + Coding</h4></div>
+      <div class="j-step"><div class="j-num">5</div><h4>AI & The Future</h4></div>
+    </div>
+
+    <div class="product-group-title">📚 Instructional Books</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag tag-lv-book">BOOK 1</div><h3>AI Systems Design</h3><p>Five-layer decomposition, autonomy spectrum, data architecture, failure modes. Builders follow plans. Architects create them.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/leverage-book1" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-lv-book">BOOK 2</div><h3>Build an AI Startup (Teen Edition)</h3><p>Customer discovery, Business Model Canvas, unit economics, 90-day sprint. Real business, real revenue.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/leverage-book2" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-lv-book">BOOK 3</div><h3>Advanced Prompt Engineering & Logic</h3><p>CTFCV framework, chain-of-thought reasoning, adversarial testing. Where intuition becomes engineering.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/leverage-book3" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-lv-book">BOOK 4</div><h3>AI + Coding Foundations</h3><p>Python, Pandas, Scikit-learn, Gradio. From raw data to deployed ML app. End-to-end pipeline.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/leverage-book4" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-lv-book">BOOK 5 · GRAND FINALE</div><h3>AI, Power & The Future (2035)</h3><p>Strategic foresight. Four ASEAN scenarios. The power map. Who decides? The final chapter of 30 books.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/leverage-book5" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
+
+    <div class="product-group-title">📖 Storybook Editions</div>
+    <div class="product-grid">
+      <div class="product-card"><div class="product-tag tag-lv-story">STORYBOOK 1</div><h3>The Architect</h3><p>The software was broken. The problem was deeper. Five layers deeper. Anya's debut in Quezon City.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/leverage-storybook1" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-lv-story">STORYBOOK 2</div><h3>The Founder</h3><p>Two hundred pesos. One GCash payment. Everything changed. Anya launches TindaTrack.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/leverage-storybook2" target="_blank" class="product-link">Buy →</a></div></div>
+      <div class="product-card"><div class="product-tag tag-lv-story">STORYBOOK 5 · GRAND FINALE</div><h3>The Decision</h3><p>Aisyah built. Kai questioned. Anya designed. Together, they decided. Three ripples become one wave.</p><div class="product-footer"><span class="product-price">SGD 5</span><a href="https://volareconsultants.gumroad.com/l/leverage-storybook5" target="_blank" class="product-link">Buy →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ ABOUT ═══════════════════════════════════════ -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-title" style="text-align:center">About AI Creator Lab™</div>
+    <div class="about-card">
+      <h3>Volare Consultants · Singapore</h3>
+      <p>AI Creator Lab™ is a digital AI literacy programme by Volare Consultants, a Singapore sole proprietorship. We create educational content for Generation Alpha (ages 8–17) across all 11 ASEAN countries.</p>
+      <p><b>Why this exists:</b> AI Creator Lab began with a simple observation — a grandfather watching his grandson grow up in a world shaped by artificial intelligence, and realising that no one was teaching children how to understand it, question it, or shape it. Not as a technology subject. As a life skill.</p>
+      <p>Our mission: affordable, accessible AI literacy education that teaches children to understand, question, create with, and stay safe around artificial intelligence. Every product is priced at SGD 5 to ensure accessibility across Southeast Asia.</p>
+      <p>Three protagonists connect the journey: Aisyah in Singapore (Awareness), Kai in Kuala Lumpur (Thinking), and Anya in Manila (Leverage). Their stories ripple across ASEAN borders — because AI literacy is not a national issue. It is a regional one.</p>
+      <p style="font-size:.8rem;color:var(--slate);margin-top:14px">All products created with AI assistance. · PDPA compliant — zero data collection. · English language with plans for Bahasa Melayu, Bahasa Indonesia, and Tagalog.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">AI Creator Lab™</div>
+    <div style="font-size:.8rem;margin-bottom:8px">by Volare Consultants · Singapore</div>
+    <div class="footer-links">
+      <a href="https://volareconsultants.gumroad.com" target="_blank">Shop on Gumroad</a>
+      <a href="#" onclick="openContact();return false;">Contact Us</a>
+      <a href="#awareness">Awareness</a>
+      <a href="#thinking">Thinking</a>
+      <a href="#leverage">Leverage</a>
+      <a href="#about">About</a>
+    </div>
+    <div class="footer-copy">© 2026 Volare Consultants. All rights reserved. AI Creator Lab™ is a trademark of Volare Consultants.<br>Created with AI assistance.</div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════ CONTACT POPUP ═══════════════════════════════════════ -->
+<div class="popup-overlay" id="contactPopup" onclick="handleOverlayClick(event)">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closeContact()" aria-label="Close">×</button>
+
+    <div id="popupForm">
+      <h2>Get in Touch 👋</h2>
+      <p>Questions about AI Creator Lab™? We'd love to hear from you.<br>We'll reply to <a href="mailto:support@volarefly.com">support@volarefly.com</a> within 1–2 business days.</p>
+
+      <form id="contactForm" action="https://formspree.io/f/xjgzvaej" method="POST">
+        <div class="popup-field">
+          <label for="cf-name">Your Name</label>
+          <input type="text" id="cf-name" name="name" placeholder="e.g. Sarah Lim" required>
+        </div>
+        <div class="popup-field">
+          <label for="cf-email">Your Email</label>
+          <input type="email" id="cf-email" name="email" placeholder="you@example.com" required>
+        </div>
+        <div class="popup-field">
+          <label for="cf-subject">Subject</label>
+          <select id="cf-subject" name="subject">
+            <option value="">Select a topic…</option>
+            <option value="Product question">Product question</option>
+            <option value="Bundle / pricing">Bundle / pricing</option>
+            <option value="School / group order">School / group order</option>
+            <option value="Technical issue">Technical issue</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="popup-field">
+          <label for="cf-message">Message</label>
+          <textarea id="cf-message" name="message" placeholder="Tell us how we can help…" required></textarea>
+        </div>
+        <input type="hidden" name="_replyto" value="support@volarefly.com">
+        <button type="submit" class="popup-submit" id="popupSubmitBtn">Send Message →</button>
+      </form>
+    </div>
+
+    <div class="popup-success" id="popupSuccess">
+      <div class="success-icon">✅</div>
+      <h3>Message Sent!</h3>
+      <p>Thanks for reaching out. We'll get back to you at <strong id="successEmail"></strong> within 1–2 business days.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openContact(){document.getElementById('contactPopup').classList.add('open');document.body.style.overflow='hidden'}
+function closeContact(){document.getElementById('contactPopup').classList.remove('open');document.body.style.overflow=''}
+function handleOverlayClick(e){if(e.target===document.getElementById('contactPopup'))closeContact()}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContact()});
+
+document.getElementById('contactForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=document.getElementById('popupSubmitBtn');
+  const email=document.getElementById('cf-email').value;
+  btn.disabled=true;btn.textContent='Sending…';
+  try{
+    const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{Accept:'application/json'}});
+    if(res.ok){
+      document.getElementById('popupForm').style.display='none';
+      document.getElementById('successEmail').textContent=email;
+      document.getElementById('popupSuccess').style.display='block';
+    } else {
+      btn.disabled=false;btn.textContent='Send Message →';
+      alert('Something went wrong. Please email us directly at support@volarefly.com');
+    }
+  } catch(err){
+    btn.disabled=false;btn.textContent='Send Message →';
+    alert('Network error. Please email us at support@volarefly.com');
+  }
+});
+</script>
 </body>
 </html>
-landing-page (1).html
-Displaying landing-page (1).html.
