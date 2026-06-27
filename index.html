@@ -5,952 +5,969 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="AI Creator Lab™ by Volare Consultants. Digital AI literacy programme for children ages 8–17 across ASEAN. Books, interactive games, and learning tools.">
 <title>AI Creator Lab™ — AI Literacy for Gen Alpha | Ages 8–17 | ASEAN</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap');
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root {
-  --teal:#0d9488;--teal-light:#5eead4;--teal-pale:#f0fdfa;
-  --navy:#1e3a5f;--navy-dark:#0f2540;
-  --sky:#0ea5e9;--sky-pale:#f0f9ff;
-  --violet:#7C3AED;--violet-light:#A78BFA;--violet-pale:#EDE9FE;
-  --coral:#F4694B;--coral-light:#FCA58E;--coral-pale:#FEF0ED;
-  --gold:#f59e0b;--gold-pale:#fffbeb;
-  --emerald:#059669;--emerald-pale:#ecfdf5;
-  --ink:#1e293b;--ink-mid:#475569;--ink-soft:#94a3b8;
-  --white:#ffffff;--bg:#f8fafc;
-}
+  :root {
+    --teal:        #0d9488;
+    --teal-dark:   #0f766e;
+    --teal-light:  #ccfbf1;
+    --coral:       #f97316;
+    --coral-light: #fff7ed;
+    --navy:        #0f172a;
+    --slate:       #334155;
+    --muted:       #64748b;
+    --border:      #e2e8f0;
+    --bg:          #f8fafc;
+    --white:       #ffffff;
+    --gold:        #f59e0b;
+  }
 
-*{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--ink);font-size:1rem;line-height:1.6;}
+  html { scroll-behavior: smooth; }
 
-/* ── NAV ── */
-nav{background:var(--navy-dark);padding:0 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.3);}
-.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:10px 0;}
-.nav-brand{font-family:'Fredoka One',cursive;color:var(--teal-light);font-size:1.1rem;margin-right:12px;white-space:nowrap;}
-.nav-inner a{color:#cbd5e1;font-size:0.8rem;font-weight:700;text-decoration:none;padding:5px 10px;border-radius:8px;transition:all 0.2s;white-space:nowrap;}
-.nav-inner a:hover{background:rgba(255,255,255,0.1);color:white;}
-.nav-inner a.shop{background:var(--teal);color:white;margin-left:6px;}
-.nav-inner a.shop:hover{background:var(--teal-light);color:var(--navy-dark);}
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--navy);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 
-/* ── SISTER SITE BANNER ── */
-.sister-banner{background:var(--navy);text-align:center;padding:9px 20px;font-size:0.82rem;color:#cbd5e1;}
-.sister-banner a{color:var(--teal-light);font-weight:700;text-decoration:none;}
-.sister-banner a:hover{text-decoration:underline;}
+  /* ── SISTER SITE BANNER ── */
+  .sister-banner {
+    background: var(--navy);
+    color: #94a3b8;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  .sister-banner a { color: var(--gold); text-decoration: none; }
+  .sister-banner a:hover { text-decoration: underline; }
 
-/* ── HERO ── */
-.hero{background:linear-gradient(135deg,var(--navy-dark) 0%,#1a3a6e 50%,#0d4a6e 100%);color:white;text-align:center;padding:72px 24px 64px;}
-.hero-globe{font-size:0.85rem;background:rgba(255,255,255,0.12);display:inline-block;padding:6px 18px;border-radius:99px;margin-bottom:20px;letter-spacing:0.04em;}
-.hero h1{font-family:'Fredoka One',cursive;font-size:clamp(2rem,5vw,3.2rem);line-height:1.2;margin-bottom:12px;}
-.hero h1 em{color:var(--teal-light);font-style:normal;}
-.hero-sub{font-size:1.05rem;opacity:0.85;max-width:620px;margin:0 auto 32px;}
-.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;}
-.btn-primary{background:var(--teal);color:white;font-family:'Fredoka One',cursive;font-size:1.1rem;padding:14px 28px;border-radius:14px;text-decoration:none;transition:all 0.2s;}
-.btn-primary:hover{background:var(--teal-light);color:var(--navy-dark);}
-.btn-secondary{background:rgba(255,255,255,0.12);color:white;font-family:'Fredoka One',cursive;font-size:1.1rem;padding:14px 28px;border-radius:14px;text-decoration:none;border:2px solid rgba(255,255,255,0.25);transition:all 0.2s;}
-.btn-secondary:hover{background:rgba(255,255,255,0.2);}
-.hero-stats{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;}
-.stat{text-align:center;}
-.stat-num{font-family:'Fredoka One',cursive;font-size:2.2rem;color:var(--teal-light);}
-.stat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.06em;}
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 2px solid var(--teal-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.9rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .nav-brand {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.4rem;
+    color: var(--teal-dark);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+  .nav-links a {
+    color: var(--slate);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { background: var(--teal-light); color: var(--teal-dark); }
+  .nav-links .btn-shop {
+    background: var(--teal);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 0.35rem 1rem;
+  }
+  .nav-links .btn-shop:hover { background: var(--teal-dark); color: var(--white); }
 
-/* ── WHY SECTION ── */
-.why{background:white;padding:64px 24px;}
-.why-inner{max-width:1000px;margin:0 auto;}
-.section-eyebrow{font-size:0.78rem;font-weight:800;color:var(--teal);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
-.section-title{font-family:'Fredoka One',cursive;font-size:clamp(1.6rem,4vw,2.2rem);color:var(--navy-dark);margin-bottom:32px;}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
-.why-card{background:var(--bg);border-radius:16px;padding:22px;border-top:4px solid var(--teal);}
-.why-icon{font-size:1.6rem;margin-bottom:10px;}
-.why-card h3{font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--navy-dark);margin-bottom:6px;}
-.why-card p{font-size:0.88rem;color:var(--ink-mid);line-height:1.6;}
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, #134e4a 100%);
+    color: var(--white);
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #99f6e4;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 em { color: #5eead4; font-style: normal; }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: #ccfbf1;
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+  }
 
-/* ── TIER SECTIONS ── */
-.tier{padding:64px 24px;}
-.tier-inner{max-width:1000px;margin:0 auto;}
-.tier-header{margin-bottom:32px;}
-.tier-label{display:inline-block;font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:4px 14px;border-radius:99px;margin-bottom:12px;}
-.tier-header h2{font-family:'Fredoka One',cursive;font-size:clamp(1.5rem,4vw,2rem);margin-bottom:8px;}
-.tier-header p{font-size:0.95rem;color:var(--ink-mid);max-width:600px;}
+  /* ── WHO THIS IS FOR ── */
+  .for-whom {
+    background: var(--teal-light);
+    border-left: 5px solid var(--teal);
+    border-radius: 10px;
+    padding: 1.1rem 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: var(--teal-dark);
+    font-size: 0.97rem;
+    text-align: left;
+    font-weight: 600;
+  }
 
-/* BUNDLE CARD */
-.bundle-card{border-radius:20px;padding:24px 28px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
-.bundle-card .bundle-text{}
-.bundle-star{font-size:1rem;margin-bottom:4px;}
-.bundle-card h3{font-family:'Fredoka One',cursive;font-size:1.2rem;margin-bottom:4px;}
-.bundle-card p{font-size:0.88rem;opacity:0.85;}
-.bundle-price-block{text-align:right;flex-shrink:0;}
-.bundle-price{font-family:'Fredoka One',cursive;font-size:2rem;}
-.bundle-save{font-size:0.75rem;font-weight:800;opacity:0.75;text-decoration:line-through;display:block;}
-.bundle-btn{display:inline-block;padding:12px 24px;border-radius:12px;font-family:'Fredoka One',cursive;font-size:1rem;text-decoration:none;margin-top:8px;transition:opacity 0.2s;white-space:nowrap;}
-.bundle-btn:hover{opacity:0.88;}
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn-primary {
+    background: var(--coral);
+    color: var(--white);
+    padding: 0.75rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #ea6505; transform: translateY(-2px); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.15);
+    color: var(--white);
+    padding: 0.75rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
-/* SUBSECTION */
-.sub-label{font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.07em;margin:28px 0 14px;padding-bottom:8px;border-bottom:2px solid #e2e8f0;}
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 2rem;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    color: #5eead4;
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.8rem; color: #99f6e4; font-weight: 600; margin-top: 0.2rem; }
 
-/* PRODUCT GRID */
-.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-bottom:24px;}
-.product-card{background:white;border-radius:14px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--teal);transition:box-shadow 0.2s;}
-.product-card:hover{box-shadow:0 4px 20px rgba(0,0,0,0.1);}
-.product-badge{font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;padding:2px 10px;border-radius:99px;display:inline-block;width:fit-content;}
-.product-title{font-family:'Fredoka One',cursive;font-size:1rem;line-height:1.3;}
-.product-sub{font-size:0.8rem;color:var(--ink-soft);}
-.product-desc{font-size:0.82rem;color:var(--ink-mid);line-height:1.5;flex:1;}
-.product-footer{display:flex;align-items:center;justify-content:space-between;margin-top:4px;}
-.product-price{font-family:'Fredoka One',cursive;font-size:1.1rem;}
-.product-link{font-size:0.82rem;font-weight:800;text-decoration:none;padding:6px 14px;border-radius:8px;transition:opacity 0.2s;white-space:nowrap;}
-.product-link:hover{opacity:0.82;}
+  /* ── FREE TIP STRIP ── */
+  .free-tip {
+    background: var(--coral-light);
+    border-top: 3px solid var(--coral);
+    border-bottom: 3px solid var(--coral);
+    padding: 2rem;
+    text-align: center;
+  }
+  .free-tip-label {
+    display: inline-block;
+    background: var(--coral);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 0.9rem;
+  }
+  .free-tip p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--slate);
+    font-size: 0.97rem;
+    font-style: italic;
+  }
 
-/* NEW BADGE */
-.new-tag{background:#fef08a;color:#713f12;font-size:0.68rem;font-weight:800;padding:2px 8px;border-radius:99px;text-transform:uppercase;letter-spacing:0.04em;}
+  /* ── WHY THIS MATTERS ── */
+  .section { padding: 3.5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    color: var(--teal-dark);
+    margin-bottom: 0.4rem;
+  }
+  .section-sub { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
 
-/* ── AWARENESS TIER colours ── */
-#awareness .tier-label{background:var(--sky-pale);color:var(--sky);}
-#awareness .tier-header h2{color:var(--sky);}
-#awareness .bundle-card{background:linear-gradient(135deg,var(--sky),#0284c7);color:white;}
-#awareness .bundle-btn{background:white;color:var(--sky);}
-#awareness .product-card{border-top-color:var(--sky);}
-#awareness .product-badge{background:var(--sky-pale);color:var(--sky);}
-#awareness .product-price{color:var(--sky);}
-#awareness .product-link{background:var(--sky);color:white;}
-#awareness .sub-label{color:var(--sky);}
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .why-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .why-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+  .why-card h3 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 0.4rem; }
+  .why-card p { font-size: 0.9rem; color: var(--slate); }
 
-/* ── THINKING TIER colours (AI Creator Lab) ── */
-#thinking .tier-label{background:#e0f2fe;color:#0369a1;}
-#thinking .tier-header h2{color:#0369a1;}
-#thinking .bundle-card{background:linear-gradient(135deg,#0369a1,#0ea5e9);color:white;}
-#thinking .bundle-btn{background:white;color:#0369a1;}
-#thinking .product-card{border-top-color:#0369a1;}
-#thinking .product-badge{background:#e0f2fe;color:#0369a1;}
-#thinking .product-price{color:#0369a1;}
-#thinking .product-link{background:#0369a1;color:white;}
-#thinking .sub-label{color:#0369a1;}
+  /* ── TIER SECTIONS ── */
+  .tier-section { padding: 3rem 2rem; }
+  .tier-section:nth-child(odd) { background: var(--white); }
+  .tier-section:nth-child(even) { background: var(--bg); }
 
-/* ── LEVERAGE TIER colours ── */
-#leverage .tier-label{background:var(--gold-pale);color:#92400e;}
-#leverage .tier-header h2{color:var(--navy-dark);}
-#leverage .bundle-card{background:linear-gradient(135deg,var(--navy-dark),#1e3a5f);color:white;}
-#leverage .bundle-btn{background:var(--gold);color:var(--navy-dark);}
-#leverage .product-card{border-top-color:var(--gold);}
-#leverage .product-badge{background:var(--gold-pale);color:#92400e;}
-#leverage .product-price{color:var(--navy-dark);}
-#leverage .product-link{background:var(--navy-dark);color:white;}
-#leverage .sub-label{color:var(--navy-dark);}
+  .tier-inner { max-width: 1100px; margin: 0 auto; }
 
-/* ── DIGITAL SMARTS LAB section ── */
-#digitalsmarts{background:white;}
-#digitalsmarts .tier-label{background:var(--sky-pale);color:var(--sky);}
-#digitalsmarts .tier-header h2{color:var(--navy-dark);}
+  .tier-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+  }
+  .tier-badge {
+    background: var(--teal);
+    color: var(--white);
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-top: 0.3rem;
+  }
+  .tier-heading { flex: 1; }
+  .tier-heading h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.6rem;
+    color: var(--teal-dark);
+    margin-bottom: 0.2rem;
+  }
+  .tier-heading p { color: var(--slate); font-size: 0.95rem; }
 
-/* DSL Awareness sub-tier */
-.dsl-awareness .bundle-card{background:linear-gradient(135deg,#0ea5e9,#38bdf8);color:white;}
-.dsl-awareness .bundle-btn{background:white;color:var(--sky);}
-.dsl-awareness .product-card{border-top-color:var(--sky);}
-.dsl-awareness .product-badge{background:var(--sky-pale);color:var(--sky);}
-.dsl-awareness .product-price{color:var(--sky);}
-.dsl-awareness .product-link{background:var(--sky);color:white;}
-.dsl-awareness .sub-label{color:var(--sky);}
+  /* bundle card */
+  .bundle-card {
+    background: linear-gradient(135deg, #134e4a, var(--teal-dark));
+    color: var(--white);
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .bundle-card-text h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .bundle-card-text p { font-size: 0.88rem; color: #99f6e4; }
+  .bundle-price-group { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .bundle-price { font-family: 'Fredoka One', cursive; font-size: 1.6rem; color: #5eead4; }
+  .btn-bundle {
+    background: var(--coral);
+    color: var(--white);
+    padding: 0.6rem 1.4rem;
+    border-radius: 25px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .btn-bundle:hover { background: #ea6505; }
 
-/* DSL Thinking sub-tier */
-.dsl-thinking .bundle-card{background:linear-gradient(135deg,var(--violet),#9333ea);color:white;}
-.dsl-thinking .bundle-btn{background:white;color:var(--violet);}
-.dsl-thinking .product-card{border-top-color:var(--violet);}
-.dsl-thinking .product-badge{background:var(--violet-pale);color:var(--violet);}
-.dsl-thinking .product-price{color:var(--violet);}
-.dsl-thinking .product-link{background:var(--violet);color:white;}
-.dsl-thinking .sub-label{color:var(--violet);}
-.dsl-thinking-label{display:inline-block;background:var(--violet-pale);color:var(--violet);font-size:0.78rem;font-weight:800;padding:4px 14px;border-radius:99px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px;}
-.dsl-awareness-label{display:inline-block;background:var(--sky-pale);color:var(--sky);font-size:0.78rem;font-weight:800;padding:4px 14px;border-radius:99px;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:14px;}
-.tier-divider{border:none;border-top:2px solid #f1f5f9;margin:40px 0;}
+  /* subsection label */
+  .subsection-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.4rem;
+    margin: 1.75rem 0 1rem;
+  }
 
-/* ── SMART MONEY section ── */
-#smartmoney{background:var(--bg);}
-#smartmoney .tier-label{background:var(--emerald-pale);color:var(--emerald);}
-#smartmoney .tier-header h2{color:var(--navy-dark);}
-#smartmoney .bundle-card{background:linear-gradient(135deg,var(--emerald),#10b981);color:white;}
-#smartmoney .bundle-btn{background:white;color:var(--emerald);}
-#smartmoney .product-card{border-top-color:var(--emerald);}
-#smartmoney .product-badge{background:var(--emerald-pale);color:var(--emerald);}
-#smartmoney .product-price{color:var(--emerald);}
-#smartmoney .product-link{background:var(--emerald);color:white;}
-#smartmoney .sub-label{color:var(--emerald);}
-.teens-card{border-top-color:var(--navy) !important;}
-.teens-badge{background:var(--navy) !important;color:white !important;}
-.teens-price{color:var(--navy) !important;}
-.teens-link{background:var(--navy) !important;color:white !important;}
-.teens-bundle{background:linear-gradient(135deg,var(--navy),#1e3a5f) !important;color:white !important;}
-.featured-tool{background:linear-gradient(135deg,var(--teal-pale),white);border:2px solid var(--teal-light);border-radius:16px;padding:22px;margin-bottom:24px;}
-.featured-tool-header{display:flex;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:12px;}
-.featured-tool-title{font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--teal);}
-.featured-tool-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
-.ftb{font-size:0.72rem;font-weight:800;background:var(--teal-pale);color:var(--teal);padding:3px 10px;border-radius:99px;}
-.featured-tool-desc{font-size:0.9rem;color:var(--ink-mid);margin-bottom:14px;line-height:1.6;}
-.featured-tool-footer{display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+  /* product grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .product-card:hover { box-shadow: 0 4px 16px rgba(13,148,136,0.12); transform: translateY(-2px); }
+  .product-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+  }
+  .product-label.new { color: var(--coral); }
+  .product-title { font-weight: 800; font-size: 0.97rem; color: var(--navy); line-height: 1.3; }
+  .product-detail { font-size: 0.82rem; color: var(--muted); }
+  .product-inside {
+    font-size: 0.8rem;
+    color: var(--teal-dark);
+    background: var(--teal-light);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    font-weight: 600;
+  }
+  .product-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.5rem; }
+  .product-price { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: var(--teal-dark); }
+  .btn-get {
+    background: var(--teal);
+    color: var(--white);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-get:hover { background: var(--teal-dark); }
 
-/* ── ABOUT ── */
-.about{background:var(--navy-dark);color:white;padding:64px 24px;}
-.about-inner{max-width:800px;margin:0 auto;}
-.about h2{font-family:'Fredoka One',cursive;font-size:1.8rem;margin-bottom:16px;color:var(--teal-light);}
-.about p{font-size:0.95rem;color:#cbd5e1;line-height:1.7;margin-bottom:14px;}
-.about p:last-child{margin-bottom:0;}
-.about a{color:var(--teal-light);text-decoration:none;font-weight:700;}
-.about a:hover{text-decoration:underline;}
-.about-sister{background:rgba(255,255,255,0.07);border-radius:14px;padding:18px 22px;margin-top:24px;border-left:4px solid var(--teal-light);}
-.about-sister p{margin-bottom:8px;}
-.about-sister p:last-child{margin-bottom:0;}
+  /* game set card variant */
+  .game-card { border-left: 4px solid var(--gold); }
 
-/* ── FOOTER ── */
-footer{background:#0a0f1e;color:#94a3b8;padding:40px 24px;text-align:center;}
-.footer-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:20px;}
-.footer-nav a{color:#94a3b8;font-size:0.82rem;text-decoration:none;padding:4px 10px;}
-.footer-nav a:hover{color:var(--teal-light);}
-.footer-copy{font-size:0.8rem;line-height:1.7;}
-.footer-copy a{color:var(--teal-light);text-decoration:none;}
+  /* ── ABOUT ── */
+  .about-section {
+    background: var(--navy);
+    color: var(--white);
+    padding: 3.5rem 2rem;
+    text-align: center;
+  }
+  .about-inner { max-width: 680px; margin: 0 auto; }
+  .about-section h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.7rem;
+    color: #5eead4;
+    margin-bottom: 1rem;
+  }
+  .about-section p { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1rem; }
+  .sister-link-block {
+    margin-top: 1.5rem;
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 1.1rem 1.5rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  .sister-link-block a { color: var(--gold); text-decoration: none; font-weight: 700; }
+  .sister-link-block a:hover { text-decoration: underline; }
 
-/* ── RESPONSIVE ── */
-@media(max-width:600px){
-  .bundle-card{flex-direction:column;}
-  .bundle-price-block{text-align:left;}
-  .hero-stats{gap:20px;}
-  .nav-inner{gap:4px;}
-}
+  /* ── FOOTER ── */
+  footer {
+    background: #020617;
+    color: #475569;
+    padding: 1.75rem 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+  .footer-nav a { color: #64748b; text-decoration: none; }
+  .footer-nav a:hover { color: var(--teal); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    nav { padding: 0.75rem 1rem; }
+    .hero { padding: 2.5rem 1.25rem 2.5rem; }
+    .tier-section, .section { padding: 2rem 1.25rem; }
+    .bundle-card { flex-direction: column; align-items: flex-start; }
+    .hero-stats { gap: 1.5rem; }
+  }
 </style>
 </head>
 <body>
 
 <!-- SISTER SITE BANNER -->
 <div class="sister-banner">
-  For adult financial &amp; business tools, visit our sister site: <a href="https://www.volareconsultants.online" target="_blank">www.volareconsultants.online</a>
+  For adult financial &amp; business tools, visit our sister site: <a href="https://www.volareconsultants.online">www.volareconsultants.online</a>
 </div>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <span class="nav-brand">AI Creator Lab™</span>
+  <a class="nav-brand" href="#">AI Creator Lab™</a>
+  <div class="nav-links">
     <a href="#awareness">Ages 8–11</a>
     <a href="#thinking">Ages 11–14</a>
     <a href="#leverage">Ages 14–17</a>
     <a href="#digitalsmarts">Digital Smarts</a>
     <a href="#smartmoney">Smart Money</a>
     <a href="#about">About</a>
-    <a href="https://volareconsultants.gumroad.com" target="_blank" class="shop">Shop All →</a>
+    <a class="btn-shop" href="https://volareconsultants.gumroad.com" target="_blank">Shop All →</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-globe">🌏 For Children Across All 11 ASEAN Countries</div>
+<section class="hero">
+  <div class="hero-eyebrow">🌏 For Children Across All 11 ASEAN Countries</div>
   <h1>Your child will grow up with AI.<br><em>Will they understand it, question it, and shape it?</em></h1>
   <p class="hero-sub">A complete digital AI literacy programme for children ages 8–17. Three tiers, three protagonists, one journey — from understanding AI to designing the systems that shape our world.</p>
-  <div class="hero-btns">
-    <a href="https://volareconsultants.gumroad.com" target="_blank" class="btn-primary">Browse All Products →</a>
-    <a href="#awareness" class="btn-secondary">Explore the Journey</a>
+
+  <!-- WHO THIS IS FOR -->
+  <div class="for-whom">
+    This programme is for any parent — in Singapore, Kuala Lumpur, Manila, London, or Los Angeles — who has watched their child use AI tools and wondered: do they actually understand what they're doing? Our books and games are designed for home use, require no teaching experience, and work on any device. No subscriptions. No logins. Download once, use for years.
   </div>
+
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://volareconsultants.gumroad.com" target="_blank">Browse All Products →</a>
+    <a class="btn-secondary" href="#awareness">Explore the Journey</a>
+  </div>
+
   <div class="hero-stats">
     <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Books</div></div>
     <div class="stat"><div class="stat-num">60</div><div class="stat-label">Interactive Games</div></div>
     <div class="stat"><div class="stat-num">3</div><div class="stat-label">Age Tiers</div></div>
     <div class="stat"><div class="stat-num">11</div><div class="stat-label">ASEAN Countries</div></div>
   </div>
+</section>
+
+<!-- FREE TIP STRIP -->
+<div class="free-tip">
+  <div class="free-tip-label">Free Tip for Parents</div>
+  <p>The single most useful thing you can do this week: ask your child to explain to you what they think AI actually is — in their own words. Don't correct them. Just listen. What they say will tell you exactly where their understanding is strong and where the gaps are. Most children describe AI as "smart" or "like a brain." That's the starting point this programme builds from.</p>
 </div>
 
-<!-- WHY -->
-<div class="why" id="about-why">
-  <div class="why-inner">
-    <div class="section-eyebrow">Why This Matters</div>
-    <div class="section-title">The Case for AI Literacy — Now</div>
-    <p style="color:var(--ink-mid);margin-bottom:28px;max-width:620px;">Your child already uses AI every day. The question isn't whether they'll encounter AI. It's whether they'll be ready.</p>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🧠</div>
-        <h3>Understand, Don't Just Use</h3>
-        <p>Most children use AI without understanding what it is. We teach what AI actually does — pattern matching, not thinking — so your child isn't fooled by it.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🔍</div>
-        <h3>Question, Don't Just Trust</h3>
-        <p>AI hallucinations are real. AI confidently states wrong facts. Your child learns to catch errors — a critical thinking skill that protects them for life.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🎨</div>
-        <h3>Create, Don't Just Consume</h3>
-        <p>A consumer copies AI output. A creator uses AI as a tool and adds their own thinking. We teach the creator mindset from age 8.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🛡️</div>
-        <h3>Stay Safe Online</h3>
-        <p>Privacy, scams, stranger danger, digital footprints — your child learns safety instincts for the AI age through practice, not lectures.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">👨‍👩‍👧</div>
-        <h3>Learn Together as a Family</h3>
-        <p>Some products are designed for parent and child to use together. Children bring tech comfort. Parents bring life wisdom. Together, better decisions.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🌏</div>
-        <h3>Made for ASEAN</h3>
-        <p>Set in Singapore, Malaysia, and the Philippines with cultural framing from across Southeast Asia. Your child sees themselves in the stories.</p>
-      </div>
-    </div>
+<!-- WHY THIS MATTERS -->
+<div class="section">
+  <p style="font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.3rem;">Why This Matters</p>
+  <h2 class="section-title">The Case for AI Literacy — Now</h2>
+  <p class="section-sub">Your child already uses AI every day. The question isn't whether they'll encounter AI. It's whether they'll be ready.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🧠</div><h3>Understand, Don't Just Use</h3><p>Most children use AI without understanding what it is. We teach what AI actually does — pattern matching, not thinking — so your child isn't fooled by it.</p></div>
+    <div class="why-card"><div class="why-icon">🔍</div><h3>Question, Don't Just Trust</h3><p>AI hallucinations are real. AI confidently states wrong facts. Your child learns to catch errors — a critical thinking skill that protects them for life.</p></div>
+    <div class="why-card"><div class="why-icon">🎨</div><h3>Create, Don't Just Consume</h3><p>A consumer copies AI output. A creator uses AI as a tool and adds their own thinking. We teach the creator mindset from age 8.</p></div>
+    <div class="why-card"><div class="why-icon">🛡️</div><h3>Stay Safe Online</h3><p>Privacy, scams, stranger danger, digital footprints — your child learns safety instincts for the AI age through practice, not lectures.</p></div>
+    <div class="why-card"><div class="why-icon">👨‍👩‍👧</div><h3>Learn Together as a Family</h3><p>Some products are designed for parent and child to use together. Children bring tech comfort. Parents bring life wisdom. Together, better decisions.</p></div>
+    <div class="why-card"><div class="why-icon">🌏</div><h3>Made for ASEAN</h3><p>Set in Singapore, Malaysia, and the Philippines with cultural framing from across Southeast Asia. Your child sees themselves in the stories.</p></div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      AWARENESS TIER
-══════════════════════════════════════════ -->
-<div class="tier" id="awareness">
+════════════════════════════════════════════════ -->
+<div id="awareness" class="tier-section">
   <div class="tier-inner">
     <div class="tier-header">
-      <div class="tier-label">Awareness Tier</div>
-      <h2>Ages 8–11 · I Understand AI</h2>
-      <p>Follow Aisyah, a 9-year-old from Tiong Bahru, Singapore — from "What is AI?" all the way to "I am a maker."</p>
+      <div class="tier-badge">Awareness Tier</div>
+      <div class="tier-heading">
+        <h2>Ages 8–11 · I Understand AI</h2>
+        <p>Follow Aisyah, a 9-year-old from Tiong Bahru, Singapore — from "What is AI?" all the way to "I am a maker."</p>
+      </div>
     </div>
 
     <div class="bundle-card">
-      <div class="bundle-text">
-        <div class="bundle-star">⭐ Best Value</div>
-        <h3>Awareness Complete Bundle</h3>
+      <div class="bundle-card-text">
+        <h3>⭐ Awareness Complete Bundle — Best Value</h3>
         <p>All 12 books + 60 interactive games in one download. Ages 8–11.</p>
       </div>
-      <div class="bundle-price-block">
+      <div class="bundle-price-group">
         <div class="bundle-price">USD 29</div>
-        <a href="https://volareconsultants.gumroad.com/l/awareness-complete-bundle" target="_blank" class="bundle-btn">Get the Bundle →</a>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/awareness-complete-bundle" target="_blank">Get the Bundle →</a>
       </div>
     </div>
 
-    <div class="sub-label">Instructional Books (Ages 8–11)</div>
+    <div class="subsection-label">Instructional Books (Ages 8–11)</div>
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-badge">Book 1</div>
+        <div class="product-label">Book 1 · Free Preview Available</div>
         <div class="product-title">What Is AI, Really?</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book1" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-inside">Explanations, hands-on activities, and guided exercises · Ages 8–11 · Works without a teacher</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book1" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 2</div>
+        <div class="product-label">Book 2</div>
         <div class="product-title">Ask Better Questions</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book2" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book2" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 3</div>
+        <div class="product-label">Book 3</div>
         <div class="product-title">Make Your First AI Project</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book3" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book3" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 4</div>
+        <div class="product-label">Book 4</div>
         <div class="product-title">Spot the Mistake</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book4" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book4" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 5</div>
+        <div class="product-label">Book 5</div>
         <div class="product-title">Build With Your Parents</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book5" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book5" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 6 · Finale</div>
+        <div class="product-label">Book 6 · Finale</div>
         <div class="product-title">Code Your First Tool</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book6" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book6" target="_blank">Get It Now →</a></div>
       </div>
     </div>
 
-    <div class="sub-label">Storybook Editions — Aisyah's Journey (Ages 8–11)</div>
+    <div class="subsection-label">Storybook Editions — Aisyah's Journey (Ages 8–11)</div>
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-badge">Storybook 1</div>
+        <div class="product-label">Storybook 1</div>
         <div class="product-title">Aisyah's Discovery</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book1-storybook" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book1-storybook" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 2</div>
+        <div class="product-label">Storybook 2</div>
         <div class="product-title">Aisyah's Second Discovery</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book2-storybook" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book2-storybook" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 3</div>
+        <div class="product-label">Storybook 3</div>
         <div class="product-title">Aisyah's Third Discovery</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book3-storybook" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book3-storybook" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 4</div>
+        <div class="product-label">Storybook 4</div>
         <div class="product-title">Aisyah's Fourth Discovery</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book4-storybook" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book4-storybook" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 5</div>
+        <div class="product-label">Storybook 5</div>
         <div class="product-title">Aisyah's Fifth Discovery</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book5-storybook" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book5-storybook" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 6 · Finale</div>
+        <div class="product-label">Storybook 6 · Finale</div>
         <div class="product-title">Aisyah's Sixth Discovery</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-book6-storybook" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book6-storybook" target="_blank">Get It Now →</a></div>
       </div>
     </div>
 
-    <div class="sub-label">Interactive Game Sets — 10 Games Each (Ages 8–11)</div>
+    <div class="subsection-label">Interactive Game Sets — 10 Games Each (Ages 8–11)</div>
     <div class="product-grid">
-      <div class="product-card">
-        <div class="product-badge">Game Set 1 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 1 · 10 Games</div>
         <div class="product-title">Pattern Makers</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set1-pattern-makers" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set1-pattern-makers" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge">Game Set 2 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 2 · 10 Games</div>
         <div class="product-title">Project Lab</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set2-project-lab" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set2-project-lab" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge">Game Set 3 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 3 · 10 Games</div>
         <div class="product-title">Error Hunters</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set3-error-hunters" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set3-error-hunters" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge">Game Set 4 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 4 · 10 Games</div>
         <div class="product-title">Family Builders</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set4-family-builders" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set4-family-builders" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge">Game Set 5 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 5 · 10 Games</div>
         <div class="product-title">Tool Makers</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set5-tool-makers" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set5-tool-makers" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge">Game Set 6 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 6 · 10 Games</div>
         <div class="product-title">AI Safety Zone</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/awareness-set6-safety-zone" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set6-safety-zone" target="_blank">Get It Now →</a></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
-     THINKING TIER (AI Creator Lab)
-══════════════════════════════════════════ -->
-<div class="tier" id="thinking" style="background:white;">
+<!-- ═══════════════════════════════════════════════
+     THINKING TIER
+════════════════════════════════════════════════ -->
+<div id="thinking" class="tier-section">
   <div class="tier-inner">
     <div class="tier-header">
-      <div class="tier-label">Thinking Tier</div>
-      <h2>Ages 11–14 · I Think With AI</h2>
-      <p>Follow Kai as he moves from understanding AI systems to building real digital products and navigating AI ethics.</p>
+      <div class="tier-badge" style="background:var(--coral);">Thinking Tier</div>
+      <div class="tier-heading">
+        <h2>Ages 11–14 · I Think With AI</h2>
+        <p>Follow Kai as he moves from understanding AI systems to building real digital products and navigating AI ethics.</p>
+      </div>
     </div>
 
-    <div class="bundle-card">
-      <div class="bundle-text">
-        <div class="bundle-star">⭐ Best Value</div>
-        <h3>Thinking Complete Bundle</h3>
+    <div class="bundle-card" style="background:linear-gradient(135deg,#7c2d12,var(--coral));">
+      <div class="bundle-card-text">
+        <h3>⭐ Thinking Complete Bundle — Best Value</h3>
         <p>All Thinking Tier books + storybooks in one bundle. Ages 11–14.</p>
       </div>
-      <div class="bundle-price-block">
+      <div class="bundle-price-group">
         <div class="bundle-price">USD 29</div>
-        <a href="https://volareconsultants.gumroad.com/l/thinking-tier-complete-v2" target="_blank" class="bundle-btn">Get the Bundle →</a>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/thinking-tier-complete-v2" target="_blank">Get the Bundle →</a>
       </div>
     </div>
 
-    <div class="sub-label">Instructional Books (Ages 11–14)</div>
+    <div class="subsection-label">Instructional Books (Ages 11–14)</div>
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-badge">Book 1</div>
+        <div class="product-label">Book 1</div>
         <div class="product-title">AI Thinking Systems</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-book1" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book1" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 2</div>
+        <div class="product-label">Book 2</div>
         <div class="product-title">Build Digital Products With AI</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-book2" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book2" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 3</div>
+        <div class="product-label">Book 3</div>
         <div class="product-title">Creative AI Studio</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-book3" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book3" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 4</div>
+        <div class="product-label">Book 4</div>
         <div class="product-title">AI Researcher Mode</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-book4" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book4" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 5</div>
-        <div class="product-title">AI Ethics & Digital Power</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-book5" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 5</div>
+        <div class="product-title">AI Ethics &amp; Digital Power</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book5" target="_blank">Get It Now →</a></div>
       </div>
     </div>
 
-    <div class="sub-label">Storybook Editions — Kai's Journey (Ages 11–14)</div>
+    <div class="subsection-label">Storybook Editions — Kai's Journey (Ages 11–14)</div>
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-badge">Storybook 1</div>
+        <div class="product-label">Storybook 1</div>
         <div class="product-title">Kai's First Discovery</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook1" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook1" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 2</div>
+        <div class="product-label">Storybook 2</div>
         <div class="product-title">The Prototype</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook2" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook2" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 3</div>
+        <div class="product-label">Storybook 3</div>
         <div class="product-title">The Data Detective</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook3" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook3" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 4</div>
+        <div class="product-label">Storybook 4</div>
         <div class="product-title">The Story Communicator</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook4" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook4" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 5</div>
+        <div class="product-label">Storybook 5</div>
         <div class="product-title">The Ethics Navigator</div>
-        <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/thinking-storybook5" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook5" target="_blank">Get It Now →</a></div>
       </div>
     </div>
 
-    <div class="sub-label">Interactive Game Sets — 10 Games Each (Ages 11–14)</div>
+    <div class="subsection-label">Interactive Game Sets — 10 Games Each (Ages 11–14)</div>
     <div class="product-grid">
-      <div class="product-card">
-        <div class="product-badge new-tag">New</div>
-        <div class="product-badge">Game Set 1 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games</div>
         <div class="product-title">Kai's Systems Thinker</div>
-        <div class="product-desc">Pattern Recognition &amp; Logic — MCQ, drag-drop, sequencing &amp; prediction across 10 progressive games.</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/kai-systems-thinker" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-detail">Game Set 1 · Pattern Recognition &amp; Logic</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-systems-thinker" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge new-tag">New</div>
-        <div class="product-badge">Game Set 2 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games</div>
         <div class="product-title">Kai's Digital Builder</div>
-        <div class="product-desc">Product Design Thinking — Spec builder, priority ranker, component selection &amp; sequencing.</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/kai-digital-builder" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-detail">Game Set 2 · Product Design Thinking</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-digital-builder" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge new-tag">New</div>
-        <div class="product-badge">Game Set 3 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games</div>
         <div class="product-title">Kai's Creative Lab</div>
-        <div class="product-desc">Originality &amp; AI Voice — Detect AI vs human writing, remix with your own voice.</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/kai-creative-lab" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-detail">Game Set 3 · Originality &amp; AI Voice</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-creative-lab" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge new-tag">New</div>
-        <div class="product-badge">Game Set 4 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games</div>
         <div class="product-title">Kai's Research Mode</div>
-        <div class="product-desc">Fact-Checking &amp; Sources — Source cards, hallucination detection, bias spotting.</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/kai-research-mode" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-detail">Game Set 4 · Fact-Checking &amp; Sources</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-research-mode" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge new-tag">New · Final</div>
-        <div class="product-badge">Game Set 5 · 10 Games</div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games · Final</div>
         <div class="product-title">Kai's Ethics Arena</div>
-        <div class="product-desc">Fairness, Power &amp; Dilemmas — Dilemmas, consequence mapping &amp; ethical review.</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/kai-ethics-arena" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-detail">Game Set 5 · Fairness, Power &amp; Dilemmas</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-ethics-arena" target="_blank">Get It Now →</a></div>
       </div>
     </div>
 
-    <div class="bundle-card" style="background:linear-gradient(135deg,#1e3a5f,#0369a1);color:white;margin-top:8px;">
-      <div class="bundle-text">
-        <div class="bundle-star">🎓 Games Bundle</div>
-        <h3>Thinking Tier Games Bundle — All 5 Sets</h3>
-        <p>All 50 games across Systems Thinking, Digital Building, Creative Lab, Research Mode, and Ethics Arena. Ages 11–14.</p>
+    <div class="bundle-card" style="background:linear-gradient(135deg,#3b0764,#6d28d9);margin-top:1.5rem;">
+      <div class="bundle-card-text">
+        <h3>🎓 Thinking Tier Games Bundle — All 5 Sets</h3>
+        <p>All 50 games across Systems Thinking, Digital Building, Creative Lab, Research Mode, and Ethics Arena.</p>
       </div>
-      <div class="bundle-price-block">
-        <div class="bundle-save">USD 25 separately</div>
-        <div class="bundle-price">USD 20</div>
-        <a href="https://volareconsultants.gumroad.com/l/kai-thinking-tier-bundle" target="_blank" class="bundle-btn" style="background:white;color:#0369a1;">Get the Bundle →</a>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 20 <span style="font-size:0.9rem;color:#c4b5fd;">Save $5</span></div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/kai-thinking-tier-bundle" target="_blank">Get the Bundle →</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      LEVERAGE TIER
-══════════════════════════════════════════ -->
-<div class="tier" id="leverage">
+════════════════════════════════════════════════ -->
+<div id="leverage" class="tier-section">
   <div class="tier-inner">
     <div class="tier-header">
-      <div class="tier-label">Leverage Tier</div>
-      <h2>Ages 14–17 · I Build With AI</h2>
-      <p>Follow Anya as she goes from AI systems design to launching a startup and navigating the future of AI power by 2035.</p>
+      <div class="tier-badge" style="background:var(--navy);">Leverage Tier</div>
+      <div class="tier-heading">
+        <h2>Ages 14–17 · I Build With AI</h2>
+        <p>Follow Anya as she goes from AI systems design to launching a startup and navigating the future of AI power by 2035.</p>
+      </div>
     </div>
 
-    <div class="bundle-card">
-      <div class="bundle-text">
-        <div class="bundle-star">⭐ Best Value</div>
-        <h3>Leverage Complete Bundle</h3>
+    <div class="bundle-card" style="background:linear-gradient(135deg,#0a0f1e,#1e3a5f);">
+      <div class="bundle-card-text">
+        <h3>⭐ Leverage Complete Bundle — Best Value</h3>
         <p>All Leverage Tier books + storybooks in one bundle. Ages 14–17.</p>
       </div>
-      <div class="bundle-price-block">
+      <div class="bundle-price-group">
         <div class="bundle-price">USD 39</div>
-        <a href="https://volareconsultants.gumroad.com/l/leverage-bundle-complete" target="_blank" class="bundle-btn">Get the Bundle →</a>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/leverage-bundle-complete" target="_blank">Get the Bundle →</a>
       </div>
     </div>
 
-    <div class="sub-label">Instructional Books (Ages 14–17)</div>
+    <div class="subsection-label">Instructional Books (Ages 14–17)</div>
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-badge">Book 1</div>
+        <div class="product-label">Book 1</div>
         <div class="product-title">AI Systems Design</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-book1" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book1" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 2</div>
+        <div class="product-label">Book 2</div>
         <div class="product-title">Build an AI Startup (Teen Edition)</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-book2" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book2" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 3</div>
+        <div class="product-label">Book 3</div>
         <div class="product-title">Advanced Prompt Engineering</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-book3" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book3" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 4</div>
-        <div class="product-title">AI & Coding Foundations</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-book4" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 4</div>
+        <div class="product-title">AI &amp; Coding Foundations</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book4" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Book 5 · Grand Finale</div>
-        <div class="product-title">AI, Power & The Future 2035</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-book5" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 5 · Grand Finale</div>
+        <div class="product-title">AI, Power &amp; The Future 2035</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book5" target="_blank">Get It Now →</a></div>
       </div>
     </div>
 
-    <div class="sub-label">Storybook Editions — Anya's Journey (Ages 14–17)</div>
+    <div class="subsection-label">Storybook Editions — Anya's Journey (Ages 14–17)</div>
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-badge">Storybook 1</div>
+        <div class="product-label">Storybook 1</div>
         <div class="product-title">The Architect</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-storybook1" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook1" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 2</div>
+        <div class="product-label">Storybook 2</div>
         <div class="product-title">The Founder</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-storybook2" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook2" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge new-tag">New</div>
-        <div class="product-badge">Storybook 3</div>
+        <div class="product-label new">New · Storybook 3</div>
         <div class="product-title">The Engineer</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-storybook-3" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook-3" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge new-tag">New</div>
-        <div class="product-badge">Storybook 4</div>
+        <div class="product-label new">New · Storybook 4</div>
         <div class="product-title">The Consequence</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-storybook-4" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook-4" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Storybook 5 · Grand Finale</div>
+        <div class="product-label">Storybook 5 · Grand Finale</div>
         <div class="product-title">The Decision</div>
-        <div class="product-footer"><span class="product-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/leverage-storybook5" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook5" target="_blank">Get It Now →</a></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════
+<!-- ═══════════════════════════════════════════════
      DIGITAL SMARTS LAB
-══════════════════════════════════════════ -->
-<div class="tier" id="digitalsmarts" style="background:white;">
+════════════════════════════════════════════════ -->
+<div id="digitalsmarts" class="tier-section">
   <div class="tier-inner">
     <div class="tier-header">
-      <div class="tier-label">Digital Smarts Lab™</div>
-      <h2>Online Safety, Media Literacy & Digital Life</h2>
-      <p>Two tiers of essential digital literacy — for children ages 8–11 and young people ages 11–14. Learn to stay safe, think critically, and navigate the digital world with confidence.</p>
-    </div>
-
-    <!-- DSL AWARENESS -->
-    <div class="dsl-awareness">
-      <div class="dsl-awareness-label">Awareness Tier · Ages 8–11 · Maya Chen · California</div>
-
-      <div class="bundle-card">
-        <div class="bundle-text">
-          <div class="bundle-star">⭐ Best Value</div>
-          <h3>Digital Smarts Lab Awareness Bundle</h3>
-          <p>All 6 Awareness Tier books in one bundle. Ages 8–11.</p>
-        </div>
-        <div class="bundle-price-block">
-          <div class="bundle-save">USD 30 separately</div>
-          <div class="bundle-price">USD 24</div>
-          <a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-awareness-bundle" target="_blank" class="bundle-btn">Get the Bundle →</a>
-        </div>
-      </div>
-
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="product-badge">Book 1</div>
-          <div class="product-title">What Is AI?</div>
-          <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-1-wha-is-ai" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 2</div>
-          <div class="product-title">AI All Around Me</div>
-          <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-2-ai-all-around-me" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 3</div>
-          <div class="product-title">Talking to AI</div>
-          <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-3-talking-to-ai" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 4</div>
-          <div class="product-title">Real or AI Made?</div>
-          <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-4-real-or-ai-made" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 5</div>
-          <div class="product-title">My Online Safety Basics</div>
-          <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-5-my-online-safety-basics" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 6</div>
-          <div class="product-title">Screen Time & Me</div>
-          <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-6-screen-time-and-me" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
+      <div class="tier-badge" style="background:#7c3aed;">Digital Smarts Lab</div>
+      <div class="tier-heading">
+        <h2>Ages 8–11 · Online Safety &amp; Digital Life</h2>
+        <p>Six essential tools teaching children how to stay safe, think critically, and navigate the digital world with confidence.</p>
       </div>
     </div>
 
-    <hr class="tier-divider">
-
-    <!-- DSL THINKING -->
-    <div class="dsl-thinking">
-      <div class="dsl-thinking-label">Thinking Tier · Ages 11–14 · Jordan Williams · Kuala Lumpur · New</div>
-
-      <div class="bundle-card">
-        <div class="bundle-text">
-          <div class="bundle-star">⭐ Best Value</div>
-          <h3>Digital Smarts Lab Thinking Tier — Complete Bundle</h3>
-          <p>All 6 Thinking Tier books in one bundle. Privacy, media literacy, data rights, algorithms, AI, and digital identity. Ages 11–14.</p>
-        </div>
-        <div class="bundle-price-block">
-          <div class="bundle-save">USD 36 separately</div>
-          <div class="bundle-price">USD 24</div>
-          <a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-thinking-bundle" target="_blank" class="bundle-btn">Get the Bundle →</a>
-        </div>
+    <div class="bundle-card" style="background:linear-gradient(135deg,#4c1d95,#7c3aed);">
+      <div class="bundle-card-text">
+        <h3>⭐ Digital Smarts Lab Bundle — Best Value</h3>
+        <p>All 6 Digital Smarts Lab books in one bundle. Ages 8–11.</p>
       </div>
-
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="product-badge">Book 1</div>
-          <div class="product-title">Who's Watching You Online?</div>
-          <div class="product-desc">Data trails, trackers, and how to limit who monitors your activity online.</div>
-          <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-thinking-1" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 2</div>
-          <div class="product-title">Real, Fake, or Somewhere In Between?</div>
-          <div class="product-desc">Spotting AI-generated content and deepfakes using the SIFT verification method.</div>
-          <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-thinking-2" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 3</div>
-          <div class="product-title">Who Owns Your Data?</div>
-          <div class="product-desc">How apps collect and trade personal data — and your five legal rights over it.</div>
-          <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-thinking-3" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 4</div>
-          <div class="product-title">The Algorithm Knows You</div>
-          <div class="product-desc">Filter bubbles, echo chambers, and how to see outside your own feed.</div>
-          <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-thinking-4" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 5</div>
-          <div class="product-title">AI As Your Study Partner</div>
-          <div class="product-desc">Smart vs. shortcut AI use in school — the PACT prompt framework and academic integrity.</div>
-          <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-thinking-5" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-        <div class="product-card">
-          <div class="product-badge">Book 6 · Series Final</div>
-          <div class="product-title">Your Digital Footprint</div>
-          <div class="product-desc">What the internet permanently remembers — and how to shape your online identity intentionally.</div>
-          <div class="product-footer"><span class="product-price">USD 6</span><a href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-thinking-6" target="_blank" class="product-link">Get It Now →</a></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     SMART MONEY
-══════════════════════════════════════════ -->
-<div class="tier" id="smartmoney">
-  <div class="tier-inner">
-    <div class="tier-header">
-      <div class="tier-label">Smart Money for Smart Kids™</div>
-      <h2>Ages 8–17 · Money Skills for Life</h2>
-      <p>Practical financial literacy tools for children and teens — budgeting, saving, investing, and entrepreneurship, explained simply.</p>
-    </div>
-
-    <!-- Featured tool -->
-    <div class="featured-tool">
-      <div class="featured-tool-header">
-        <div>
-          <span class="new-tag">🎮 New · Interactive Tool</span>
-          <div class="featured-tool-title" style="margin-top:8px;">Kai's Budget Builder — For Ages 11–14</div>
-          <div class="featured-tool-badges">
-            <span class="ftb">Ages 11–14</span>
-            <span class="ftb">Scored activity</span>
-            <span class="ftb">Personalised badge</span>
-            <span class="ftb">Family Conversation Starters</span>
-            <span class="ftb">AI Prompt included</span>
-            <span class="ftb">HTML5 · Any device</span>
-          </div>
-        </div>
-      </div>
-      <div class="featured-tool-desc">Kai guides learners through allocating a real monthly allowance, handling a surprise expense, and making a smart trade-off — all scored, with a personalised badge, Family Conversation Starters, and a copyable AI prompt. Works on any device. No login needed.</div>
-      <div class="featured-tool-footer">
-        <span style="font-family:'Fredoka One',cursive;font-size:1.2rem;color:var(--teal);">USD 5</span>
-        <a href="https://volareconsultants.gumroad.com/l/kai-budget-builder" target="_blank" class="product-link" style="background:var(--teal);color:white;">Get It Now →</a>
-      </div>
-    </div>
-
-    <!-- Kids section -->
-    <div class="sub-label" style="color:var(--emerald);">🪙 For Kids · Ages 8–11</div>
-
-    <div class="bundle-card">
-      <div class="bundle-text">
-        <div class="bundle-star">⭐ Best Value</div>
-        <h3>Smart Money Kids Bundle (Ages 8–11)</h3>
-        <p>All 12 core money tools for younger children in one bundle.</p>
-      </div>
-      <div class="bundle-price-block">
-        <div class="bundle-save">USD 60 separately</div>
+      <div class="bundle-price-group">
         <div class="bundle-price">USD 24</div>
-        <a href="https://volareconsultants.gumroad.com/l/smart-money-awareness-bundle" target="_blank" class="bundle-btn">Get the Bundle →</a>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-awareness-bundle" target="_blank">Get the Bundle →</a>
       </div>
     </div>
 
     <div class="product-grid">
       <div class="product-card">
-        <div class="product-badge">Tool 1</div>
-        <div class="product-title">My First Budget Planner</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-01-my-first-budget-planner" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 1</div>
+        <div class="product-title">What Is AI?</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-1-wha-is-ai" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Tool 2</div>
-        <div class="product-title">My First Savings Goal Tracker</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-02-my-first-savings-goal-tracker" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 2</div>
+        <div class="product-title">AI All Around Me</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-2-ai-all-around-me" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Tool 3</div>
-        <div class="product-title">My First Earning & Spending Diary</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-03-my-first-earning-spending-diary" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 3</div>
+        <div class="product-title">Talking to AI</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-3-talking-to-ai" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Tool 4</div>
-        <div class="product-title">Needs vs Wants Sorter</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-04-needs-vs-wants-sorter" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 4</div>
+        <div class="product-title">Real or AI Made?</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-4-real-or-ai-made" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Tool 5</div>
-        <div class="product-title">My First Money Tracker</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-05-my-first-money-tracker" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 5</div>
+        <div class="product-title">My Online Safety Basics</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-5-my-online-safety-basics" target="_blank">Get It Now →</a></div>
       </div>
       <div class="product-card">
-        <div class="product-badge">Tool 6</div>
-        <div class="product-title">Smart Shopper Challenge</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-06-smart-shopper-challenge" target="_blank" class="product-link">Get It Now →</a></div>
+        <div class="product-label">Book 6</div>
+        <div class="product-title">Screen Time &amp; Me</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-6-screen-time-and-me" target="_blank">Get It Now →</a></div>
       </div>
-      <div class="product-card">
-        <div class="product-badge">Tool 7</div>
-        <div class="product-title">Smart Budget Builder</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-07-smart-budget-builder" target="_blank" class="product-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card">
-        <div class="product-badge">Tool 8</div>
-        <div class="product-title">Smart Savings Interest Calculator</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-08-smart-savings-interest-calculator" target="_blank" class="product-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card">
-        <div class="product-badge">Tool 9</div>
-        <div class="product-title">Smart Spending Analyser</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-09-smart-spending-analyser" target="_blank" class="product-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card">
-        <div class="product-badge">Tool 10</div>
-        <div class="product-title">Business Idea Evaluator</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-10-business-idea-evaluator" target="_blank" class="product-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card">
-        <div class="product-badge">Tool 11</div>
-        <div class="product-title">Smart Money Decisions Game</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/smart-money-11-smart-money-decisions-game" target="_blank" class="product-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card">
-        <div class="product-badge">Tool 12</div>
-        <div class="product-title">Smart Earnings Calculator</div>
-        <div class="product-footer"><span class="product-price">USD 5</span><a href="https://volareconsultants.gumroad.com/l/lhkvfy" target="_blank" class="product-link">Get It Now →</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SMART MONEY
+════════════════════════════════════════════════ -->
+<div id="smartmoney" class="tier-section">
+  <div class="tier-inner">
+    <div class="tier-header">
+      <div class="tier-badge" style="background:#059669;">Smart Money for Smart Kids</div>
+      <div class="tier-heading">
+        <h2>Ages 8–17 · Money Skills for Life</h2>
+        <p>Practical financial literacy tools for children and teens — budgeting, saving, investing, and entrepreneurship, explained simply.</p>
       </div>
     </div>
 
-    <!-- Teens section -->
-    <div class="sub-label" style="color:var(--navy);">💼 For Teens · Ages 13–17</div>
+    <!-- Featured product -->
+    <div class="bundle-card" style="background:linear-gradient(135deg,#064e3b,#059669);margin-bottom:1.5rem;">
+      <div class="bundle-card-text">
+        <h3>🎮 New · Kai's Budget Builder — Ages 11–14</h3>
+        <p>Scored activity · Personalised badge · Family Conversation Starters · AI Prompt included · HTML5 · Any device</p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 5</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/kai-budget-builder" target="_blank">Get It Now →</a>
+      </div>
+    </div>
 
-    <div class="bundle-card teens-bundle">
-      <div class="bundle-text">
-        <div class="bundle-star">⭐ Best Value</div>
-        <h3>Smart Money Teens Bundle (Ages 13–17)</h3>
+    <div class="subsection-label">🪙 For Kids · Ages 8–11</div>
+    <div class="bundle-card" style="background:linear-gradient(135deg,#064e3b,#047857);">
+      <div class="bundle-card-text">
+        <h3>⭐ Smart Money Kids Bundle (Ages 8–11)</h3>
+        <p>All 6 core tools for younger children in one bundle.</p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 24</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/smart-money-awareness-bundle" target="_blank">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <div class="product-grid" style="margin-top:1rem;">
+      <div class="product-card"><div class="product-label">Tool 1</div><div class="product-title">My First Budget Planner</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-01-my-first-budget-planner" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 2</div><div class="product-title">My First Savings Goal Tracker</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-02-my-first-savings-goal-tracker" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 3</div><div class="product-title">My First Earning &amp; Spending Diary</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-03-my-first-earning-spending-diary" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 4</div><div class="product-title">Needs vs Wants Sorter</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-04-needs-vs-wants-sorter" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 5</div><div class="product-title">My First Money Tracker</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-05-my-first-money-tracker" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 6</div><div class="product-title">Smart Shopper Challenge</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-06-smart-shopper-challenge" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 7</div><div class="product-title">Smart Budget Builder</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-07-smart-budget-builder" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 8</div><div class="product-title">Smart Savings Interest Calculator</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-08-smart-savings-interest-calculator" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 9</div><div class="product-title">Smart Spending Analyser</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-09-smart-spending-analyser" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 10</div><div class="product-title">Business Idea Evaluator</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-10-business-idea-evaluator" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 11</div><div class="product-title">Smart Money Decisions Game</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-11-smart-money-decisions-game" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 12</div><div class="product-title">Smart Earnings Calculator</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/lhkvfy" target="_blank">Get It Now →</a></div></div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:2rem;">💼 For Teens · Ages 13–17</div>
+    <div class="bundle-card" style="background:linear-gradient(135deg,#1e3a5f,#1d4ed8);">
+      <div class="bundle-card-text">
+        <h3>⭐ Smart Money Teens Bundle (Ages 13–17)</h3>
         <p>All 6 teen money tools in one bundle.</p>
       </div>
-      <div class="bundle-price-block">
-        <div class="bundle-save">USD 42 separately</div>
+      <div class="bundle-price-group">
         <div class="bundle-price">USD 24</div>
-        <a href="https://volareconsultants.gumroad.com/l/smart-money-leverage-bundle" target="_blank" class="bundle-btn" style="background:var(--gold);color:var(--navy-dark);">Get the Bundle →</a>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/smart-money-leverage-bundle" target="_blank">Get the Bundle →</a>
       </div>
     </div>
 
-    <div class="product-grid">
-      <div class="product-card teens-card">
-        <div class="product-badge teens-badge">Tool 13</div>
-        <div class="product-title">Teen Budget & Cash Flow Planner</div>
-        <div class="product-footer"><span class="product-price teens-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/smart-money-13-teen-budget-cash-flow-planner" target="_blank" class="product-link teens-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card teens-card">
-        <div class="product-badge teens-badge">Tool 14</div>
-        <div class="product-title">Investment Basics Simulator</div>
-        <div class="product-footer"><span class="product-price teens-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/smart-money-14-investment-basics-simulator" target="_blank" class="product-link teens-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card teens-card">
-        <div class="product-badge teens-badge">Tool 15</div>
-        <div class="product-title">Side Hustle Profit Calculator</div>
-        <div class="product-footer"><span class="product-price teens-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/smart-money-15-side-hustle-profit-calculator" target="_blank" class="product-link teens-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card teens-card">
-        <div class="product-badge teens-badge">Tool 16</div>
-        <div class="product-title">Financial Goal Roadmap</div>
-        <div class="product-footer"><span class="product-price teens-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/smart-money-16-financial-goal-roadmap" target="_blank" class="product-link teens-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card teens-card">
-        <div class="product-badge teens-badge">Tool 17</div>
-        <div class="product-title">Credit & Debt Literacy Tool</div>
-        <div class="product-footer"><span class="product-price teens-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/smart-money-17-credit-debt-literacy-tool" target="_blank" class="product-link teens-link">Get It Now →</a></div>
-      </div>
-      <div class="product-card teens-card">
-        <div class="product-badge teens-badge">Tool 18</div>
-        <div class="product-title">My Financial Independence Plan</div>
-        <div class="product-footer"><span class="product-price teens-price">USD 7</span><a href="https://volareconsultants.gumroad.com/l/smart-money-18-my-financial-independence-plan" target="_blank" class="product-link teens-link">Get It Now →</a></div>
-      </div>
+    <div class="product-grid" style="margin-top:1rem;">
+      <div class="product-card"><div class="product-label">Tool 13</div><div class="product-title">Teen Budget &amp; Cash Flow Planner</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-13-teen-budget-cash-flow-planner" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 14</div><div class="product-title">Investment Basics Simulator</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-14-investment-basics-simulator" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 15</div><div class="product-title">Side Hustle Profit Calculator</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-15-side-hustle-profit-calculator" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 16</div><div class="product-title">Financial Goal Roadmap</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-16-financial-goal-roadmap" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 17</div><div class="product-title">Credit &amp; Debt Literacy Tool</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-17-credit-debt-literacy-tool" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 18</div><div class="product-title">My Financial Independence Plan</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-18-my-financial-independence-plan" target="_blank">Get It Now →</a></div></div>
     </div>
 
-    <!-- Parents -->
-    <div class="sub-label" style="color:var(--ink-mid);">📚 For Parents · All Ages</div>
+    <div class="subsection-label" style="margin-top:2rem;">📚 For Parents · All Ages</div>
     <div class="product-grid">
-      <div class="product-card" style="border-top-color:var(--violet);">
-        <div class="product-badge new-tag">New</div>
-        <div class="product-badge" style="background:var(--violet-pale);color:var(--violet);">For Parents</div>
+      <div class="product-card">
+        <div class="product-label new">New · For Parents</div>
         <div class="product-title">The Family Money Playbook</div>
-        <div class="product-desc">28 pages · 3 age tiers · conversation scripts + family activities</div>
-        <div class="product-footer"><span class="product-price" style="color:var(--violet);">USD 7</span><a href="https://volareconsultants.gumroad.com/l/the-family-money-playbook" target="_blank" class="product-link" style="background:var(--violet);color:white;">Get It Now →</a></div>
+        <div class="product-detail">28 pages · 3 age tiers · conversation scripts + family activities</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/the-family-money-playbook" target="_blank">Get It Now →</a></div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<div class="about" id="about">
+<!-- ═══════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════════ -->
+<div id="about" class="about-section">
   <div class="about-inner">
     <h2>About AI Creator Lab™</h2>
     <p>AI Creator Lab™ is a digital education programme by Volare Consultants, a Singapore sole proprietorship. We believe every child in ASEAN deserves to grow up understanding the technology that will shape their world — not just using it, but questioning it, creating with it, and staying safe within it.</p>
     <p>All products are delivered digitally via Gumroad. Affordable, instantly downloadable, and designed to work at home, in schools, and in learning centres across all 11 ASEAN countries.</p>
-    <div class="about-sister">
-      <p>Looking for <strong>business tools, planners &amp; financial guides for adults?</strong></p>
-      <p>Visit Volare Consultants — our sister store for creators and entrepreneurs. &nbsp; <a href="https://www.volareconsultants.online" target="_blank">www.volareconsultants.online</a></p>
-      <p style="margin-top:10px;"><a href="https://www.volareconsultants.online" target="_blank" style="display:inline-block;background:var(--teal);color:white;padding:10px 20px;border-radius:10px;font-weight:800;font-size:0.9rem;">Visit Volare Consultants →</a></p>
+    <div class="sister-link-block">
+      Looking for <strong>business tools, planners &amp; financial guides for adults?</strong><br>
+      Visit Volare Consultants — our sister store for creators and entrepreneurs.<br>
+      <a href="https://www.volareconsultants.online">www.volareconsultants.online</a>
     </div>
   </div>
 </div>
@@ -967,11 +984,8 @@ footer{background:#0a0f1e;color:#94a3b8;padding:40px 24px;text-align:center;}
     <a href="https://www.volareconsultants.online" target="_blank">Volare Consultants</a>
     <a href="mailto:support@volarefly.com">Contact Us</a>
   </div>
-  <div class="footer-copy">
-    AI Creator Lab™ · by Volare Consultants · Digital AI literacy for Generation Alpha · Ages 8–17 · ASEAN<br>
-    © 2026 Volare Consultants. All rights reserved. Made with care in Singapore. Digital products delivered via Gumroad.<br>
-    <a href="mailto:support@volarefly.com">support@volarefly.com</a>
-  </div>
+  <p>AI Creator Lab™ · by Volare Consultants · Digital AI literacy for Generation Alpha · Ages 8–17 · ASEAN</p>
+  <p style="margin-top:0.4rem;">© 2026 Volare Consultants. All rights reserved. Made with care in Singapore. Digital products delivered via Gumroad.</p>
 </footer>
 
 </body>
