@@ -3,148 +3,1312 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Is AI making kids less creative? A plain-English look at the real risk — and how to help your child use AI as a creative partner, not a shortcut.">
-<title>Is AI Making Kids Less Creative? | AI Creator Lab™ Learning Center</title>
+<meta name="description" content="AI Creator Lab™ by Volare Consultants. Digital AI literacy programme for children ages 8–17 across ASEAN. Books, interactive games, and learning tools.">
+<title>AI Creator Lab™ — AI Literacy for Gen Alpha | Ages 8–17 | ASEAN</title>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
   :root {
-    --teal: #0d9488; --teal-dark: #0f766e; --teal-light: #ccfbf1;
-    --coral: #f97316; --coral-light: #fff7ed;
-    --navy: #0f172a; --slate: #334155; --muted: #64748b;
-    --border: #e2e8f0; --bg: #f8fafc; --white: #ffffff;
+    --teal:        #0d9488;
+    --teal-dark:   #0f766e;
+    --teal-light:  #ccfbf1;
+    --coral:       #f97316;
+    --coral-light: #fff7ed;
+    --navy:        #0f172a;
+    --slate:       #334155;
+    --muted:       #64748b;
+    --border:      #e2e8f0;
+    --bg:          #f8fafc;
+    --white:       #ffffff;
+    --gold:        #f59e0b;
   }
+
   html { scroll-behavior: smooth; }
-  body { font-family: 'Nunito', sans-serif; background: var(--bg); color: var(--navy); font-size: 1.05rem; line-height: 1.75; }
 
-  .sister-banner { background: var(--navy); color: #94a3b8; text-align: center; padding: 0.5rem 1rem; font-size: 0.85rem; }
-  .sister-banner a { color: #f59e0b; text-decoration: none; }
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--bg);
+    color: var(--navy);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 
-  nav { background: var(--white); border-bottom: 2px solid var(--teal-light); position: sticky; top: 0; z-index: 100; padding: 0.9rem 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem; }
-  .nav-brand { font-family: 'Fredoka One', cursive; font-size: 1.3rem; color: var(--teal-dark); text-decoration: none; }
-  .nav-back { color: var(--slate); text-decoration: none; font-size: 0.88rem; font-weight: 700; padding: 0.4rem 0.9rem; border-radius: 20px; background: var(--teal-light); }
-  .nav-back:hover { background: #99f6e4; }
+  /* ── SISTER SITE BANNER ── */
+  .sister-banner {
+    background: var(--navy);
+    color: #94a3b8;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  .sister-banner a { color: var(--gold); text-decoration: none; }
+  .sister-banner a:hover { text-decoration: underline; }
 
-  .article-header { background: linear-gradient(135deg, var(--teal-dark) 0%, #134e4a 100%); color: var(--white); padding: 3.5rem 2rem 3rem; text-align: center; }
-  .eyebrow { display: inline-block; background: rgba(255,255,255,0.15); color: #99f6e4; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.35rem 1rem; border-radius: 20px; margin-bottom: 1.25rem; }
-  .article-header h1 { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem, 4.5vw, 2.6rem); line-height: 1.25; max-width: 720px; margin: 0 auto 1rem; }
-  .article-meta { color: #99f6e4; font-size: 0.9rem; }
+  /* ── NAV ── */
+  nav {
+    background: var(--white);
+    border-bottom: 2px solid var(--teal-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0.9rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .nav-brand {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.4rem;
+    color: var(--teal-dark);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; flex-wrap: wrap; gap: 0.4rem; align-items: center; }
+  .nav-links a {
+    color: var(--slate);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { background: var(--teal-light); color: var(--teal-dark); }
+  .nav-links .btn-shop {
+    background: var(--teal);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 0.35rem 1rem;
+  }
+  .nav-links .btn-shop:hover { background: var(--teal-dark); color: var(--white); }
 
-  .article-body { max-width: 700px; margin: 0 auto; padding: 3rem 2rem; }
-  .article-body h2 { font-family: 'Fredoka One', cursive; font-size: 1.4rem; color: var(--teal-dark); margin: 2.25rem 0 0.9rem; }
-  .article-body p { margin-bottom: 1.1rem; color: var(--slate); }
-  .article-body strong { color: var(--navy); }
-  .callout { background: var(--coral-light); border-left: 5px solid var(--coral); border-radius: 10px; padding: 1.2rem 1.5rem; margin: 1.5rem 0; font-size: 0.97rem; color: var(--navy); }
-  .callout strong { color: #c2410c; }
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, #134e4a 100%);
+    color: var(--white);
+    padding: 4rem 2rem 3.5rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: #99f6e4;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 em { color: #5eead4; font-style: normal; }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: #ccfbf1;
+    max-width: 640px;
+    margin: 0 auto 1.5rem;
+  }
 
-  .diagram-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2rem 1.5rem; margin: 2rem 0; text-align: center; }
-  .diagram-caption { font-size: 0.85rem; color: var(--muted); margin-top: 1rem; font-style: italic; }
+  /* ── WHO THIS IS FOR ── */
+  .for-whom {
+    background: var(--teal-light);
+    border-left: 5px solid var(--teal);
+    border-radius: 10px;
+    padding: 1.1rem 1.5rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    color: var(--teal-dark);
+    font-size: 0.97rem;
+    text-align: left;
+    font-weight: 600;
+  }
 
-  .talk-box { background: var(--teal-light); border-radius: 14px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
-  .talk-box h3 { font-family: 'Fredoka One', cursive; font-size: 1.15rem; color: var(--teal-dark); margin-bottom: 0.75rem; }
-  .talk-box p { color: var(--navy); font-weight: 600; font-size: 1rem; }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+  .btn-primary {
+    background: var(--coral);
+    color: var(--white);
+    padding: 0.75rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #ea6505; transform: translateY(-2px); }
+  .btn-secondary {
+    background: rgba(255,255,255,0.15);
+    color: var(--white);
+    padding: 0.75rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.4);
+    transition: background 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
-  .cta-strip { background: var(--navy); color: var(--white); padding: 2.5rem 2rem; text-align: center; }
-  .cta-strip h3 { font-family: 'Fredoka One', cursive; font-size: 1.3rem; color: #5eead4; margin-bottom: 0.75rem; }
-  .cta-strip p { color: #cbd5e1; font-size: 0.95rem; max-width: 560px; margin: 0 auto 1.5rem; }
-  .cta-btn { background: var(--coral); color: var(--white); padding: 0.7rem 1.6rem; border-radius: 25px; font-weight: 800; font-size: 0.92rem; text-decoration: none; display: inline-block; }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 2rem;
+  }
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    color: #5eead4;
+    line-height: 1;
+  }
+  .stat-label { font-size: 0.8rem; color: #99f6e4; font-weight: 600; margin-top: 0.2rem; }
 
-  footer { background: #020617; color: #475569; padding: 1.5rem 2rem; text-align: center; font-size: 0.8rem; }
-  footer a { color: #64748b; text-decoration: none; }
+  /* ── FREE TIP STRIP ── */
+  .free-tip {
+    background: var(--coral-light);
+    border-top: 3px solid var(--coral);
+    border-bottom: 3px solid var(--coral);
+    padding: 2rem;
+    text-align: center;
+  }
+  .free-tip-label {
+    display: inline-block;
+    background: var(--coral);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.9rem;
+    border-radius: 20px;
+    margin-bottom: 0.9rem;
+  }
+  .free-tip p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--slate);
+    font-size: 0.97rem;
+    font-style: italic;
+  }
 
+  /* ── WHY THIS MATTERS ── */
+  .section { padding: 3.5rem 2rem; max-width: 1100px; margin: 0 auto; }
+  .section-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.8rem;
+    color: var(--teal-dark);
+    margin-bottom: 0.4rem;
+  }
+  .section-sub { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .why-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .why-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+  .why-card h3 { font-size: 1rem; font-weight: 800; color: var(--navy); margin-bottom: 0.4rem; }
+  .why-card p { font-size: 0.9rem; color: var(--slate); }
+
+  /* ── TIER SECTIONS ── */
+  .tier-section { padding: 3rem 2rem; }
+  .tier-section:nth-child(odd) { background: var(--white); }
+  .tier-section:nth-child(even) { background: var(--bg); }
+
+  .tier-inner { max-width: 1100px; margin: 0 auto; }
+
+  .tier-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
+    flex-wrap: wrap;
+  }
+  .tier-badge {
+    background: var(--teal);
+    color: var(--white);
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.85rem;
+    padding: 0.3rem 0.9rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    margin-top: 0.3rem;
+  }
+  .tier-heading { flex: 1; }
+  .tier-heading h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.6rem;
+    color: var(--teal-dark);
+    margin-bottom: 0.2rem;
+  }
+  .tier-heading p { color: var(--slate); font-size: 0.95rem; }
+
+  /* bundle card */
+  .bundle-card {
+    background: linear-gradient(135deg, #134e4a, var(--teal-dark));
+    color: var(--white);
+    border-radius: 14px;
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .bundle-card-text h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; margin-bottom: 0.3rem; }
+  .bundle-card-text p { font-size: 0.88rem; color: #99f6e4; }
+  .bundle-price-group { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .bundle-price { font-family: 'Fredoka One', cursive; font-size: 1.6rem; color: #5eead4; }
+  .btn-bundle {
+    background: var(--coral);
+    color: var(--white);
+    padding: 0.6rem 1.4rem;
+    border-radius: 25px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .btn-bundle:hover { background: #ea6505; }
+
+  /* subsection label */
+  .subsection-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 0.4rem;
+    margin: 1.75rem 0 1rem;
+  }
+
+  /* product grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .product-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: box-shadow 0.2s, transform 0.15s;
+  }
+  .product-card:hover { box-shadow: 0 4px 16px rgba(13,148,136,0.12); transform: translateY(-2px); }
+  .product-label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+  }
+  .product-label.new { color: var(--coral); }
+  .product-title { font-weight: 800; font-size: 0.97rem; color: var(--navy); line-height: 1.3; }
+  .product-detail { font-size: 0.82rem; color: var(--muted); }
+  .product-inside {
+    font-size: 0.8rem;
+    color: var(--teal-dark);
+    background: var(--teal-light);
+    border-radius: 6px;
+    padding: 0.4rem 0.6rem;
+    font-weight: 600;
+  }
+  .product-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 0.5rem; }
+  .product-price { font-family: 'Fredoka One', cursive; font-size: 1.1rem; color: var(--teal-dark); }
+  .btn-get {
+    background: var(--teal);
+    color: var(--white);
+    padding: 0.35rem 0.9rem;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .btn-get:hover { background: var(--teal-dark); }
+
+  /* game set card variant */
+  .game-card { border-left: 4px solid var(--gold); }
+
+  /* ── ABOUT ── */
+  .about-section {
+    background: var(--navy);
+    color: var(--white);
+    padding: 3.5rem 2rem;
+    text-align: center;
+  }
+  .about-inner { max-width: 680px; margin: 0 auto; }
+  .about-section h2 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.7rem;
+    color: #5eead4;
+    margin-bottom: 1rem;
+  }
+  .about-section p { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 1rem; }
+  .sister-link-block {
+    margin-top: 1.5rem;
+    background: rgba(255,255,255,0.07);
+    border-radius: 10px;
+    padding: 1.1rem 1.5rem;
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+  .sister-link-block a { color: var(--gold); text-decoration: none; font-weight: 700; }
+  .sister-link-block a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #020617;
+    color: #475569;
+    padding: 1.75rem 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+  }
+  .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
+  .footer-nav a { color: #64748b; text-decoration: none; }
+  .footer-nav a:hover { color: var(--teal); }
+
+  /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
-    .article-header { padding: 2.5rem 1.25rem 2rem; }
-    .article-body { padding: 2rem 1.25rem; }
+    nav { padding: 0.75rem 1rem; }
+    .hero { padding: 2.5rem 1.25rem 2.5rem; }
+    .tier-section, .section { padding: 2rem 1.25rem; }
+    .bundle-card { flex-direction: column; align-items: flex-start; }
+    .hero-stats { gap: 1.5rem; }
   }
 </style>
 </head>
 <body>
 
+<!-- SISTER SITE BANNER -->
 <div class="sister-banner">
   For adult financial &amp; business tools, visit our sister site: <a href="https://www.volareconsultants.online">www.volareconsultants.online</a>
 </div>
 
+<!-- NAV -->
 <nav>
-  <a class="nav-brand" href="/">AI Creator Lab™</a>
-  <a class="nav-back" href="/learn.html">← Back to Learning Center</a>
+  <a class="nav-brand" href="#">AI Creator Lab™</a>
+  <div class="nav-links">
+    <a href="#free" style="color:#0d9488;font-weight:800;">Free Resource</a> <a href="#learn" style="color:#f97316;font-weight:800;">Learning Center</a> <a href="#awareness">Ages 8–11</a>
+    <a href="#thinking">Ages 11–14</a>
+    <a href="#leverage">Ages 14–17</a>
+    <a href="#digitalsmarts">Digital Smarts</a>
+    <a href="#smartmoney">Smart Money</a>
+    <a href="#parents" style="color:#d97706;font-weight:800;">For Parents</a>
+    <a href="#about">About</a>
+    <a class="btn-shop" href="https://volareconsultants.gumroad.com" target="_blank">Shop All →</a>
+  </div>
 </nav>
 
-<div class="article-header">
-  <div class="eyebrow">Learning Center · Creativity</div>
-  <h1>Is AI Making Kids Less Creative?</h1>
-  <p class="article-meta">The honest answer — and the one habit that actually protects a child's creative voice</p>
-</div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">🌏 For Children Across All 11 ASEAN Countries</div>
+  <h1>Your child will grow up with AI.<br><em>Will they understand it, question it, and shape it?</em></h1>
+  <p class="hero-sub">A complete digital AI literacy programme for children ages 8–17. Three tiers, three protagonists, one journey — from understanding AI to designing the systems that shape our world.</p>
 
-<div class="article-body">
-
-  <p>It's one of the most common worries parents raise: if an AI can draw the picture, write the story, or compose the song in seconds, will children ever develop their own creative voice? It's a fair question — and the honest answer is more specific than a simple yes or no.</p>
-
-  <h2>The risk isn't what most people think</h2>
-  <p>AI doesn't make a child less imaginative just by existing. The real risk is quieter: a child using AI to <strong>skip the struggle</strong> — asking it to finish the story, design the poster, or write the song — and never discovering that the struggle itself is where their own voice actually comes from.</p>
-  <p>Creativity isn't a personality trait some kids have and others don't. It's a muscle that gets built through the uncomfortable middle part — staring at a blank page, trying an idea that doesn't work, trying again. Skip that part enough times, and the muscle never develops, regardless of how "creative" the output looks.</p>
-
-  <div class="callout">
-    <strong>The key distinction:</strong> A consumer asks AI to finish the work. A creator asks AI for a starting point, a second opinion, or a technical assist — and still does the thinking. Same tool, completely different outcome.
+  <!-- WHO THIS IS FOR -->
+  <div class="for-whom">
+    This programme is for any parent — in Singapore, Kuala Lumpur, Manila, London, or Los Angeles — who has watched their child use AI tools and wondered: do they actually understand what they're doing? Our books and games are designed for home use, require no teaching experience, and work on any device. No subscriptions. No logins. Download once, use for years.
   </div>
 
-  <h2>What "using AI well" actually looks like</h2>
-  <p>Think of a sparring partner, not a replacement. A child writing a story might ask AI: "Give me three different ways this character could react to bad news" — then pick the one that feels right, or write a better fourth option themselves. That's AI amplifying their thinking. It's very different from asking AI to "just write the ending" and pasting it in.</p>
-  <p>The tool is identical in both cases. The difference is entirely in how it's used — and that's a habit you can actively shape at home.</p>
-
-  <div class="diagram-wrap">
-    <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;height:auto;">
-      <!-- Left path: Consumer -->
-      <text x="150" y="30" text-anchor="middle" font-family="Fredoka One, cursive" font-size="15" fill="#c2410c">The Consumer Path</text>
-      <rect x="45" y="45" width="210" height="42" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-      <text x="150" y="71" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12.5" fill="#7c2d12">"AI, finish this for me"</text>
-      <line x1="150" y1="87" x2="150" y2="112" stroke="#f97316" stroke-width="3"/>
-      <polygon points="144,112 150,124 156,112" fill="#f97316"/>
-      <rect x="45" y="124" width="210" height="42" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-      <text x="150" y="150" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12.5" fill="#7c2d12">Copy + paste result</text>
-      <line x1="150" y1="166" x2="150" y2="191" stroke="#f97316" stroke-width="3"/>
-      <polygon points="144,191 150,203 156,191" fill="#f97316"/>
-      <rect x="45" y="203" width="210" height="42" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
-      <text x="150" y="229" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="12.5" fill="#991b1b">No creative muscle built</text>
-
-      <!-- Right path: Creator -->
-      <text x="490" y="30" text-anchor="middle" font-family="Fredoka One, cursive" font-size="15" fill="#0f766e">The Creator Path</text>
-      <rect x="385" y="45" width="210" height="42" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
-      <text x="490" y="71" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12.5" fill="#134e4a">"AI, give me 3 options"</text>
-      <line x1="490" y1="87" x2="490" y2="112" stroke="#0d9488" stroke-width="3"/>
-      <polygon points="484,112 490,124 496,112" fill="#0d9488"/>
-      <rect x="385" y="124" width="210" height="42" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
-      <text x="490" y="146" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12.5" fill="#134e4a">Pick, change, or improve</text>
-      <text x="490" y="160" text-anchor="middle" font-family="Nunito, sans-serif" font-size="10.5" fill="#134e4a">one — add their own idea</text>
-      <line x1="490" y1="166" x2="490" y2="191" stroke="#0d9488" stroke-width="3"/>
-      <polygon points="484,191 490,203 496,191" fill="#0d9488"/>
-      <rect x="385" y="203" width="210" height="42" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-      <text x="490" y="229" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="12.5" fill="#065f46">Creative muscle strengthened</text>
-    </svg>
-    <p class="diagram-caption">Same tool. Same five minutes. Completely different outcome for a developing creative mind.</p>
+  <div class="hero-btns">
+    <a class="btn-primary" href="https://volareconsultants.gumroad.com" target="_blank">Browse All Products →</a>
+    <a class="btn-secondary" href="#awareness">Explore the Journey</a>
   </div>
 
-  <h2>A simple house rule that works</h2>
-  <p>You don't need to ban AI from creative projects — that usually backfires anyway. A more durable rule: <strong>AI can offer options, but a person always makes the final creative choice.</strong> Ask your child to point out which part of the final result was actually theirs. If they can't answer that, it's worth revisiting how the tool was used.</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">30+</div><div class="stat-label">Books</div></div>
+    <div class="stat"><div class="stat-num">110</div><div class="stat-label">Interactive Games</div></div>
+    <div class="stat"><div class="stat-num">3</div><div class="stat-label">Age Tiers</div></div>
+    <div class="stat"><div class="stat-num">11</div><div class="stat-label">ASEAN Countries</div></div>
+  </div>
+</section>
 
-  <div class="talk-box">
-    <h3>💬 Try this tonight</h3>
-    <p>"If an AI could draw or write anything for you instantly, what would you still want to make yourself?"</p>
+<!-- ═══════════════════════════════════════════════
+     LEARNING CENTER (full articles, in-page)
+════════════════════════════════════════════════ -->
+<div id="learn" style="background:#ffffff;padding:3.5rem 2rem;border-bottom:1px solid #e2e8f0;">
+  <div style="max-width:760px;margin:0 auto;">
+
+    <div style="text-align:center;margin-bottom:2.5rem;">
+      <div style="display:inline-block;background:#fff7ed;color:#c2410c;font-size:0.75rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:20px;margin-bottom:0.9rem;">The Learning Center · Free</div>
+      <h2 style="font-family:'Fredoka One',cursive;font-size:1.9rem;color:#0f172a;margin-bottom:0.5rem;">Read, learn, and enjoy the journey.</h2>
+      <p style="color:#64748b;font-size:0.97rem;max-width:560px;margin:0 auto;">Plain-English articles for parents and kids navigating AI together — free, and growing regularly. No payment required, ever.</p>
+    </div>
+
+    <!-- ARTICLE 1 -->
+    <div style="border:1px solid #ccfbf1;border-radius:16px;overflow:hidden;margin-bottom:2rem;">
+      <div style="background:linear-gradient(135deg,#0f766e 0%,#134e4a 100%);padding:1.75rem 2rem;">
+        <div style="display:inline-block;background:rgba(255,255,255,0.15);color:#99f6e4;font-size:0.7rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.9rem;border-radius:20px;margin-bottom:0.9rem;">AI Basics</div>
+        <h3 style="font-family:'Fredoka One',cursive;font-size:1.5rem;color:#ffffff;line-height:1.3;">How Does AI Actually Learn?</h3>
+        <p style="color:#99f6e4;font-size:0.88rem;margin-top:0.4rem;">A plain-English guide for parents and kids — read it together, no jargon</p>
+      </div>
+      <div style="padding:2rem;">
+        <p style="color:#334155;margin-bottom:1.1rem;">Your child has probably asked an AI chatbot a question and gotten an answer back in seconds. It feels a little like magic — or a little like talking to a very fast, very confident friend. But AI isn't thinking, and it isn't magic. It's doing something much more specific, and once you understand what that is, a lot of the mystery disappears.</p>
+
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:#0f766e;margin:1.5rem 0 0.7rem;">It's not thinking. It's pattern-matching.</h4>
+        <p style="color:#334155;margin-bottom:1.1rem;">Imagine you read ten thousand recipes for chocolate cake. After a while, you'd start to notice patterns — most cakes use flour, sugar, eggs, and butter, roughly in certain proportions, baked at a similar temperature. You wouldn't need to "understand" baking chemistry to guess a reasonable eleventh recipe. You'd just be really, really good at spotting the pattern.</p>
+        <p style="color:#334155;margin-bottom:1.1rem;">That's close to what AI does — except instead of ten thousand recipes, it has been shown an almost unimaginable number of pieces of text, images, and other data. It learns which words tend to follow other words, which patterns tend to answer which kinds of questions. When your child asks it something, it isn't recalling a fact the way a person would. It's predicting what a good answer would probably look like, based on patterns it has seen before.</p>
+
+        <div style="background:#fff7ed;border-left:5px solid #f97316;border-radius:10px;padding:1.1rem 1.4rem;margin:1.4rem 0;font-size:0.95rem;color:#0f172a;">
+          <strong style="color:#c2410c;">Why this matters:</strong> An AI can sound completely confident while being completely wrong — because it isn't checking facts, it's completing a pattern. Confidence and correctness are two different things, and AI is very good at the first one without always having the second.
+        </div>
+
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:#0f766e;margin:1.5rem 0 0.7rem;">So how does it "learn" in the first place?</h4>
+        <p style="color:#334155;margin-bottom:1.1rem;">Think of it like an enormous exam with practice questions but no answer key at first. The system makes a guess, checks how far off it was, adjusts slightly, and tries again — billions of times, on billions of examples — until its guesses get reliably close. Nobody sits down and teaches it rules like "cats have four legs." It works out the pattern for itself, purely from seeing enough examples.</p>
+
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:1.5rem 1rem;margin:1.5rem 0;text-align:center;">
+          <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;height:auto;">
+            <rect x="10" y="70" width="150" height="80" rx="14" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+            <text x="85" y="100" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="13" fill="#0f766e">Millions of</text>
+            <text x="85" y="118" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="13" fill="#0f766e">Examples</text>
+            <text x="85" y="136" text-anchor="middle" font-family="Nunito, sans-serif" font-size="10" fill="#134e4a">(text, images, etc.)</text>
+            <line x1="165" y1="110" x2="215" y2="110" stroke="#f97316" stroke-width="3"/>
+            <polygon points="215,104 227,110 215,116" fill="#f97316"/>
+            <rect x="232" y="60" width="170" height="100" rx="14" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+            <text x="317" y="95" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="13" fill="#c2410c">Guess → Check →</text>
+            <text x="317" y="113" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="13" fill="#c2410c">Adjust</text>
+            <text x="317" y="133" text-anchor="middle" font-family="Nunito, sans-serif" font-size="10" fill="#7c2d12">(billions of times)</text>
+            <line x1="407" y1="110" x2="457" y2="110" stroke="#f97316" stroke-width="3"/>
+            <polygon points="457,104 469,110 457,116" fill="#f97316"/>
+            <rect x="474" y="70" width="155" height="80" rx="14" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/>
+            <text x="551" y="100" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="13" fill="#0f766e">A Pattern</text>
+            <text x="551" y="118" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="13" fill="#0f766e">"Model"</text>
+            <text x="551" y="136" text-anchor="middle" font-family="Nunito, sans-serif" font-size="10" fill="#134e4a">(ready to predict)</text>
+          </svg>
+          <p style="font-size:0.85rem;color:#64748b;margin-top:1rem;font-style:italic;">This is the whole idea in one picture — not memorizing facts, but building a giant pattern-predictor.</p>
+        </div>
+
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:#0f766e;margin:1.5rem 0 0.7rem;">Why it sometimes gets things confidently wrong</h4>
+        <p style="color:#334155;margin-bottom:1.1rem;">Because AI is predicting patterns rather than checking facts, it can produce something called a "hallucination" — a made-up answer that sounds completely plausible. It's not lying on purpose. It's doing exactly what it was built to do: complete the pattern, even when the honest answer would be "I don't know."</p>
+        <p style="color:#334155;margin-bottom:1.1rem;">This is exactly why teaching your child to double-check AI answers against something they know, or a trusted source, matters more than teaching them to avoid AI altogether. The skill isn't distrust — it's verification.</p>
+
+        <div style="background:#ccfbf1;border-radius:14px;padding:1.5rem 1.75rem;margin:1.75rem 0;">
+          <h4 style="font-family:'Fredoka One',cursive;font-size:1.05rem;color:#0f766e;margin-bottom:0.6rem;">💬 Try this tonight</h4>
+          <p style="color:#0f172a;font-weight:600;">"If an AI doesn't actually know things the way we do, what do you think it's really good at — and what should we always double-check?"</p>
+        </div>
+
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:#0f766e;margin:1.5rem 0 0.7rem;">The one idea to take away</h4>
+        <p style="color:#334155;margin-bottom:0;">AI is a remarkably good pattern-matcher, not a thinker. That single distinction explains almost everything confusing about how it behaves — why it's fast, why it's sometimes wrong with total confidence, and why the most useful skill for your child isn't learning to avoid it, but learning to work with it wisely.</p>
+      </div>
+      <div style="background:#0f172a;padding:1.75rem 2rem;text-align:center;">
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:#5eead4;margin-bottom:0.5rem;">Want to go deeper with your child?</h4>
+        <p style="color:#cbd5e1;font-size:0.9rem;max-width:480px;margin:0 auto 1rem;">"What Is AI, Really?" is our full Book 1 — hands-on activities and guided exercises that build on exactly this idea, for ages 8–11.</p>
+        <a href="https://volareconsultants.gumroad.com/l/awareness-book1" target="_blank" style="background:#f97316;color:#ffffff;padding:0.65rem 1.5rem;border-radius:25px;font-weight:800;font-size:0.88rem;text-decoration:none;display:inline-block;">See the Book →</a>
+      </div>
+    </div>
+
+    <!-- ARTICLE 2 -->
+    <div style="border:1px solid #ccfbf1;border-radius:16px;overflow:hidden;">
+      <div style="background:linear-gradient(135deg,#0f766e 0%,#134e4a 100%);padding:1.75rem 2rem;">
+        <div style="display:inline-block;background:rgba(255,255,255,0.15);color:#99f6e4;font-size:0.7rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0.3rem 0.9rem;border-radius:20px;margin-bottom:0.9rem;">Creativity</div>
+        <h3 style="font-family:'Fredoka One',cursive;font-size:1.5rem;color:#ffffff;line-height:1.3;">Is AI Making Kids Less Creative?</h3>
+        <p style="color:#99f6e4;font-size:0.88rem;margin-top:0.4rem;">The honest answer — and the one habit that actually protects a child's creative voice</p>
+      </div>
+      <div style="padding:2rem;">
+        <p style="color:#334155;margin-bottom:1.1rem;">It's one of the most common worries parents raise: if an AI can draw the picture, write the story, or compose the song in seconds, will children ever develop their own creative voice? It's a fair question — and the honest answer is more specific than a simple yes or no.</p>
+
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:#0f766e;margin:1.5rem 0 0.7rem;">The risk isn't what most people think</h4>
+        <p style="color:#334155;margin-bottom:1.1rem;">AI doesn't make a child less imaginative just by existing. The real risk is quieter: a child using AI to <strong style="color:#0f172a;">skip the struggle</strong> — asking it to finish the story, design the poster, or write the song — and never discovering that the struggle itself is where their own voice actually comes from.</p>
+        <p style="color:#334155;margin-bottom:1.1rem;">Creativity isn't a personality trait some kids have and others don't. It's a muscle that gets built through the uncomfortable middle part — staring at a blank page, trying an idea that doesn't work, trying again. Skip that part enough times, and the muscle never develops, regardless of how "creative" the output looks.</p>
+
+        <div style="background:#fff7ed;border-left:5px solid #f97316;border-radius:10px;padding:1.1rem 1.4rem;margin:1.4rem 0;font-size:0.95rem;color:#0f172a;">
+          <strong style="color:#c2410c;">The key distinction:</strong> A consumer asks AI to finish the work. A creator asks AI for a starting point, a second opinion, or a technical assist — and still does the thinking. Same tool, completely different outcome.
+        </div>
+
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:#0f766e;margin:1.5rem 0 0.7rem;">What "using AI well" actually looks like</h4>
+        <p style="color:#334155;margin-bottom:1.1rem;">Think of a sparring partner, not a replacement. A child writing a story might ask AI: "Give me three different ways this character could react to bad news" — then pick the one that feels right, or write a better fourth option themselves. That's AI amplifying their thinking. It's very different from asking AI to "just write the ending" and pasting it in.</p>
+
+        <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:1.5rem 1rem;margin:1.5rem 0;text-align:center;">
+          <svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;height:auto;">
+            <text x="150" y="30" text-anchor="middle" font-family="Fredoka One, cursive" font-size="15" fill="#c2410c">The Consumer Path</text>
+            <rect x="45" y="45" width="210" height="42" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+            <text x="150" y="71" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12.5" fill="#7c2d12">"AI, finish this for me"</text>
+            <line x1="150" y1="87" x2="150" y2="112" stroke="#f97316" stroke-width="3"/>
+            <polygon points="144,112 150,124 156,112" fill="#f97316"/>
+            <rect x="45" y="124" width="210" height="42" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
+            <text x="150" y="150" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12.5" fill="#7c2d12">Copy + paste result</text>
+            <line x1="150" y1="166" x2="150" y2="191" stroke="#f97316" stroke-width="3"/>
+            <polygon points="144,191 150,203 156,191" fill="#f97316"/>
+            <rect x="45" y="203" width="210" height="42" rx="10" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+            <text x="150" y="229" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="12.5" fill="#991b1b">No creative muscle built</text>
+            <text x="490" y="30" text-anchor="middle" font-family="Fredoka One, cursive" font-size="15" fill="#0f766e">The Creator Path</text>
+            <rect x="385" y="45" width="210" height="42" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+            <text x="490" y="71" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12.5" fill="#134e4a">"AI, give me 3 options"</text>
+            <line x1="490" y1="87" x2="490" y2="112" stroke="#0d9488" stroke-width="3"/>
+            <polygon points="484,112 490,124 496,112" fill="#0d9488"/>
+            <rect x="385" y="124" width="210" height="42" rx="10" fill="#f0fdfa" stroke="#0d9488" stroke-width="2"/>
+            <text x="490" y="146" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="700" font-size="12.5" fill="#134e4a">Pick, change, or improve</text>
+            <text x="490" y="160" text-anchor="middle" font-family="Nunito, sans-serif" font-size="10.5" fill="#134e4a">one — add their own idea</text>
+            <line x1="490" y1="166" x2="490" y2="191" stroke="#0d9488" stroke-width="3"/>
+            <polygon points="484,191 490,203 496,191" fill="#0d9488"/>
+            <rect x="385" y="203" width="210" height="42" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+            <text x="490" y="229" text-anchor="middle" font-family="Nunito, sans-serif" font-weight="800" font-size="12.5" fill="#065f46">Creative muscle strengthened</text>
+          </svg>
+          <p style="font-size:0.85rem;color:#64748b;margin-top:1rem;font-style:italic;">Same tool. Same five minutes. Completely different outcome for a developing creative mind.</p>
+        </div>
+
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:#0f766e;margin:1.5rem 0 0.7rem;">A simple house rule that works</h4>
+        <p style="color:#334155;margin-bottom:1.1rem;">You don't need to ban AI from creative projects — that usually backfires anyway. A more durable rule: <strong style="color:#0f172a;">AI can offer options, but a person always makes the final creative choice.</strong> Ask your child to point out which part of the final result was actually theirs. If they can't answer that, it's worth revisiting how the tool was used.</p>
+
+        <div style="background:#ccfbf1;border-radius:14px;padding:1.5rem 1.75rem;margin:1.75rem 0;">
+          <h4 style="font-family:'Fredoka One',cursive;font-size:1.05rem;color:#0f766e;margin-bottom:0.6rem;">💬 Try this tonight</h4>
+          <p style="color:#0f172a;font-weight:600;">"If an AI could draw or write anything for you instantly, what would you still want to make yourself?"</p>
+        </div>
+
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.15rem;color:#0f766e;margin:1.5rem 0 0.7rem;">The one idea to take away</h4>
+        <p style="color:#334155;margin-bottom:0;">AI doesn't dull creativity by existing. Skipping the creative struggle does. The goal isn't less AI — it's making sure your child is still the one doing the deciding, the improving, and the final creative call, every time.</p>
+      </div>
+      <div style="background:#0f172a;padding:1.75rem 2rem;text-align:center;">
+        <h4 style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:#5eead4;margin-bottom:0.5rem;">Want a hands-on way to practice this?</h4>
+        <p style="color:#cbd5e1;font-size:0.9rem;max-width:480px;margin:0 auto 1rem;">The Creative AI Project Tracker is a free printable that helps kids plan a project step-by-step and check that their own voice stayed in the driver's seat.</p>
+        <a href="https://volareconsultants.gumroad.com/l/creative-ai-project-tracker-free" target="_blank" style="background:#f97316;color:#ffffff;padding:0.65rem 1.5rem;border-radius:25px;font-weight:800;font-size:0.88rem;text-decoration:none;display:inline-block;">Get the Free Tracker →</a>
+      </div>
+    </div>
+
+    <p style="text-align:center;color:#94a3b8;font-size:0.85rem;margin-top:2rem;">More free articles added regularly — check back often.</p>
+  </div>
+</div>
+
+<!-- FREE RESOURCES SECTION -->
+<div id="free" style="background:linear-gradient(135deg,#134e4a 0%,#0f172a 100%);padding:3rem 2rem;text-align:center;">
+<div style="max-width:1000px;margin:0 auto;">
+<div style="display:inline-block;background:rgba(94,234,212,0.15);color:#5eead4;font-size:0.75rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:20px;border:1px solid rgba(94,234,212,0.3);margin-bottom:1.25rem;">Free Resources — No Payment Required</div>
+<h2 style="font-family:'Fredoka One',cursive;font-size:clamp(1.6rem,4vw,2.4rem);color:#ffffff;margin-bottom:0.75rem;line-height:1.2;">Not sure where to start?<br><span style="color:#5eead4;">Try one of these free tools first.</span></h2>
+<p style="color:#ccfbf1;font-size:0.97rem;max-width:580px;margin:0 auto 2rem;">Four free downloads — no payment, no signup friction. Start with whichever fits what's on your mind right now.</p>
+
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;text-align:left;">
+
+  <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(94,234,212,0.3);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+    <div style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#5eead4;">For Parents · 25 Checklist Items</div>
+    <div style="font-weight:800;color:#ffffff;font-size:1.02rem;line-height:1.3;">AI Safety Checklist for Parents</div>
+    <div style="font-size:0.85rem;color:#99f6e4;">Conversations · Privacy · Critical Thinking · Emotional Safety · AI-Ready Child</div>
+    <a href="https://volareconsultants.gumroad.com/l/ai-safety-checklist-for-parents" target="_blank" style="margin-top:auto;background:#f97316;color:#ffffff;padding:0.6rem 1.2rem;border-radius:22px;font-weight:800;font-size:0.88rem;text-decoration:none;text-align:center;">Download Free →</a>
   </div>
 
-  <h2>The one idea to take away</h2>
-  <p>AI doesn't dull creativity by existing. Skipping the creative struggle does. The goal isn't less AI — it's making sure your child is still the one doing the deciding, the improving, and the final creative call, every time.</p>
+  <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(94,234,212,0.3);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+    <div style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#5eead4;">Printable · 8 Self-Checks</div>
+    <div style="font-weight:800;color:#ffffff;font-size:1.02rem;line-height:1.3;">AI Homework Helper Checklist</div>
+    <div style="font-size:0.85rem;color:#99f6e4;">Is AI helping your child learn — or just finish faster? A4 + US Letter included.</div>
+    <a href="https://volareconsultants.gumroad.com/l/ai-homework-helper-checklist-free" target="_blank" style="margin-top:auto;background:#f97316;color:#ffffff;padding:0.6rem 1.2rem;border-radius:22px;font-weight:800;font-size:0.88rem;text-decoration:none;text-align:center;">Download Free →</a>
+  </div>
+
+  <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(94,234,212,0.3);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+    <div style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#5eead4;">Printable · 5-Step Tracker</div>
+    <div style="font-weight:800;color:#ffffff;font-size:1.02rem;line-height:1.3;">Creative AI Project Tracker</div>
+    <div style="font-size:0.85rem;color:#99f6e4;">Plan a creative project step-by-step and keep it feeling like their own voice. A4 + US Letter included.</div>
+    <a href="https://volareconsultants.gumroad.com/l/creative-ai-project-tracker-free" target="_blank" style="margin-top:auto;background:#f97316;color:#ffffff;padding:0.6rem 1.2rem;border-radius:22px;font-weight:800;font-size:0.88rem;text-decoration:none;text-align:center;">Download Free →</a>
+  </div>
+
+  <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(94,234,212,0.3);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:0.6rem;">
+    <div style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#5eead4;">Printable · 8 Practical Checks</div>
+    <div style="font-weight:800;color:#ffffff;font-size:1.02rem;line-height:1.3;">"Is It Real?" Media Literacy Checklist</div>
+    <div style="font-size:0.85rem;color:#99f6e4;">Helps kids pause and think before believing, sharing, or repeating something online. A4 + US Letter included.</div>
+    <a href="https://volareconsultants.gumroad.com/l/media-literacy-checklist-free" target="_blank" style="margin-top:auto;background:#f97316;color:#ffffff;padding:0.6rem 1.2rem;border-radius:22px;font-weight:800;font-size:0.88rem;text-decoration:none;text-align:center;">Download Free →</a>
+  </div>
 
 </div>
-
-<div class="cta-strip">
-  <h3>Want a hands-on way to practice this?</h3>
-  <p>The Creative AI Project Tracker is a free printable that helps kids plan a project step-by-step and check that their own voice stayed in the driver's seat.</p>
-  <a class="cta-btn" href="https://volareconsultants.gumroad.com/l/creative-ai-project-tracker-free" target="_blank">Get the Free Tracker →</a>
+<p style="color:#4b6b68;font-size:0.8rem;margin-top:1.5rem;">You will be taken to Gumroad. Price is already set to 0. Download instantly.</p>
+</div>
 </div>
 
+<!-- FREE TIP STRIP -->
+<div class="free-tip">
+  <div class="free-tip-label">Free Tip for Parents</div>
+  <p>The single most useful thing you can do this week: ask your child to explain to you what they think AI actually is — in their own words. Don't correct them. Just listen. What they say will tell you exactly where their understanding is strong and where the gaps are. Most children describe AI as "smart" or "like a brain." That's the starting point this programme builds from.</p>
+</div>
+
+
+<!-- PHASE C: BITE-SIZED CONTENT -->
+
+<!-- Strip 1: Reality Check -->
+<div style="background:#ffffff;padding:3.5rem 2rem;border-bottom:1px solid #e2e8f0;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <div style="display:inline-block;background:#fff7ed;color:#c2410c;font-size:0.75rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:20px;margin-bottom:0.9rem;">The AI Future Your Child Is Growing Into</div>
+      <h2 style="font-family:'Fredoka One',cursive;font-size:1.7rem;color:#0f172a;margin-bottom:0.4rem;">Three things most parents haven't considered yet.</h2>
+      <p style="color:#64748b;font-size:0.95rem;max-width:560px;margin:0 auto;">Not to frighten you. Because if nobody tells you now, the world will tell your child later — without preparation.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;">
+
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-top:4px solid #f97316;border-radius:12px;padding:1.5rem;">
+        <div style="font-family:'Fredoka One',cursive;font-size:1rem;color:#c2410c;margin-bottom:0.6rem;">01 — The Creativity Reality</div>
+        <p style="font-size:0.95rem;color:#334155;line-height:1.7;">Many parents worry AI will make children less creative. The opposite risk is quieter and more common: children using AI to skip the creative struggle entirely — asking it to finish the story, design the poster, write the song — and never discovering that the struggle itself is where their own voice comes from. AI should be a creative sparring partner, not a replacement for the blank page.</p>
+      </div>
+
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-top:4px solid #f97316;border-radius:12px;padding:1.5rem;">
+        <div style="font-family:'Fredoka One',cursive;font-size:1rem;color:#c2410c;margin-bottom:0.6rem;">02 — The Attention Reality</div>
+        <p style="font-size:0.95rem;color:#334155;line-height:1.7;">AI tools are increasingly built to keep children engaged for as long as possible — the same way social media was. A chatbot that responds instantly, agrees easily, and never gets bored is, by design, more compelling than homework, chores, or even friends. Parents who don't discuss this openly are leaving their child's attention to be shaped entirely by design choices made in someone else's boardroom.</p>
+      </div>
+
+      <div style="background:#f8fafc;border:1px solid #e2e8f0;border-top:4px solid #f97316;border-radius:12px;padding:1.5rem;">
+        <div style="font-family:'Fredoka One',cursive;font-size:1rem;color:#c2410c;margin-bottom:0.6rem;">03 — The Privacy Reality</div>
+        <p style="font-size:0.95rem;color:#334155;line-height:1.7;">Every question a child asks an AI tool is often stored, analyzed, and sometimes used to train future systems. Children rarely think about this — to them, it feels like talking to a diary that talks back. Teaching a child that AI conversations are not private, the same way teaching them not to overshare online, is quickly becoming a basic digital literacy skill, not an advanced one.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Strip 2: Family Conversation Starters -->
+<div style="background:#f0fdfa;border-top:3px solid #0d9488;border-bottom:3px solid #0d9488;padding:3.5rem 2rem;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <div style="display:inline-block;background:#0d9488;color:#ffffff;font-size:0.75rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;padding:0.35rem 1rem;border-radius:20px;margin-bottom:0.9rem;">This Month's Family Conversation</div>
+      <h2 style="font-family:'Fredoka One',cursive;font-size:1.7rem;color:#0f172a;margin-bottom:0.4rem;">One question. Tonight. No preparation needed.</h2>
+      <p style="color:#64748b;font-size:0.95rem;max-width:560px;margin:0 auto;">Ask this at dinner, in the car, or before bed. Listen more than you speak. The conversation that follows will tell you everything about where your child's AI understanding currently stands.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;">
+
+      <div style="background:#ffffff;border:1px solid #ccfbf1;border-radius:12px;padding:1.5rem;">
+        <div style="display:inline-block;background:#ccfbf1;color:#0f766e;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:0.2rem 0.7rem;border-radius:10px;margin-bottom:0.75rem;">Ages 8–11</div>
+        <p style="font-size:1rem;font-weight:800;color:#0f172a;line-height:1.4;margin-bottom:0.6rem;">"If an AI could draw or write anything for you instantly, what would you still want to make yourself?"</p>
+        <p style="font-size:0.83rem;color:#64748b;font-style:italic;">Listen for what they still value doing with their own hands and mind — that's what to protect and nurture.</p>
+      </div>
+
+      <div style="background:#ffffff;border:1px solid #ccfbf1;border-radius:12px;padding:1.5rem;">
+        <div style="display:inline-block;background:#ccfbf1;color:#0f766e;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:0.2rem 0.7rem;border-radius:10px;margin-bottom:0.75rem;">Ages 11–14</div>
+        <p style="font-size:1rem;font-weight:800;color:#0f172a;line-height:1.4;margin-bottom:0.6rem;">"Do you think an AI chatbot could ever really understand you the way a friend does?"</p>
+        <p style="font-size:0.83rem;color:#64748b;font-style:italic;">This opens the door to how they're using AI emotionally, without making them feel judged for it.</p>
+      </div>
+
+      <div style="background:#ffffff;border:1px solid #ccfbf1;border-radius:12px;padding:1.5rem;">
+        <div style="display:inline-block;background:#ccfbf1;color:#0f766e;font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;padding:0.2rem 0.7rem;border-radius:10px;margin-bottom:0.75rem;">Ages 14–17</div>
+        <p style="font-size:1rem;font-weight:800;color:#0f172a;line-height:1.4;margin-bottom:0.6rem;">"If everything you saw online could be AI-generated and look completely real, how would you decide what to trust?"</p>
+        <p style="font-size:0.83rem;color:#64748b;font-style:italic;">Teenagers who can articulate their own trust framework are far better equipped than those who've never had to think about it.</p>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:#64748b;font-size:0.82rem;margin-top:1.5rem;">Updated monthly. Come back next month for a new set of conversation starters.</p>
+    <p style="text-align:center;margin-top:1rem;"><a href="https://volareconsultants.gumroad.com/l/ai-creator-lab-family-conversation-cards" target="_blank" style="background:#0d9488;color:#ffffff;padding:0.6rem 1.4rem;border-radius:25px;font-weight:800;font-size:0.88rem;text-decoration:none;display:inline-block;">🃏 Get the Full Free Deck — 15 Cards Across All 3 Tiers →</a></p>
+  </div>
+</div>
+
+<!-- WHY THIS MATTERS -->
+<div class="section">
+  <p style="font-size:0.8rem;font-weight:800;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-bottom:0.3rem;">Why This Matters</p>
+  <h2 class="section-title">The Case for AI Literacy — Now</h2>
+  <p class="section-sub">Your child already uses AI every day. The question isn't whether they'll encounter AI. It's whether they'll be ready.</p>
+  <div class="why-grid">
+    <div class="why-card"><div class="why-icon">🧠</div><h3>Understand, Don't Just Use</h3><p>Most children use AI without understanding what it is. We teach what AI actually does — pattern matching, not thinking — so your child isn't fooled by it.</p></div>
+    <div class="why-card"><div class="why-icon">🔍</div><h3>Question, Don't Just Trust</h3><p>AI hallucinations are real. AI confidently states wrong facts. Your child learns to catch errors — a critical thinking skill that protects them for life.</p></div>
+    <div class="why-card"><div class="why-icon">🎨</div><h3>Create, Don't Just Consume</h3><p>A consumer copies AI output. A creator uses AI as a tool and adds their own thinking. We teach the creator mindset from age 8.</p></div>
+    <div class="why-card"><div class="why-icon">🛡️</div><h3>Stay Safe Online</h3><p>Privacy, scams, stranger danger, digital footprints — your child learns safety instincts for the AI age through practice, not lectures.</p></div>
+    <div class="why-card"><div class="why-icon">👨‍👩‍👧</div><h3>Learn Together as a Family</h3><p>Some products are designed for parent and child to use together. Children bring tech comfort. Parents bring life wisdom. Together, better decisions.</p></div>
+    <div class="why-card"><div class="why-icon">🌏</div><h3>Made for ASEAN</h3><p>Set in Singapore, Malaysia, and the Philippines with cultural framing from across Southeast Asia. Your child sees themselves in the stories.</p></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     AWARENESS TIER
+════════════════════════════════════════════════ -->
+<div id="awareness" class="tier-section">
+  <div class="tier-inner">
+    <div class="tier-header">
+      <div class="tier-badge">Awareness Tier</div>
+      <div class="tier-heading">
+        <h2>Ages 8–11 · I Understand AI</h2>
+        <p>Follow Aisyah, a 9-year-old from Tiong Bahru, Singapore — from "What is AI?" all the way to "I am a maker."</p>
+      </div>
+    </div>
+
+    <div class="bundle-card">
+      <div class="bundle-card-text">
+        <h3>⭐ Awareness Complete Bundle — Best Value</h3>
+        <p>All 12 books + 60 interactive games in one download. Ages 8–11.</p>
+        <p style="margin-top:0.5rem;">🎓 <a href="https://volareconsultants.gumroad.com/l/ai-creator-lab-certificate-awareness-tier" target="_blank" style="color:#5eead4;text-decoration:underline;">Free Certificate of Completion for this tier →</a></p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 29</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/awareness-complete-bundle" target="_blank">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <div class="subsection-label">Instructional Books (Ages 8–11)</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label">Book 1 · Free Preview Available</div>
+        <div class="product-title">What Is AI, Really?</div>
+        <div class="product-inside">Explanations, hands-on activities, and guided exercises · Ages 8–11 · Works without a teacher</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book1" target="_blank">Get It Now →</a></div>
+        <div style="margin-top:0.3rem;"><a href="https://volareconsultants.gumroad.com/l/ai-creator-lab-activity-pack-what-is-ai-really" target="_blank" style="font-size:0.78rem;color:#0f766e;text-decoration:underline;">🎨 Free companion Activity Worksheet Pack →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 2</div>
+        <div class="product-title">Ask Better Questions</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book2" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 3</div>
+        <div class="product-title">Make Your First AI Project</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book3" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 4</div>
+        <div class="product-title">Spot the Mistake</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book4" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 5</div>
+        <div class="product-title">Build With Your Parents</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book5" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 6 · Finale</div>
+        <div class="product-title">Code Your First Tool</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book6" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+
+    <div class="subsection-label">Storybook Editions — Aisyah's Journey (Ages 8–11)</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label">Storybook 1</div>
+        <div class="product-title">Aisyah's Discovery</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book1-storybook" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 2</div>
+        <div class="product-title">Aisyah's Second Discovery</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book2-storybook" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 3</div>
+        <div class="product-title">Aisyah's Third Discovery</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book3-storybook" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 4</div>
+        <div class="product-title">Aisyah's Fourth Discovery</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book4-storybook" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 5</div>
+        <div class="product-title">Aisyah's Fifth Discovery</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book5-storybook" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 6 · Finale</div>
+        <div class="product-title">Aisyah's Sixth Discovery</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-book6-storybook" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+
+    <div class="subsection-label">Interactive Game Sets — 10 Games Each (Ages 8–11)</div>
+    <div class="product-grid">
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 1 · 10 Games</div>
+        <div class="product-title">Pattern Makers</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set1-pattern-makers" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 2 · 10 Games</div>
+        <div class="product-title">Project Lab</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set2-project-lab" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 3 · 10 Games</div>
+        <div class="product-title">Error Hunters</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set3-error-hunters" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 4 · 10 Games</div>
+        <div class="product-title">Family Builders</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set4-family-builders" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 5 · 10 Games</div>
+        <div class="product-title">Tool Makers</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set5-tool-makers" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label">Game Set 6 · 10 Games</div>
+        <div class="product-title">AI Safety Zone</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/awareness-set6-safety-zone" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     THINKING TIER
+════════════════════════════════════════════════ -->
+<div id="thinking" class="tier-section">
+  <div class="tier-inner">
+    <div class="tier-header">
+      <div class="tier-badge" style="background:var(--coral);">Thinking Tier</div>
+      <div class="tier-heading">
+        <h2>Ages 11–14 · I Think With AI</h2>
+        <p>Follow Kai as he moves from understanding AI systems to building real digital products and navigating AI ethics.</p>
+      </div>
+    </div>
+
+    <div class="bundle-card" style="background:linear-gradient(135deg,#7c2d12,var(--coral));">
+      <div class="bundle-card-text">
+        <h3>⭐ Thinking Complete Bundle — Best Value</h3>
+        <p>All Thinking Tier books + storybooks in one bundle. Ages 11–14.</p>
+        <p style="margin-top:0.5rem;">🎓 <a href="https://volareconsultants.gumroad.com/l/ai-creator-lab-certificate-thinking-tier" target="_blank" style="color:#fed7aa;text-decoration:underline;">Free Certificate of Completion for this tier →</a></p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 29</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/thinking-tier-complete-v2" target="_blank">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <div class="subsection-label">Instructional Books (Ages 11–14)</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label">Book 1</div>
+        <div class="product-title">AI Thinking Systems</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book1" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 2</div>
+        <div class="product-title">Build Digital Products With AI</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book2" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 3</div>
+        <div class="product-title">Creative AI Studio</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book3" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 4</div>
+        <div class="product-title">AI Researcher Mode</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book4" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 5</div>
+        <div class="product-title">AI Ethics &amp; Digital Power</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-book5" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+
+    <div class="subsection-label">Storybook Editions — Kai's Journey (Ages 11–14)</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label">Storybook 1</div>
+        <div class="product-title">Kai's First Discovery</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook1" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 2</div>
+        <div class="product-title">The Prototype</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook2" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 3</div>
+        <div class="product-title">The Data Detective</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook3" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 4</div>
+        <div class="product-title">The Story Communicator</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook4" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 5</div>
+        <div class="product-title">The Ethics Navigator</div>
+        <div class="product-footer"><span class="product-price">USD 6</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/thinking-storybook5" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+
+    <div class="subsection-label">Interactive Game Sets — 10 Games Each (Ages 11–14)</div>
+    <div class="product-grid">
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games</div>
+        <div class="product-title">Kai's Systems Thinker</div>
+        <div class="product-detail">Game Set 1 · Pattern Recognition &amp; Logic</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-systems-thinker" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games</div>
+        <div class="product-title">Kai's Digital Builder</div>
+        <div class="product-detail">Game Set 2 · Product Design Thinking</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-digital-builder" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games</div>
+        <div class="product-title">Kai's Creative Lab</div>
+        <div class="product-detail">Game Set 3 · Originality &amp; AI Voice</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-creative-lab" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games</div>
+        <div class="product-title">Kai's Research Mode</div>
+        <div class="product-detail">Game Set 4 · Fact-Checking &amp; Sources</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-research-mode" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card game-card">
+        <div class="product-label new">New · 10 Games · Final</div>
+        <div class="product-title">Kai's Ethics Arena</div>
+        <div class="product-detail">Game Set 5 · Fairness, Power &amp; Dilemmas</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/kai-ethics-arena" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+
+    <div class="bundle-card" style="background:linear-gradient(135deg,#3b0764,#6d28d9);margin-top:1.5rem;">
+      <div class="bundle-card-text">
+        <h3>🎓 Thinking Tier Games Bundle — All 5 Sets</h3>
+        <p>All 50 games across Systems Thinking, Digital Building, Creative Lab, Research Mode, and Ethics Arena.</p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 20 <span style="font-size:0.9rem;color:#c4b5fd;">Save $5</span></div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/kai-thinking-tier-bundle" target="_blank">Get the Bundle →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     LEVERAGE TIER
+════════════════════════════════════════════════ -->
+<div id="leverage" class="tier-section">
+  <div class="tier-inner">
+    <div class="tier-header">
+      <div class="tier-badge" style="background:var(--navy);">Leverage Tier</div>
+      <div class="tier-heading">
+        <h2>Ages 14–17 · I Build With AI</h2>
+        <p>Follow Anya as she goes from AI systems design to launching a startup and navigating the future of AI power by 2035.</p>
+      </div>
+    </div>
+
+    <div class="bundle-card" style="background:linear-gradient(135deg,#0a0f1e,#1e3a5f);">
+      <div class="bundle-card-text">
+        <h3>⭐ Leverage Complete Bundle — Best Value</h3>
+        <p>All Leverage Tier books + storybooks in one bundle. Ages 14–17.</p>
+        <p style="margin-top:0.5rem;">🎓 <a href="https://volareconsultants.gumroad.com/l/ai-creator-lab-certificate-leverage-tier" target="_blank" style="color:#fde68a;text-decoration:underline;">Free Certificate of Completion for this tier →</a></p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 39</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/leverage-bundle-complete" target="_blank">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <div class="subsection-label">Instructional Books (Ages 14–17)</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label">Book 1</div>
+        <div class="product-title">AI Systems Design</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book1" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 2</div>
+        <div class="product-title">Build an AI Startup (Teen Edition)</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book2" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 3</div>
+        <div class="product-title">Advanced Prompt Engineering</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book3" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 4</div>
+        <div class="product-title">AI &amp; Coding Foundations</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book4" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 5 · Grand Finale</div>
+        <div class="product-title">AI, Power &amp; The Future 2035</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-book5" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+
+    <div class="subsection-label">Storybook Editions — Anya's Journey (Ages 14–17)</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label">Storybook 1</div>
+        <div class="product-title">The Architect</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook1" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 2</div>
+        <div class="product-title">The Founder</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook2" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label new">New · Storybook 3</div>
+        <div class="product-title">The Engineer</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook-3" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label new">New · Storybook 4</div>
+        <div class="product-title">The Consequence</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook-4" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Storybook 5 · Grand Finale</div>
+        <div class="product-title">The Decision</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/leverage-storybook5" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     DIGITAL SMARTS LAB
+════════════════════════════════════════════════ -->
+<div id="digitalsmarts" class="tier-section">
+  <div class="tier-inner">
+    <div class="tier-header">
+      <div class="tier-badge" style="background:#7c3aed;">Digital Smarts Lab</div>
+      <div class="tier-heading">
+        <h2>Ages 8–11 · Online Safety &amp; Digital Life</h2>
+        <p>Six essential tools teaching children how to stay safe, think critically, and navigate the digital world with confidence.</p>
+      </div>
+    </div>
+
+    <div class="bundle-card" style="background:linear-gradient(135deg,#4c1d95,#7c3aed);">
+      <div class="bundle-card-text">
+        <h3>⭐ Digital Smarts Lab Bundle — Best Value</h3>
+        <p>All 6 Digital Smarts Lab books in one bundle. Ages 8–11.</p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 24</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-awareness-bundle" target="_blank">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label">Book 1</div>
+        <div class="product-title">What Is AI?</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-1-wha-is-ai" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 2</div>
+        <div class="product-title">AI All Around Me</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-2-ai-all-around-me" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 3</div>
+        <div class="product-title">Talking to AI</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-3-talking-to-ai" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 4</div>
+        <div class="product-title">Real or AI Made?</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-4-real-or-ai-made" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 5</div>
+        <div class="product-title">My Online Safety Basics</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-5-my-online-safety-basics" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Book 6</div>
+        <div class="product-title">Screen Time &amp; Me</div>
+        <div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/digital-smarts-lab-6-screen-time-and-me" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SMART MONEY
+════════════════════════════════════════════════ -->
+<div id="smartmoney" class="tier-section">
+  <div class="tier-inner">
+    <div class="tier-header">
+      <div class="tier-badge" style="background:#059669;">Smart Money for Smart Kids</div>
+      <div class="tier-heading">
+        <h2>Ages 8–17 · Money Skills for Life</h2>
+        <p>Practical financial literacy tools for children and teens — budgeting, saving, investing, and entrepreneurship, explained simply.</p>
+      </div>
+    </div>
+
+    <!-- Featured product -->
+    <div class="bundle-card" style="background:linear-gradient(135deg,#064e3b,#059669);margin-bottom:1.5rem;">
+      <div class="bundle-card-text">
+        <h3>🎮 New · Kai's Budget Builder — Ages 11–14</h3>
+        <p>Scored activity · Personalised badge · Family Conversation Starters · AI Prompt included · HTML5 · Any device</p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 5</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/kai-budget-builder" target="_blank">Get It Now →</a>
+      </div>
+    </div>
+
+    <div class="subsection-label">🪙 For Kids · Ages 8–11</div>
+    <div class="bundle-card" style="background:linear-gradient(135deg,#064e3b,#047857);">
+      <div class="bundle-card-text">
+        <h3>⭐ Smart Money Kids Bundle (Ages 8–11)</h3>
+        <p>All 6 core tools for younger children in one bundle.</p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 24</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/smart-money-awareness-bundle" target="_blank">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <div class="product-grid" style="margin-top:1rem;">
+      <div class="product-card"><div class="product-label">Tool 1</div><div class="product-title">My First Budget Planner</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-01-my-first-budget-planner" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 2</div><div class="product-title">My First Savings Goal Tracker</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-02-my-first-savings-goal-tracker" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 3</div><div class="product-title">My First Earning &amp; Spending Diary</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-03-my-first-earning-spending-diary" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 4</div><div class="product-title">Needs vs Wants Sorter</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-04-needs-vs-wants-sorter" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 5</div><div class="product-title">My First Money Tracker</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-05-my-first-money-tracker" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 6</div><div class="product-title">Smart Shopper Challenge</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-06-smart-shopper-challenge" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 7</div><div class="product-title">Smart Budget Builder</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-07-smart-budget-builder" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 8</div><div class="product-title">Smart Savings Interest Calculator</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-08-smart-savings-interest-calculator" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 9</div><div class="product-title">Smart Spending Analyser</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-09-smart-spending-analyser" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 10</div><div class="product-title">Business Idea Evaluator</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-10-business-idea-evaluator" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 11</div><div class="product-title">Smart Money Decisions Game</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-11-smart-money-decisions-game" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 12</div><div class="product-title">Smart Earnings Calculator</div><div class="product-footer"><span class="product-price">USD 5</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/lhkvfy" target="_blank">Get It Now →</a></div></div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:2rem;">💼 For Teens · Ages 13–17</div>
+    <div class="bundle-card" style="background:linear-gradient(135deg,#1e3a5f,#1d4ed8);">
+      <div class="bundle-card-text">
+        <h3>⭐ Smart Money Teens Bundle (Ages 13–17)</h3>
+        <p>All 6 teen money tools in one bundle.</p>
+      </div>
+      <div class="bundle-price-group">
+        <div class="bundle-price">USD 24</div>
+        <a class="btn-bundle" href="https://volareconsultants.gumroad.com/l/smart-money-leverage-bundle" target="_blank">Get the Bundle →</a>
+      </div>
+    </div>
+
+    <div class="product-grid" style="margin-top:1rem;">
+      <div class="product-card"><div class="product-label">Tool 13</div><div class="product-title">Teen Budget &amp; Cash Flow Planner</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-13-teen-budget-cash-flow-planner" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 14</div><div class="product-title">Investment Basics Simulator</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-14-investment-basics-simulator" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 15</div><div class="product-title">Side Hustle Profit Calculator</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-15-side-hustle-profit-calculator" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 16</div><div class="product-title">Financial Goal Roadmap</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-16-financial-goal-roadmap" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 17</div><div class="product-title">Credit &amp; Debt Literacy Tool</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-17-credit-debt-literacy-tool" target="_blank">Get It Now →</a></div></div>
+      <div class="product-card"><div class="product-label">Tool 18</div><div class="product-title">My Financial Independence Plan</div><div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/smart-money-18-my-financial-independence-plan" target="_blank">Get It Now →</a></div></div>
+    </div>
+
+    <div class="subsection-label" style="margin-top:2rem;">📚 For Parents · All Ages</div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label new">New · For Parents</div>
+        <div class="product-title">The Family Money Playbook</div>
+        <div class="product-detail">28 pages · 3 age tiers · conversation scripts + family activities</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/the-family-money-playbook" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     ABOUT
+════════════════════════════════════════════════ -->
+<!-- FOR PARENTS & GRANDPARENTS SECTION -->
+<div id="parents" class="tier-section">
+  <div class="tier-inner">
+    <div class="tier-header">
+      <div class="tier-badge" style="background:#d97706;">For Parents &amp; Grandparents</div>
+      <div class="tier-heading">
+        <h2>Raising Children in the AI Age</h2>
+        <p>Two resources for the adults — a free safety guide and a guide about what matters most before technology ever enters the picture.</p>
+      </div>
+    </div>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="product-label">Free Download · For Parents</div>
+        <div class="product-title">AI Safety Checklist for Parents</div>
+        <div class="product-detail">5 areas · 25 practical items · Ages 8–17</div>
+        <div class="product-inside">Conversations · Privacy · Critical Thinking · Emotional Safety · AI-Ready Child</div>
+        <div class="product-footer"><span class="product-price">Free</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/ai-safety-checklist-for-parents" target="_blank">Download Free →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label new">New · For Parents &amp; Grandparents</div>
+        <div class="product-title">Raising a Human First</div>
+        <div class="product-detail">5 virtues · 3 sections · Ages 0–7 focus · Conversation starters</div>
+        <div class="product-inside">Character before technology. Kindness, discipline, respect, honesty, generosity — taught through example, not instruction.</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/raising-a-human-first" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label">Free Preview · Ages 8–11</div>
+        <div class="product-title">What Is AI, Really? — 3 Sample Pages</div>
+        <div class="product-detail">Book 1 · Awareness Tier · Introduction, Activity &amp; Reflection</div>
+        <div class="product-inside">Try before you buy — see exactly what the full book looks like inside.</div>
+        <div class="product-footer"><span class="product-price">Free</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/what-is-ai-really-preview" target="_blank">Download Free →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label new">New · AI for Parents Mini-Series · Guide 1</div>
+        <div class="product-title">AI in Plain English</div>
+        <div class="product-detail">3 pages · No jargon · For parents who feel left behind</div>
+        <div class="product-inside">You don't need to be a tech expert to guide your child. Plain-language explanations of what AI is, how it works, and the one mindset shift that helps most.</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/ai-in-plain-english" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label new">New · AI for Parents Mini-Series · Guide 2</div>
+        <div class="product-title">What Your Child Is Actually Doing With AI</div>
+        <div class="product-detail">3 pages · The real, common ways kids use AI today</div>
+        <div class="product-inside">Homework help, chatting, creating, quick answers — what's genuinely helpful, what to watch for, and one simple weekly habit that keeps you part of the conversation.</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/what-your-child-is-doing-with-ai" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card">
+        <div class="product-label new">New · AI for Parents Mini-Series · Guide 3</div>
+        <div class="product-title">Talking to Your Child About AI</div>
+        <div class="product-detail">3 pages · Conversation starters that keep you part of the picture</div>
+        <div class="product-inside">Why the conversation matters more than the rules — natural ways to start, and how to set boundaries your child actually understands.</div>
+        <div class="product-footer"><span class="product-price">USD 7</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/talking-to-your-child-about-ai" target="_blank">Get It Now →</a></div>
+      </div>
+      <div class="product-card" style="border-color:#f97316;">
+        <div class="product-label new">★ Best Value · Complete Mini-Series</div>
+        <div class="product-title">AI for Parents — Complete Bundle (3 Guides)</div>
+        <div class="product-detail">All 3 guides together · Save vs buying separately</div>
+        <div class="product-inside">AI in Plain English + What Your Child Is Actually Doing With AI + Talking to Your Child About AI — everything you need to feel confident, in one bundle.</div>
+        <div class="product-footer"><span class="product-price">USD 17</span><a class="btn-get" href="https://volareconsultants.gumroad.com/l/ai-for-parents-bundle" target="_blank">Get It Now →</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="about" class="about-section">
+  <div class="about-inner">
+    <h2>About AI Creator Lab™</h2>
+    <p>AI Creator Lab™ is a digital education programme by Volare Consultants, a Singapore sole proprietorship. We believe every child in ASEAN deserves to grow up understanding the technology that will shape their world — not just using it, but questioning it, creating with it, and staying safe within it.</p>
+    <p>All products are delivered digitally via Gumroad. Affordable, instantly downloadable, and designed to work at home, in schools, and in learning centres across all 11 ASEAN countries.</p>
+    <div class="sister-link-block">
+      Looking for <strong>business tools, planners &amp; financial guides for adults?</strong><br>
+      Visit Volare Consultants — our sister store for creators and entrepreneurs.<br>
+      <a href="https://www.volareconsultants.online">www.volareconsultants.online</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <p>AI Creator Lab™ · Learning Center · Free educational content for families</p>
-  <p style="margin-top:0.4rem;"><a href="mailto:support@volarefly.com">Contact Us</a></p>
+  <div class="footer-nav">
+    <a href="#free" style="color:#0d9488;font-weight:800;">Free Resource</a> <a href="#awareness">Ages 8–11</a>
+    <a href="#thinking">Ages 11–14</a>
+    <a href="#leverage">Ages 14–17</a>
+    <a href="#digitalsmarts">Digital Smarts Lab</a>
+    <a href="#smartmoney">Smart Money</a>
+    <a href="https://volareconsultants.gumroad.com" target="_blank">Shop on Gumroad</a>
+    <a href="https://www.volareconsultants.online" target="_blank">Volare Consultants</a>
+    <a href="mailto:support@volarefly.com">Contact Us</a>
+  </div>
+  <p>AI Creator Lab™ · by Volare Consultants · Digital AI literacy for Generation Alpha · Ages 8–17 · ASEAN</p>
+  <p style="margin-top:0.4rem;">© 2026 Volare Consultants. All rights reserved. Made with care in Singapore. Digital products delivered via Gumroad.</p>
 </footer>
 
 </body>
