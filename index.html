@@ -506,6 +506,73 @@
     .acc-body { padding: 0 1.25rem 2rem; }
   }
 
+
+
+  /* ── VIBRANCY PASS (bolder colors, less white space) ── */
+
+  /* Per-tier tinted section backgrounds, replacing plain odd/even white/grey */
+  .acc-section { background: var(--white) !important; }
+  #emotionalsafety { background: linear-gradient(180deg, #fff1f2 0%, #ffffff 100%) !important; border-top: 4px solid #e11d48; }
+  #awareness { background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%) !important; border-top: 4px solid var(--teal); }
+  #thinking { background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%) !important; border-top: 4px solid var(--coral); }
+  #leverage { background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%) !important; border-top: 4px solid var(--navy); }
+  #digitalsmarts { background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 100%) !important; border-top: 4px solid #7c3aed; }
+  #smartmoney { background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%) !important; border-top: 4px solid #059669; }
+  #parents { background: linear-gradient(180deg, #fffbeb 0%, #ffffff 100%) !important; border-top: 4px solid #d97706; }
+
+  /* Bolder, bigger tier badges */
+  .tier-badge {
+    font-size: 0.92rem !important;
+    padding: 0.4rem 1.1rem !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  }
+
+  /* Accordion header gets a hover tint + bolder chevron */
+  .acc-header { border-radius: 12px; transition: background 0.2s; }
+  .acc-header:hover { background: rgba(0,0,0,0.02); }
+  .acc-chevron { font-size: 1.6rem !important; }
+
+  /* Product cards: colored top accent instead of plain border, bolder hover */
+  .product-card {
+    border-top: 3px solid var(--border) !important;
+    transition: box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+  }
+  #emotionalsafety .product-card:hover { border-top-color: #e11d48 !important; box-shadow: 0 6px 20px rgba(225,29,72,0.15); transform: translateY(-3px); }
+  #awareness .product-card:hover { border-top-color: var(--teal) !important; box-shadow: 0 6px 20px rgba(13,148,136,0.18); transform: translateY(-3px); }
+  #thinking .product-card:hover { border-top-color: var(--coral) !important; box-shadow: 0 6px 20px rgba(249,115,22,0.18); transform: translateY(-3px); }
+  #leverage .product-card:hover { border-top-color: var(--navy) !important; box-shadow: 0 6px 20px rgba(10,15,30,0.18); transform: translateY(-3px); }
+  #digitalsmarts .product-card:hover { border-top-color: #7c3aed !important; box-shadow: 0 6px 20px rgba(124,58,237,0.18); transform: translateY(-3px); }
+  #smartmoney .product-card:hover { border-top-color: #059669 !important; box-shadow: 0 6px 20px rgba(5,150,105,0.18); transform: translateY(-3px); }
+  #parents .product-card:hover { border-top-color: #d97706 !important; box-shadow: 0 6px 20px rgba(217,119,6,0.18); transform: translateY(-3px); }
+
+  /* Subsection labels: colored chip instead of plain grey uppercase text */
+  .subsection-label {
+    display: inline-block;
+    background: var(--bg);
+    border: none !important;
+    border-radius: 20px;
+    padding: 0.35rem 1rem !important;
+    color: var(--slate) !important;
+  }
+
+  /* Why This Matters cards: rotating color accents instead of all-white */
+  .why-grid .why-card:nth-child(6n+1) { border-top: 4px solid var(--teal); }
+  .why-grid .why-card:nth-child(6n+2) { border-top: 4px solid var(--coral); }
+  .why-grid .why-card:nth-child(6n+3) { border-top: 4px solid #7c3aed; }
+  .why-grid .why-card:nth-child(6n+4) { border-top: 4px solid #059669; }
+  .why-grid .why-card:nth-child(6n+5) { border-top: 4px solid #d97706; }
+  .why-grid .why-card:nth-child(6n+6) { border-top: 4px solid var(--navy); }
+  .why-card { transition: transform 0.15s, box-shadow 0.2s; }
+  .why-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(15,23,42,0.1); }
+
+  /* Buttons: slightly bolder shadow for punch */
+  .btn-primary, .btn-get, .btn-bundle {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  .btn-primary:hover, .btn-get:hover, .btn-bundle:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  }
+
 </style>
 </head>
 <body>
