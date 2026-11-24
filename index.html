@@ -209,6 +209,7 @@
 <a href="#" onclick="document.querySelector('[data-tab=\'t3\']').click();document.querySelector('.catalog').scrollIntoView();return false;">14-17</a>
 <a href="#" onclick="document.querySelector('[data-tab=\'t4\']').click();document.querySelector('.catalog').scrollIntoView();return false;">Family</a>
 <a href="#templates">Free Library</a>
+<a href="#familyplan">Family AI Plan</a>
 <a href="#learn">Learn</a>
 <a href="#about-us-full">About</a>
 <a class="nav-cta" href="#templates">Start with free guides</a>
@@ -223,6 +224,7 @@
 <button class="btn-primary" onclick="document.getElementById('templates').scrollIntoView({behavior:'smooth'});">Start with free guides</button>
 <a class="link-story" href="#about-us-full">Read our story →</a>
 </div>
+<a href="#familyplan" style="display:inline-block;background:#fff;border:2px solid #1E3A32;color:#1E3A32;font-weight:800;text-decoration:none;padding:0.6rem 1.2rem;border-radius:30px;margin-bottom:16px;font-size:0.98rem;">🧭 New: Make your Family AI Plan together · Free</a>
 <div class="trust-line">♡ No hype, no pressure. Just clear, family-first guidance for the conversations and choices ahead.</div>
 </div>
 <div class="hero-photo-wrap">
@@ -394,6 +396,296 @@
 <div class="product-grid" data-group="t4-safety-b"></div>
 </div>
 </section>
+
+<!-- ═══════════════════════════════════════════════
+     FAMILY AI PLAN · FREE TOOL (parent and child together, ages 8–17)
+     Everything runs in the family's browser. Nothing is collected or sent anywhere.
+════════════════════════════════════════════════ -->
+<div id="familyplan" style="background:#F7F3EA;padding:3.5rem 1.5rem;border-top:4px solid #B5532F;">
+<style>
+  #familyplan, #familyplan * { box-sizing:border-box; }
+  #familyplan .fp-wrap { max-width:1100px; margin:0 auto; font-family:'Nunito',system-ui,sans-serif; color:#1F2A24; }
+  #familyplan .fp-eyebrow { display:inline-block; background:#F6DDD0; color:#8A3A1C; font-size:0.8rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; padding:0.35rem 1rem; border-radius:20px; margin-bottom:0.9rem; }
+  #familyplan h2.fp-title { font-family:'Fredoka','Fredoka One','Nunito',sans-serif; font-weight:700; font-size:clamp(1.8rem,4vw,2.6rem); color:#1E3A32; line-height:1.2; margin:0 0 0.6rem; }
+  #familyplan h2.fp-title em { color:#B5532F; font-style:normal; }
+  #familyplan .fp-sub { font-size:1.08rem; color:#33413A; max-width:700px; margin:0 0 1.6rem; line-height:1.6; }
+  #familyplan .fp-trust { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:1.8rem; }
+  #familyplan .fp-trust span { background:#fff; border:1px solid #E3D9C9; border-radius:20px; padding:0.4rem 0.9rem; font-size:0.92rem; font-weight:700; color:#1E3A32; }
+  #familyplan .fp-grid { display:grid; grid-template-columns:250px 1fr; gap:1.5rem; align-items:start; }
+  #familyplan .fp-grid > * { min-width:0; }
+  #familyplan .fp-side { background:#1E3A32; color:#fff; border-radius:18px; padding:1.4rem; position:sticky; top:100px; }
+  #familyplan .fp-side h3 { font-size:0.8rem; letter-spacing:0.12em; text-transform:uppercase; color:#F2C9A8; margin:0 0 1rem; font-weight:800; }
+  #familyplan .fp-steps { list-style:none; margin:0; padding:0; }
+  #familyplan .fp-steps li { margin-bottom:0.3rem; }
+  #familyplan .fp-steps button { display:flex; align-items:center; gap:0.7rem; width:100%; background:none; border:none; color:#D7E3DC; font-family:inherit; font-size:1rem; font-weight:700; padding:0.45rem 0.4rem; border-radius:10px; cursor:pointer; text-align:left; }
+  #familyplan .fp-steps button:hover { background:rgba(255,255,255,0.08); }
+  #familyplan .fp-n { flex:none; width:30px; height:30px; border-radius:50%; border:2px solid #6F8F82; display:flex; align-items:center; justify-content:center; font-size:0.9rem; font-weight:800; }
+  #familyplan .fp-steps button.on { color:#fff; }
+  #familyplan .fp-steps button.on .fp-n { background:#B5532F; border-color:#B5532F; color:#fff; }
+  #familyplan .fp-steps button.done .fp-n { background:#F2C9A8; border-color:#F2C9A8; color:#1E3A32; }
+  #familyplan .fp-prog { margin-top:1.2rem; border-top:1px solid #3E6155; padding-top:1rem; font-weight:800; font-size:0.95rem; }
+  #familyplan .fp-bar { height:10px; background:#3E6155; border-radius:10px; margin:0.5rem 0 0.2rem; overflow:hidden; }
+  #familyplan .fp-bar span { display:block; height:100%; width:0; background:#F2C9A8; border-radius:10px; transition:width 0.3s; }
+  #familyplan .fp-card { background:#fff; border:1px solid #E3D9C9; border-radius:18px; padding:2rem 2.2rem; box-shadow:0 4px 18px rgba(36,70,59,0.06); }
+  #familyplan .fp-top { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.6rem; }
+  #familyplan .fp-stepno { font-size:0.85rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#5B6B63; }
+  #familyplan .fp-saved { font-size:0.85rem; font-weight:800; color:#1E3A32; background:#E3EEE8; padding:0.3rem 0.8rem; border-radius:20px; }
+  #familyplan h3.fp-q { font-family:'Fredoka','Fredoka One','Nunito',sans-serif; font-weight:700; font-size:1.75rem; color:#1E3A32; line-height:1.25; margin:0 0 0.4rem; }
+  #familyplan .fp-intro { color:#33413A; font-size:1.05rem; margin:0 0 1.3rem; line-height:1.6; }
+  #familyplan .fp-kid { background:#EAF3EE; border-radius:14px; padding:1rem 1.2rem; font-size:1.08rem; color:#1F2A24; margin-bottom:1.2rem; line-height:1.55; }
+  #familyplan .fp-kid b { color:#1E3A32; }
+  #familyplan label.fp-l { display:block; font-weight:800; color:#1F2A24; font-size:1.05rem; margin:1.2rem 0 0.2rem; }
+  #familyplan .fp-h { display:block; color:#4E5D56; font-size:0.95rem; margin-bottom:0.45rem; }
+  #familyplan input[type=text], #familyplan input[type=date], #familyplan textarea, #familyplan select { width:100%; font-family:inherit; font-size:1.05rem; color:#1F2A24; background:#fff; border:2px solid #CFC5B4; border-radius:10px; padding:0.75rem 0.9rem; }
+  #familyplan textarea { min-height:90px; resize:vertical; line-height:1.5; }
+  #familyplan input:focus, #familyplan textarea:focus, #familyplan select:focus, #familyplan button:focus-visible { outline:3px solid #B5532F; outline-offset:2px; }
+  #familyplan .fp-ages { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:0.9rem; }
+  #familyplan .fp-age { border:2px solid #CFC5B4; border-radius:16px; padding:1.1rem 1.2rem; cursor:pointer; background:#fff; text-align:left; font-family:inherit; }
+  #familyplan .fp-age:hover { border-color:#B5532F; }
+  #familyplan .fp-age.on { border-color:#B5532F; background:#FDF1EA; box-shadow:0 0 0 2px #B5532F inset; }
+  #familyplan .fp-age big { display:block; font-size:1.9rem; margin-bottom:0.2rem; }
+  #familyplan .fp-age b { display:block; font-size:1.1rem; color:#1E3A32; }
+  #familyplan .fp-age span { font-size:0.95rem; color:#4E5D56; }
+  #familyplan .fp-checks { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.55rem; }
+  #familyplan .fp-checks label { display:flex; gap:0.65rem; align-items:flex-start; font-size:1.02rem; color:#1F2A24; background:#F7F3EA; border:1px solid #E3D9C9; border-radius:12px; padding:0.7rem 0.85rem; cursor:pointer; line-height:1.4; }
+  #familyplan .fp-checks input { width:22px; height:22px; accent-color:#B5532F; flex:none; margin-top:1px; }
+  #familyplan .fp-pca { display:grid; grid-template-columns:repeat(3,1fr); gap:0.9rem; margin-bottom:1.2rem; }
+  #familyplan .fp-pca div { background:#1E3A32; color:#fff; border-radius:16px; padding:1.1rem; text-align:center; }
+  #familyplan .fp-pca big { display:block; font-family:'Fredoka','Fredoka One','Nunito',sans-serif; font-size:1.6rem; color:#F2C9A8; font-weight:700; }
+  #familyplan .fp-pca span { font-size:0.98rem; line-height:1.45; display:block; margin-top:0.3rem; }
+  #familyplan .fp-scen { border:2px solid #E3D9C9; border-radius:16px; padding:1.1rem 1.2rem; margin-bottom:1rem; }
+  #familyplan .fp-scen p.q { font-weight:800; font-size:1.05rem; margin:0 0 0.7rem; color:#1F2A24; }
+  #familyplan .fp-opts { display:flex; flex-wrap:wrap; gap:0.5rem; }
+  #familyplan .fp-opt { font-family:inherit; font-size:1rem; font-weight:700; border:2px solid #CFC5B4; background:#fff; border-radius:30px; padding:0.55rem 1.1rem; cursor:pointer; color:#1F2A24; }
+  #familyplan .fp-opt.right { background:#E3EEE8; border-color:#1E3A32; }
+  #familyplan .fp-opt.wrong { background:#FBE4DA; border-color:#B5532F; }
+  #familyplan .fp-fb { margin-top:0.7rem; font-size:1rem; line-height:1.5; display:none; }
+  #familyplan .fp-tip { background:#FDF1EA; border-left:5px solid #B5532F; border-radius:10px; padding:1rem 1.2rem; margin-top:1.4rem; font-size:0.98rem; line-height:1.55; color:#1F2A24; }
+  #familyplan .fp-tip b { color:#8A3A1C; }
+  #familyplan .fp-nav { display:flex; justify-content:space-between; gap:0.75rem; flex-wrap:wrap; border-top:1px solid #E3D9C9; margin-top:1.8rem; padding-top:1.4rem; }
+  #familyplan .fp-btn { font-family:inherit; font-weight:800; font-size:1.02rem; border-radius:30px; padding:0.8rem 1.6rem; cursor:pointer; border:2px solid #1E3A32; background:#fff; color:#1E3A32; }
+  #familyplan .fp-btn.pri { background:#B5532F; border-color:#B5532F; color:#fff; }
+  #familyplan .fp-btn.pri:hover { background:#9A4425; border-color:#9A4425; }
+  #familyplan .fp-err { color:#A42A12; font-weight:800; margin-top:0.7rem; display:none; }
+  #familyplan .fp-sum h4 { font-family:'Fredoka','Fredoka One','Nunito',sans-serif; color:#B5532F; font-size:1.25rem; margin:1.4rem 0 0.5rem; font-weight:700; }
+  #familyplan .fp-sum ul { margin:0; padding-left:1.3rem; line-height:1.7; font-size:1.02rem; }
+  #familyplan .fp-sum p { margin:0.2rem 0; font-size:1.02rem; line-height:1.6; }
+  #familyplan .fp-empty { color:#8C9690; font-style:italic; }
+  #familyplan .fp-actions { display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.3rem; }
+  #familyplan .fp-recs { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.9rem; margin-top:0.6rem; }
+  #familyplan .fp-rec { border:2px solid #E3D9C9; border-radius:14px; padding:1rem 1.1rem; display:flex; flex-direction:column; gap:0.35rem; background:#fff; }
+  #familyplan .fp-rec small { font-size:0.75rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:#B5532F; }
+  #familyplan .fp-rec b { color:#1F2A24; font-size:1.02rem; line-height:1.3; }
+  #familyplan .fp-rec span { color:#4E5D56; font-size:0.93rem; }
+  #familyplan .fp-rec a { margin-top:auto; align-self:flex-start; background:#1E3A32; color:#fff; text-decoration:none; font-weight:800; font-size:0.9rem; padding:0.45rem 1rem; border-radius:20px; }
+  #familyplan .fp-note { font-size:0.92rem; color:#4E5D56; margin-top:1rem; line-height:1.5; }
+  @media (max-width:820px) {
+    #familyplan { padding:2rem 0.9rem; }
+    #familyplan .fp-grid { grid-template-columns:1fr; }
+    #familyplan .fp-side { position:static; padding:1rem 1.1rem; }
+    #familyplan .fp-steps { display:flex; gap:0.3rem; overflow-x:auto; padding-bottom:0.3rem; }
+    #familyplan .fp-steps li { margin:0; flex:none; }
+    #familyplan .fp-steps button { padding:0.3rem; }
+    #familyplan .fp-steps .fp-lbl { display:none; }
+    #familyplan .fp-steps button.on .fp-lbl { display:inline; }
+    #familyplan .fp-card { padding:1.4rem 1.1rem; }
+    #familyplan .fp-pca { grid-template-columns:1fr; }
+    #familyplan .fp-btn { flex:1; text-align:center; }
+  }
+</style>
+<div class="fp-wrap">
+  <div class="fp-eyebrow">Free Family Tool · Ages 8–17</div>
+  <h2 class="fp-title">Make your <em>Family AI Plan</em> together.</h2>
+  <p class="fp-sub">Sit down with your child for about 15 minutes. Answer a few friendly questions together, try three quick "what would you do?" moments, and finish with a family AI plan for the fridge and an AI Safety Champion certificate.</p>
+  <div class="fp-trust"><span>🔒 Nothing is collected or sent</span><span>💾 Saved only on this device</span><span>👨‍👩‍👧 Made for parents and children together</span><span>🖨️ Print or save as PDF</span></div>
+
+  <div class="fp-grid">
+    <aside class="fp-side" aria-label="Steps">
+      <h3>Our family plan</h3>
+      <ol class="fp-steps" id="fpSteps"></ol>
+      <div class="fp-prog"><div style="display:flex;justify-content:space-between"><span>Progress</span><span id="fpPct">0%</span></div><div class="fp-bar" aria-hidden="true"><span id="fpBar"></span></div></div>
+    </aside>
+    <div class="fp-card" id="fpCard" aria-live="polite"></div>
+  </div>
+  <p class="fp-note" style="text-align:center">This tool stores answers only in this browser, on this device, and never sends them anywhere. Use first names only. If you share a device, tap "Start a new plan" at the end to clear it. General guidance for families, not professional advice.</p>
+</div>
+
+<script>
+(function(){
+  var KEY='aclFamilyPlan_v1', G='https://volareconsultants.gumroad.com/l/';
+  var AGES={
+    a811:{ic:'🧒',t:'Ages 8–11',d:'Just starting to meet AI at home and school.',
+      uses:['Voice assistants (like Siri or Google Assistant)','AI in games or apps','Chatbots, with a grown-up','Homework help apps','Fun photo filters','Videos that might be made by AI'],
+      rules:['I use AI in a shared space at home, not alone in my room.','I ask a grown-up before trying a new AI app or website.','I never tell an AI my full name, address, school or passwords.','I never share photos of me or my family with an AI.','I try my homework first, then ask AI for a hint.','If something feels scary, strange or wrong, I tell a grown-up straight away.','AI is a tool, not a friend. I keep no secrets with a chatbot.'],
+      scen:[
+        {q:'A chatbot says: "Tell me where you live and I can find fun things near you!" What do you do?',o:['Tell it my address','Stop and ask a grown-up'],a:1,why:'Great choice! Your address is private. Pause, then ask a grown-up first.'},
+        {q:'You see a video of a talking cat that sounds exactly like a person. Is it real?',o:['It must be real','It might be made by AI. Let\'s check'],a:1,why:'Yes! AI can make videos that look real. Checking with a grown-up is the smart move.'},
+        {q:'Your homework is hard. What do you do first?',o:['Ask AI to do it all','Try first, then ask for a hint'],a:1,why:'That\'s it! Your brain learns best when you try first.'}]},
+    a1114:{ic:'🧑',t:'Ages 11–14',d:'Using AI for school, games and chatting with friends.',
+      uses:['Chatbots like ChatGPT, Gemini or Copilot','AI homework and study tools','AI in games and social apps','AI image or video makers','AI voice or face filters','Messages from accounts that might be bots'],
+      rules:['I check what AI tells me with at least one other trusted source.','I follow my school\'s rules on using AI, and I say when I used it.','I never share personal details, photos or passwords with AI tools.','I don\'t make fake pictures, voices or videos of real people.','I ask before signing up for any new AI app.','If a message pressures me, threatens me or asks for secrets, I stop and tell a trusted adult.','I keep AI chats on devices my family knows about.'],
+      scen:[
+        {q:'An AI gives you a fact for your project that sounds surprising. What next?',o:['Copy it straight in','Check it with another source'],a:1,why:'Exactly. AI can sound confident and still be wrong. Pause and check.'},
+        {q:'A new online "friend" says: "Don\'t tell your parents about our chats." What do you do?',o:['Keep the secret','Stop chatting and tell a trusted adult'],a:1,why:'Well done. Any request for secrets is a warning sign. Asking for help is always right.'},
+        {q:'A classmate wants to make a funny AI picture of a teacher. What do you say?',o:['Sure, it\'s just a joke','No, we don\'t make fake pictures of real people'],a:1,why:'Right. Fake images of real people can hurt them, even as a joke.'}]},
+    a1417:{ic:'🧑‍🎓',t:'Ages 14–17',d:'Using AI more independently for school, work and life.',
+      uses:['Chatbots for study, writing and ideas','AI tools for projects and portfolios','AI in social media feeds and filters','AI image, voice or video tools','AI for job or course applications','Deepfakes and AI scams online'],
+      rules:['I use AI to help my thinking, not replace it, and I declare it when required.','I check important facts, especially about health, money or news.','I protect my privacy: no ID numbers, passwords or private photos in AI tools.','I never create or share fake or private images of anyone.','I treat money requests, "urgent" messages and deals online as possible scams.','I talk to a trusted adult if something online makes me feel pressured, unsafe or upset.','We review our family AI plan together every few months.'],
+      scen:[
+        {q:'Your essay is due tonight. An AI offers to write it all for you. What do you do?',o:['Submit what it writes','Use it for ideas, then write it myself'],a:1,why:'Smart. Your thinking is the point, and most schools require you to declare AI use.'},
+        {q:'You get a voice message that sounds like a relative asking for money urgently. What do you do?',o:['Send the money fast','Pause and call them back on a number you know'],a:1,why:'Yes. AI can copy voices. Always check through another way you trust.'},
+        {q:'Someone shares an AI-made fake photo of a classmate in a group chat. What do you do?',o:['Forward it on','Don\'t share it, and tell a trusted adult'],a:1,why:'That\'s the right call. Sharing it causes harm. Reporting it helps.'}]}
+  };
+  var STEPS=['Who\'s planning','How we use AI','Pause. Check. Ask.','Our family rules','Our trusted adults','Our promises','Our plan'];
+  var data={}, step=0, store=null;
+  try{ store=window.localStorage; store.setItem('__fp','1'); store.removeItem('__fp'); }catch(e){ store=null; }
+  function load(){ if(!store) return; try{ var s=JSON.parse(store.getItem(KEY)||'{}'); data=s.data||{}; step=s.step||0; }catch(e){} }
+  function save(){ if(!store) return; try{ store.setItem(KEY,JSON.stringify({data:data,step:step})); }catch(e){} }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function A(){ return AGES[data.age]||AGES.a811; }
+  function kid(){ return data.kid ? esc(data.kid) : 'your child'; }
+  function pct(){ var c=0,t=7; if(data.age)c++; if((data.uses||[]).length)c++; if((data.quiz||[]).filter(function(x){return x!=null;}).length===3)c++; if((data.rules||[]).length)c++; if(data.adults)c++; if(data.kidPromise||data.parentPromise)c++; if(data.review)c++; return Math.round(c/t*100); }
+  var card=document.getElementById('fpCard'), list=document.getElementById('fpSteps');
+  function nav(){
+    list.innerHTML='';
+    STEPS.forEach(function(s,i){ var li=document.createElement('li'), b=document.createElement('button'); b.type='button';
+      b.className=(i===step?'on':'')+(i<step?' done':''); b.setAttribute('aria-current',i===step?'step':'false');
+      b.innerHTML='<span class="fp-n">'+(i<step?'✓':(i+1))+'</span><span class="fp-lbl">'+s+'</span>';
+      b.onclick=function(){ collect(); if(i>0&&!data.age){ go(0); showErr(); return; } go(i); }; li.appendChild(b); list.appendChild(li); });
+    var p=pct(); document.getElementById('fpPct').textContent=p+'%'; document.getElementById('fpBar').style.width=p+'%';
+  }
+  function head(q,intro){ return '<div class="fp-top"><span class="fp-stepno">Step '+(step+1)+' of '+STEPS.length+'</span>'+(store?'<span class="fp-saved">✓ Saved on this device</span>':'')+'</div><h3 class="fp-q">'+q+'</h3><p class="fp-intro">'+intro+'</p>'; }
+  function tip(t){ return '<div class="fp-tip"><b>Grown-up tip:</b> '+t+'</div>'; }
+  function navBtns(){ return '<div class="fp-err" id="fpErr" role="alert">Please choose an age group to continue.</div><div class="fp-nav">'+(step>0?'<button type="button" class="fp-btn" id="fpBack">← Back</button>':'<span></span>')+'<button type="button" class="fp-btn pri" id="fpNext">'+(step===5?'See our plan →':'Next →')+'</button></div>'; }
+  function checks(cls,items,chosen){ return '<div class="fp-checks">'+items.map(function(x){ return '<label><input type="checkbox" class="'+cls+'" value="'+esc(x)+'"'+((chosen||[]).indexOf(x)>-1?' checked':'')+'> <span>'+esc(x)+'</span></label>'; }).join('')+'</div>'; }
+  function render(){
+    var a=A(), h='';
+    if(step===0){
+      h=head('Who is making this plan?','Choose your child\'s age group. The questions, examples and rules will change to suit them.');
+      h+='<div class="fp-ages" role="radiogroup" aria-label="Age group">';
+      Object.keys(AGES).forEach(function(k){ var x=AGES[k]; h+='<button type="button" role="radio" aria-checked="'+(data.age===k)+'" class="fp-age'+(data.age===k?' on':'')+'" data-k="'+k+'"><big aria-hidden="true">'+x.ic+'</big><b>'+x.t+'</b><span>'+x.d+'</span></button>'; });
+      h+='</div><label class="fp-l" for="fp_kid">Child\'s first name <span style="font-weight:600;color:#4E5D56">(optional)</span></label><span class="fp-h">Used only on your printed certificate. First name only, please.</span><input type="text" id="fp_kid" maxlength="20" autocomplete="off" value="'+esc(data.kid||'')+'" placeholder="e.g. Ari">';
+      h+='<label class="fp-l" for="fp_grown">Grown-up\'s name <span style="font-weight:600;color:#4E5D56">(optional)</span></label><span class="fp-h">For example "Mum", "Dad", "Grandma" or a first name.</span><input type="text" id="fp_grown" maxlength="20" autocomplete="off" value="'+esc(data.grown||'')+'" placeholder="e.g. Dad">';
+      h+=tip('Do this together, side by side, when nobody is rushed. Let your child do the clicking and reading where they can.');
+    } else if(step===1){
+      h=head('How does our family use AI now?','Tick everything '+kid()+' meets at home, at school or with friends. There are no wrong answers.');
+      h+='<div class="fp-kid">💬 <b>Ask '+kid()+':</b> "Where have you seen AI? What do you like about it?"</div>';
+      h+=checks('fp-use',a.uses,data.uses);
+      h+='<label class="fp-l" for="fp_love">What do we enjoy about AI?</label><textarea id="fp_love" placeholder="e.g. It helps with ideas for stories">'+esc(data.love||'')+'</textarea>';
+      h+='<label class="fp-l" for="fp_worry">What do we want to be careful about?</label><textarea id="fp_worry" placeholder="e.g. Believing everything it says">'+esc(data.worry||'')+'</textarea>';
+      h+=tip('Listen more than you talk. Children share more when they don\'t feel they\'re about to lose something.');
+    } else if(step===2){
+      h=head('Our safety habit: Pause. Check. Ask.','One simple habit for every new AI moment. Read it together, then try three quick "what would you do?" moments.');
+      h+='<div class="fp-pca"><div><big>⏸ Pause</big><span>Stop before you share, click, copy or send.</span></div><div><big>🔍 Check</big><span>Is it true? Is it safe? Is it private?</span></div><div><big>🙋 Ask</big><span>Ask a trusted grown-up when you\'re not sure.</span></div></div>';
+      var qz=data.quiz||[];
+      a.scen.forEach(function(s,i){ var chosen=qz[i];
+        h+='<div class="fp-scen"><p class="q">'+(i+1)+'. '+esc(s.q)+'</p><div class="fp-opts">'+s.o.map(function(o,j){ var cl = chosen==null?'':(j===s.a?(j===chosen?' right':''):(j===chosen?' wrong':'')); return '<button type="button" class="fp-opt'+cl+'" data-i="'+i+'" data-j="'+j+'">'+esc(o)+'</button>'; }).join('')+'</div>';
+        h+='<div class="fp-fb" id="fpfb'+i+'" style="display:'+(chosen==null?'none':'block')+'">'+(chosen==null?'':(chosen===s.a?'✅ '+esc(s.why):'🤔 Good try! The safer choice is <b>'+esc(s.o[s.a])+'</b>. '+esc(s.why.replace(/^[^.!]*[.!]\s*/,''))))+'</div></div>'; });
+      h+=tip('If your child picks the risky answer, stay calm and curious: "What might happen next?" Mistakes here are how they learn safely.');
+    } else if(step===3){
+      h=head('Our family AI rules','Choose the rules that fit your family, about four to six is plenty. Add your own if you like.');
+      h+='<div class="fp-kid">💬 <b>Ask '+kid()+':</b> "Which rule do you think is most important? Why?"</div>';
+      h+=checks('fp-rule',a.rules,data.rules);
+      h+='<label class="fp-l" for="fp_own">Our own rule (optional)</label><input type="text" id="fp_own" value="'+esc(data.own||'')+'" placeholder="e.g. No AI at the dinner table">';
+      h+=tip('Rules work best when children help choose them. Explain the "why" behind each one.');
+    } else if(step===4){
+      h=head('Who can we ask for help?','Everyone needs people they can go to. Write down the grown-ups '+kid()+' trusts.');
+      h+='<label class="fp-l" for="fp_adults">Our trusted adults</label><span class="fp-h">First names or how your child knows them, such as "Mum", "Uncle Raj", "Ms Tan at school".</span><textarea id="fp_adults" placeholder="e.g. Mum, Dad, Grandma, my class teacher">'+esc(data.adults||'')+'</textarea>';
+      h+='<label class="fp-l" for="fp_ifwrong">If something goes wrong online, we will…</label><textarea id="fp_ifwrong">'+esc(data.ifwrong!=null?data.ifwrong:'Stop, take a screenshot if it\'s safe to, and tell a trusted adult. We will not be angry. We will sort it out together.')+'</textarea>';
+      h+=tip('Promise your child that telling you will never get them in trouble. That promise is the most powerful safety tool you have.');
+    } else if(step===5){
+      h=head('Our promises','A promise from '+kid()+', and a promise from the grown-ups.');
+      h+='<label class="fp-l" for="fp_kp">'+(data.kid?esc(data.kid)+'\'s':'My')+' promise</label><textarea id="fp_kp">'+esc(data.kidPromise!=null?data.kidPromise:'I will use Pause. Check. Ask. and tell a trusted adult if anything online feels wrong.')+'</textarea>';
+      h+='<label class="fp-l" for="fp_pp">The grown-ups\' promise</label><textarea id="fp_pp">'+esc(data.parentPromise!=null?data.parentPromise:'We will listen without getting angry, help you learn, and review this plan with you.')+'</textarea>';
+      h+='<label class="fp-l" for="fp_review">We will look at our plan again on</label><span class="fp-h">Every three months works well for most families.</span><input type="date" id="fp_review" value="'+esc(data.review||'')+'">';
+      h+=tip('Put the review date in your calendar now. AI changes quickly, and so will your child.');
+    } else { h=summary(); }
+    if(step<6) h+=navBtns();
+    card.innerHTML=h; nav(); wire();
+  }
+  function fmt(v){ if(!v) return ''; var d=new Date(v+'T00:00:00'); return isNaN(d)?v:d.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'}); }
+  function rules(){ var r=(data.rules||[]).slice(); if(data.own) r.push(data.own); return r; }
+  function recs(){
+    var R={
+      playbook:['For parents','The Family AI Safety Playbook','A complete parent guide for ages 8–17.','the-family-ai-safety-playbook','USD 9'],
+      agree:['Free printable','Our Family AI Agreement','A printable agreement to sign together.','family-ai-agreement-free','FREE'],
+      found:['Ages 8–11 · Bundle','AI Safety Foundations Bundle','4 activity workbooks with Ari: deepfakes, privacy, scams, safe choices.','ai-safety-foundations-bundle','USD 15'],
+      hero:['Ages 8–11 · Free','My AI Safety Superhero Card','A fun card to keep by the screen.','ai-safety-superhero-card-free','FREE'],
+      scam:['Ages 11–14 · Free','Scam and Fake Account Spotter','A quick card for spotting fakes.','scam-fake-account-spotter-free','FREE'],
+      dsl:['Ages 11–14 · Bundle','Digital Smarts Lab: Thinking Tier','6 books on AI, privacy, scams and screen time.','digital-smarts-lab-thinking-tier-bundle','USD 24'],
+      fake:['Ages 14–17 · Free','Spot the Fake Worksheet','Practice spotting AI fakes and deepfakes.','spot-the-fake-worksheet-free','FREE'],
+      think:['Ages 14–17','Show Your Thinking','Use AI honestly in projects and exams.','show-your-thinking-workbook','USD 7']
+    };
+    var m={a811:['hero','found'],a1114:['scam','dsl'],a1417:['fake','think']}[data.age||'a811'].concat(['agree','playbook']);
+    return m.map(function(k){ var x=R[k]; return '<div class="fp-rec"><small>'+x[0]+'</small><b>'+x[1]+'</b><span>'+x[2]+'</span><a href="'+G+x[3]+'" target="_blank" rel="noopener">'+(x[4]==='FREE'?'Get it free':'View · '+x[4])+' →</a></div>'; }).join('');
+  }
+  function planBody(forPrint){
+    var u=data.uses||[], r=rules(), e=function(t){ return '<span class="'+(forPrint?'e':'fp-empty')+'">'+t+'</span>'; };
+    var h='<h4>Where we meet AI</h4>'+(u.length?'<ul>'+u.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':e('Not filled in yet'));
+    if(data.love||data.worry) h+='<p><b>We enjoy:</b> '+esc(data.love||'-')+'</p><p><b>We are careful about:</b> '+esc(data.worry||'-')+'</p>';
+    h+='<h4>Our safety habit</h4><p><b>Pause.</b> Stop before you share, click, copy or send. <b>Check.</b> Is it true, safe and private? <b>Ask.</b> Ask a trusted grown-up when you\'re not sure.</p>';
+    h+='<h4>Our family AI rules</h4>'+(r.length?'<ul>'+r.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>':e('No rules chosen yet'));
+    h+='<h4>Our trusted adults</h4><p>'+(data.adults?esc(data.adults):e('Not filled in yet'))+'</p><p><b>If something goes wrong:</b> '+esc(data.ifwrong||'Stop and tell a trusted adult.')+'</p>';
+    h+='<h4>Our promises</h4><p><b>'+(data.kid?esc(data.kid)+'\'s promise':'Child\'s promise')+':</b> '+esc(data.kidPromise||'-')+'</p><p><b>Grown-ups\' promise:</b> '+esc(data.parentPromise||'-')+'</p>';
+    h+='<p><b>We will review this plan on:</b> '+(data.review?fmt(data.review):e('Choose a date'))+'</p>';
+    return h;
+  }
+  function summary(){
+    var a=A(), right=(data.quiz||[]).filter(function(x,i){return x===a.scen[i].a;}).length;
+    var h=head('Our Family AI Plan','Here is your plan. Print it for the fridge, and print '+kid()+'\'s certificate too.');
+    h+='<div class="fp-kid">🏅 <b>'+(data.kid?esc(data.kid):'Your child')+'</b> answered <b>'+right+' of 3</b> "what would you do?" moments the safe way. '+(right===3?'Brilliant work!':'Great practice. Talk about the others together.')+'</div>';
+    h+='<div class="fp-sum">'+planBody(false)+'</div>';
+    h+='<div class="fp-actions"><button type="button" class="fp-btn pri" id="fpPrintPlan">🖨️ Print or save our plan</button><button type="button" class="fp-btn pri" id="fpPrintCert">🏅 Print the certificate</button><button type="button" class="fp-btn" id="fpEdit">← Change our answers</button></div>';
+    h+='<p class="fp-note">To save as a PDF, choose "Save as PDF" as the printer.</p>';
+    h+='<h4 style="font-family:\'Fredoka\',\'Fredoka One\',sans-serif;color:#1E3A32;font-size:1.3rem;margin:2rem 0 0.2rem;font-weight:700">Keep learning together</h4><p class="fp-note" style="margin-top:0">Chosen for '+a.t.toLowerCase()+' and for parents. Free items are marked.</p><div class="fp-recs">'+recs()+'</div>';
+    h+='<div class="fp-actions" style="margin-top:1.6rem"><button type="button" class="fp-btn" id="fpNew">Start a new plan</button></div>';
+    return h;
+  }
+  function openPrint(title,body,css){
+    var html='<!doctype html><html><head><meta charset="utf-8"><title>'+esc(title)+'</title><style>'+css+'</style></head><body>'+body+'<script>window.onload=function(){setTimeout(function(){window.print();},300);}<\/script></body></html>';
+    var w=null; try{ w=window.open('','_blank'); }catch(e){}
+    if(w){ w.document.open(); w.document.write(html); w.document.close(); }
+    else { var p=document.createElement('p'); p.className='fp-note'; p.style.fontWeight='800'; p.textContent='Your browser blocked the print window. Please allow pop-ups for this site and try again.'; card.querySelector('.fp-actions').after(p); }
+  }
+  function printPlan(){
+    var css='body{font-family:Arial,sans-serif;color:#1F2A24;max-width:760px;margin:24px auto;padding:0 20px;font-size:12.5pt;line-height:1.5}h1{font-size:24pt;color:#1E3A32;margin:0}h1 span{color:#B5532F}.sub{color:#4E5D56;margin:4px 0 10px}h4{font-size:14pt;color:#B5532F;border-bottom:2px solid #F2C9A8;padding-bottom:3px;margin:18px 0 6px}ul{margin:0;padding-left:20px}p{margin:4px 0}.e{color:#8C9690;font-style:italic}.sig{display:flex;gap:30px;margin-top:28px}.sig div{flex:1;border-top:1.5px solid #1F2A24;padding-top:4px;font-size:10.5pt}.f{margin-top:20px;font-size:9.5pt;color:#4E5D56}';
+    var who=(data.kid?esc(data.kid)+' and family':'Our family');
+    var body='<h1>Our Family <span>AI Plan</span></h1><div class="sub">'+who+' · '+A().t+' · Made with the free AI Creator Lab Family AI Plan</div>'+planBody(true)+'<div class="sig"><div>'+(data.kid?esc(data.kid):'Child')+'</div><div>'+(data.grown?esc(data.grown):'Grown-up')+'</div><div>Date</div></div><div class="f">AI Creator Lab™ · www.aicreatorlab.store · General guidance for families, not professional advice.</div>';
+    openPrint('Our Family AI Plan',body,css);
+  }
+  function printCert(){
+    var css='@page{size:landscape;margin:12mm}body{font-family:Arial,sans-serif;margin:0;color:#1F2A24}.c{border:8px solid #1E3A32;outline:3px solid #B5532F;outline-offset:-16px;border-radius:18px;padding:40px 50px;text-align:center;min-height:170mm;display:flex;flex-direction:column;justify-content:center}.k{letter-spacing:4px;font-size:12pt;color:#B5532F;font-weight:bold}h1{font-size:34pt;color:#1E3A32;margin:10px 0}.n{font-size:30pt;font-weight:bold;border-bottom:2px solid #1F2A24;display:inline-block;min-width:60%;padding:0 20px 4px;margin:14px auto}.p{font-size:14pt;line-height:1.6;max-width:640px;margin:10px auto}.pca{font-size:18pt;font-weight:bold;color:#1E3A32;margin:14px 0}.row{display:flex;justify-content:space-around;margin-top:34px;font-size:11pt}.row div{border-top:1.5px solid #1F2A24;padding-top:4px;min-width:200px}.f{font-size:9pt;color:#4E5D56;margin-top:22px}';
+    var body='<div class="c"><div class="k">AI CREATOR LAB™ · CERTIFICATE</div><h1>AI Safety Champion</h1><div class="p">This certificate is proudly awarded to</div><div class="n">'+(data.kid?esc(data.kid):'&nbsp;')+'</div><div class="p">for making a Family AI Plan and promising to use the safety habit</div><div class="pca">Pause. Check. Ask.</div><div class="row"><div>'+(data.grown?esc(data.grown):'Grown-up')+'</div><div>Date</div></div><div class="f">www.aicreatorlab.store</div></div>';
+    openPrint('AI Safety Champion Certificate',body,css);
+  }
+  function collect(){
+    var g=function(id){ var el=document.getElementById(id); return el?el.value.trim():undefined; };
+    var map={fp_kid:'kid',fp_grown:'grown',fp_love:'love',fp_worry:'worry',fp_own:'own',fp_adults:'adults',fp_ifwrong:'ifwrong',fp_kp:'kidPromise',fp_pp:'parentPromise',fp_review:'review'};
+    Object.keys(map).forEach(function(id){ var v=g(id); if(v!==undefined) data[map[id]]=v; });
+    var u=card.querySelectorAll('.fp-use'); if(u.length){ data.uses=[]; u.forEach(function(c){ if(c.checked) data.uses.push(c.value); }); }
+    var r=card.querySelectorAll('.fp-rule'); if(r.length){ data.rules=[]; r.forEach(function(c){ if(c.checked) data.rules.push(c.value); }); }
+    save(); var p=pct(); document.getElementById('fpPct').textContent=p+'%'; document.getElementById('fpBar').style.width=p+'%';
+  }
+  function showErr(){ var e=document.getElementById('fpErr'); if(e) e.style.display='block'; }
+  function go(i){ step=Math.max(0,Math.min(STEPS.length-1,i)); save(); render();
+    var top=document.getElementById('familyplan').getBoundingClientRect().top+window.pageYOffset-80; if(Math.abs(window.pageYOffset-top)>300) window.scrollTo({top:top,behavior:'smooth'}); }
+  function wire(){
+    card.querySelectorAll('.fp-age').forEach(function(b){ b.onclick=function(){ var k=b.getAttribute('data-k'); collect(); if(data.age!==k){ data.age=k; data.uses=[]; data.rules=[]; data.quiz=[]; } save(); render(); }; });
+    card.querySelectorAll('.fp-opt').forEach(function(b){ b.onclick=function(){ var i=+b.getAttribute('data-i'), j=+b.getAttribute('data-j'); data.quiz=data.quiz||[]; data.quiz[i]=j; collect(); render(); }; });
+    card.querySelectorAll('input,textarea').forEach(function(el){ el.addEventListener('change',collect); el.addEventListener('blur',collect); });
+    var n=document.getElementById('fpNext'), b=document.getElementById('fpBack');
+    if(n) n.onclick=function(){ collect(); if(step===0&&!data.age){ showErr(); return; } go(step+1); };
+    if(b) b.onclick=function(){ collect(); go(step-1); };
+    var pp=document.getElementById('fpPrintPlan'); if(pp) pp.onclick=printPlan;
+    var pc=document.getElementById('fpPrintCert'); if(pc) pc.onclick=printCert;
+    var ed=document.getElementById('fpEdit'); if(ed) ed.onclick=function(){ go(1); };
+    var nw=document.getElementById('fpNew'); if(nw) nw.onclick=function(){ if(window.confirm('Start a new plan? This clears your answers from this device. Print your plan first if you want to keep it.')){ data={}; step=0; save(); render(); } };
+  }
+  load(); render();
+})();
+</script>
+</div>
+
 
 <style>
   footer.site-footer{
@@ -808,6 +1100,7 @@
 <div class="footer-nav">
 <a href="#">Home</a>
 <a class="footer-cta" href="#templates">Free Templates &amp; Tools</a>
+<a href="#familyplan">Family AI Plan</a>
 <a href="#" onclick="document.querySelector('[data-tab=\'t1\']').click();document.querySelector('.catalog').scrollIntoView();return false;">Ages 8–11</a>
 <a href="#" onclick="document.querySelector('[data-tab=\'t2\']').click();document.querySelector('.catalog').scrollIntoView();return false;">Ages 11–14</a>
 <a href="#" onclick="document.querySelector('[data-tab=\'t3\']').click();document.querySelector('.catalog').scrollIntoView();return false;">Ages 14–17</a>
