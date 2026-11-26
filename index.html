@@ -209,6 +209,7 @@
 <a href="#" onclick="document.querySelector('[data-tab=\'t3\']').click();document.querySelector('.catalog').scrollIntoView();return false;">14-17</a>
 <a href="#" onclick="document.querySelector('[data-tab=\'t4\']').click();document.querySelector('.catalog').scrollIntoView();return false;">Family</a>
 <a href="#templates">Free Library</a>
+<a href="#finder">Start Here</a>
 <a href="#familyplan">Family AI Plan</a>
 <a href="#learn">Learn</a>
 <a href="#about-us-full">About</a>
@@ -224,6 +225,7 @@
 <button class="btn-primary" onclick="document.getElementById('templates').scrollIntoView({behavior:'smooth'});">Start with free guides</button>
 <a class="link-story" href="#about-us-full">Read our story →</a>
 </div>
+<a href="#finder" style="display:inline-block;background:#B5532F;border:2px solid #B5532F;color:#fff;font-weight:800;text-decoration:none;padding:0.6rem 1.2rem;border-radius:30px;margin:0 8px 16px 0;font-size:0.98rem;">⭐ Start Here: Find the Right Book</a>
 <a href="#familyplan" style="display:inline-block;background:#fff;border:2px solid #1E3A32;color:#1E3A32;font-weight:800;text-decoration:none;padding:0.6rem 1.2rem;border-radius:30px;margin-bottom:16px;font-size:0.98rem;">🧭 New: Make your Family AI Plan together · Free</a>
 <div class="trust-line">♡ No hype, no pressure. Just clear, family-first guidance for the conversations and choices ahead.</div>
 </div>
@@ -235,6 +237,154 @@
 </div>
 </div>
 </section>
+<!-- ═══════════════════════════════════════════════
+     START HERE · FAMILY PRODUCT FINDER (for parents: age → topic → preference)
+     Runs only in the visitor's browser. Nothing is saved or sent.
+     To change a recommendation: edit the M list in the script below.
+════════════════════════════════════════════════ -->
+<div id="finder" style="background:#ffffff;padding:3.25rem 1.5rem;border-top:4px solid #B5532F;">
+<style>
+  #finder, #finder * { box-sizing:border-box; }
+  #finder .fd-wrap { max-width:1000px; margin:0 auto; font-family:'Nunito',system-ui,sans-serif; color:#1F2A24; }
+  #finder .fd-eyebrow { display:inline-block; background:#F6DDD0; color:#8A3A1C; font-size:0.8rem; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; padding:0.35rem 1rem; border-radius:20px; margin-bottom:0.8rem; }
+  #finder h2.fd-title { font-family:'Fredoka','Nunito',sans-serif; font-weight:700; font-size:clamp(1.7rem,4vw,2.4rem); color:#1E3A32; line-height:1.2; margin:0 0 0.5rem; }
+  #finder h2.fd-title em { color:#B5532F; font-style:normal; }
+  #finder .fd-sub { color:#33413A; font-size:1.06rem; max-width:660px; margin:0 0 1.5rem; line-height:1.6; }
+  #finder .fd-card { background:#F7F3EA; border:1px solid #E3D9C9; border-radius:18px; padding:1.75rem 2rem; }
+  #finder .fd-top { display:flex; justify-content:space-between; align-items:center; gap:0.5rem; flex-wrap:wrap; margin-bottom:0.4rem; }
+  #finder .fd-stepno { font-size:0.85rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#5B6B63; }
+  #finder .fd-dots { display:flex; gap:0.4rem; }
+  #finder .fd-dots span { width:34px; height:8px; border-radius:6px; background:#E3D9C9; }
+  #finder .fd-dots span.on { background:#B5532F; }
+  #finder h3.fd-q { font-family:'Fredoka','Nunito',sans-serif; font-weight:700; font-size:1.55rem; color:#1E3A32; margin:0 0 1rem; line-height:1.25; }
+  #finder .fd-opts { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.75rem; }
+  #finder .fd-opt { text-align:left; font-family:inherit; background:#fff; border:2px solid #CFC5B4; border-radius:14px; padding:0.95rem 1.1rem; cursor:pointer; display:flex; gap:0.8rem; align-items:flex-start; color:#1F2A24; }
+  #finder .fd-opt:hover { border-color:#B5532F; background:#FDF1EA; }
+  #finder .fd-opt:focus-visible, #finder .fd-btn:focus-visible, #finder a:focus-visible { outline:3px solid #B5532F; outline-offset:2px; }
+  #finder .fd-opt .fd-ic { font-size:1.5rem; line-height:1; flex:none; margin-top:0.1rem; }
+  #finder .fd-opt b { display:block; color:#1E3A32; font-size:1.05rem; line-height:1.3; }
+  #finder .fd-opt small { display:block; color:#4E5D56; font-size:0.93rem; margin-top:0.15rem; }
+  #finder .fd-nav { display:flex; justify-content:space-between; gap:0.75rem; flex-wrap:wrap; margin-top:1.25rem; }
+  #finder .fd-btn { font-family:inherit; font-weight:800; font-size:0.98rem; border-radius:30px; padding:0.7rem 1.4rem; cursor:pointer; border:2px solid #1E3A32; background:#fff; color:#1E3A32; }
+  #finder .fd-btn.pri { background:#B5532F; border-color:#B5532F; color:#fff; }
+  #finder .fd-res-intro { color:#33413A; font-size:1.02rem; margin:0 0 1.1rem; }
+  #finder .fd-res { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; }
+  #finder .fd-pick { background:#fff; border:2px solid #E3D9C9; border-radius:14px; padding:1.2rem 1.25rem; display:flex; flex-direction:column; gap:0.4rem; }
+  #finder .fd-pick.top { border-color:#B5532F; box-shadow:0 0 0 3px #F6DDD0; }
+  #finder .fd-tag { font-size:0.74rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color:#B5532F; }
+  #finder .fd-best { display:inline-block; align-self:flex-start; background:#1E3A32; color:#F2C9A8; font-size:0.72rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; padding:0.2rem 0.6rem; border-radius:12px; }
+  #finder .fd-pick b { color:#1F2A24; font-size:1.05rem; line-height:1.3; }
+  #finder .fd-pick p { color:#4E5D56; font-size:0.93rem; margin:0; }
+  #finder .fd-foot { display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:0.6rem; gap:0.5rem; }
+  #finder .fd-price { font-weight:800; color:#1E3A32; font-size:1.05rem; }
+  #finder a.fd-go { background:#1E3A32; color:#fff; text-decoration:none; font-weight:800; font-size:0.88rem; padding:0.45rem 1rem; border-radius:20px; white-space:nowrap; }
+  #finder .fd-pick.top a.fd-go { background:#B5532F; }
+  #finder .fd-more { margin-top:1.1rem; background:#fff; border:1px dashed #CFC5B4; border-radius:12px; padding:0.9rem 1.1rem; font-size:0.95rem; color:#33413A; line-height:1.6; }
+  #finder .fd-more a { color:#9A4425; font-weight:800; text-decoration:none; }
+  #finder .fd-note { font-size:0.88rem; color:#5B6B63; margin-top:1rem; }
+  @media (max-width:600px) {
+    #finder { padding:2rem 0.9rem; }
+    #finder .fd-card { padding:1.25rem 1rem; }
+    #finder .fd-btn { flex:1; text-align:center; }
+  }
+</style>
+<div class="fd-wrap">
+  <div class="fd-eyebrow">Start Here · For Parents · 3 Quick Questions</div>
+  <h2 class="fd-title">So many books and games. <em>Where do we start?</em></h2>
+  <p class="fd-sub">Tell us your child's age and what matters most right now. We'll suggest a free place to start, the best-fit book or workbook, and the best-value bundle. Under a minute. Nothing is saved or sent.</p>
+  <div class="fd-card" id="fdCard" aria-live="polite"></div>
+</div>
+<script>
+(function(){
+  var G='https://volareconsultants.gumroad.com/l/';
+  var AGES={a811:{ic:'🧒',t:'Ages 8–11',d:'Just starting to meet AI.'},a1114:{ic:'🧑',t:'Ages 11–14',d:'Using AI for school and with friends.'},a1417:{ic:'🧑‍🎓',t:'Ages 14–17',d:'Using AI more independently.'},all:{ic:'👨‍👩‍👧',t:'Several ages, or the whole family',d:'Something we can all do together.'}};
+  var TOPICS={safety:{ic:'🛡️',t:'Staying safe online',d:'Privacy, scams, fakes and deepfakes.'},school:{ic:'📚',t:'Homework and school',d:'Using AI honestly to learn.'},create:{ic:'🎨',t:'Creating with AI',d:'Stories, projects and giving credit.'},learn:{ic:'🤖',t:'Understanding AI',d:'How AI works, in books and games.'},money:{ic:'🪙',t:'Money skills',d:'Budgets, saving and smart choices.'},feelings:{ic:'💛',t:'Screen time and feelings',d:'Balance, focus and AI "friends".'},career:{ic:'🚀',t:'Future careers',d:'Skills, paths and jobs with AI.'}};
+  var PREFS={free:{ic:'🎁',t:'Something free to start',d:'Try it before you buy.'},single:{ic:'📘',t:'One book or workbook',d:'The single best fit.'},bundle:{ic:'⭐',t:'The best-value bundle',d:'Everything on the topic, for less.'}};
+  var PLAN=['Family AI Plan (free tool on this page)','Make your family AI rules together, ages 8–17.','#familyplan','FREE'];
+  /* M[topic][age] = {f: free, g: [best-fit guide, extras...], b: bundle or null} . Item: [title, reason, slug, price] */
+  var M={
+   safety:{
+    a811:{f:['My AI Safety Superhero Card','A fun safety card to keep by the screen.','ai-safety-superhero-card-free','FREE'],g:[['AI Safe Choices','Practice safe choices with Ari, step by step.','ai-safe-choices-workbook','USD 7'],['AI Privacy Protector','What to keep private, and why.','ai-privacy-protector-workbook','USD 5']],b:['AI Safety Foundations Bundle','4 workbooks: deepfakes, privacy, scams and safe choices.','ai-safety-foundations-bundle','USD 15']},
+    a1114:{f:['Scam and Fake Account Spotter Card','A quick card for spotting fakes.','scam-fake-account-spotter-free','FREE'],g:[['Scams, Bots, and Fake Accounts','Spot the tricks before they work.','digital-smarts-lab-thinking-4-scams-bots-and-fake-accounts','USD 6'],['Your Digital Footprint','What you share, and what it says about you.','digital-smarts-lab-thinking-2-your-digital-footprint','USD 6']],b:['Digital Smarts Lab Thinking Tier Bundle','All 6 online safety books for ages 11–14.','digital-smarts-lab-thinking-tier-bundle','USD 24']},
+    a1417:{f:['Spot the Fake Worksheet','Practice spotting AI fakes and deepfakes.','spot-the-fake-worksheet-free','FREE'],g:[['The Family AI Safety Playbook','The complete parent guide, ages 8–17.','the-family-ai-safety-playbook','USD 9'],['Building Your Online Reputation','Protect the name you are building online.','digital-smarts-lab-thinking-6-building-your-online-reputation','USD 6']],b:['AI for Parents Complete Bundle','3 parent guides to understand and guide your teen.','ai-for-parents-bundle','USD 17']},
+    all:{f:PLAN,g:[['The Family AI Safety Playbook','The complete parent guide, with a 30-day action plan.','the-family-ai-safety-playbook','USD 9'],['Our Family AI Journal','One 10-minute family conversation a week for 12 weeks.','our-family-ai-journal','USD 7'],['Our Family AI Agreement','A free agreement to sign together.','family-ai-agreement-free','FREE']],b:['AI for Parents Complete Bundle','3 guides: plain English, what children do with AI, and how to talk about it.','ai-for-parents-bundle','USD 17']}},
+   school:{
+    a811:{f:['AI Homework Helper Checklist','When AI can help with homework, and when it can\'t.','ai-homework-helper-checklist-free','FREE'],g:[['Try First, Then Ask','Build the habit of trying before asking AI.','try-first-then-ask-workbook','USD 5']],b:['AI at School Bundle','All 4 AI at School workbooks, ages 8–17.','ai-at-school-bundle','USD 17']},
+    a1114:{f:['Study Smart with AI Planner','Plan study time that uses AI well.','study-smart-with-ai-planner-free','FREE'],g:[['AI Study Buddy, Not AI Shortcut','Use AI to learn, not to skip learning.','ai-study-buddy-workbook','USD 6'],['Is the AI Right? A Fact-Check Workbook','Check AI answers like a detective.','is-the-ai-right-workbook','USD 6']],b:['AI at School Bundle','All 4 AI at School workbooks, ages 8–17.','ai-at-school-bundle','USD 17']},
+    a1417:{f:['Study Smart with AI Planner','Plan study time that uses AI well.','study-smart-with-ai-planner-free','FREE'],g:[['Show Your Thinking','Use AI honestly in projects and exams.','show-your-thinking-workbook','USD 7']],b:['AI at School Bundle','All 4 AI at School workbooks, ages 8–17.','ai-at-school-bundle','USD 17']},
+    all:{f:['AI Homework Helper Checklist','A simple checklist for the whole family.','ai-homework-helper-checklist-free','FREE'],g:[['Homework in the Age of AI: A Parent\'s Guide','The Homework Traffic Light and 6 family tools.','homework-in-the-age-of-ai','USD 7']],b:['AI at School Bundle','All 4 AI at School workbooks, ages 8–17.','ai-at-school-bundle','USD 17']}},
+   create:{
+    a811:{f:['My Creative AI Idea Journal','Spark ideas for stories and projects.','creative-ai-idea-journal-free','FREE'],g:[['My AI Story Studio','Make stories with AI as a helper.','my-ai-story-studio-workbook','USD 5']],b:['Create with AI Bundle','All 4 Create with AI workbooks, ages 8–17.','create-with-ai-bundle','USD 17']},
+    a1114:{f:['Creative AI Project Tracker','Plan and track a creative project.','creative-ai-project-tracker-free','FREE'],g:[['Create, Don\'t Copy','Make it your own and give credit.','create-dont-copy-workbook','USD 6'],['From Idea to Project','Turn an idea into a finished project.','from-idea-to-project-workbook','USD 6']],b:['Create with AI Bundle','All 4 Create with AI workbooks, ages 8–17.','create-with-ai-bundle','USD 17']},
+    a1417:{f:['My AI Project Canvas','Plan a project on one page.','my-ai-project-canvas-free','FREE'],g:[['Build Your Portfolio with AI','Show your best work, honestly.','build-your-portfolio-with-ai','USD 7']],b:['Create with AI Bundle','All 4 Create with AI workbooks, ages 8–17.','create-with-ai-bundle','USD 17']},
+    all:{f:['Creative AI Project Tracker','A family project, start to finish.','creative-ai-project-tracker-free','FREE'],g:[['Raising Creators, Not Copiers','A parent\'s guide to creativity, credit and copyright.','raising-creators-not-copiers','USD 7']],b:['Create with AI Bundle','All 4 Create with AI workbooks, ages 8–17.','create-with-ai-bundle','USD 17']}},
+   learn:{
+    a811:{f:['AI Helper or Not? Sorting Game','A fun way to spot where AI is used.','ai-helper-or-not-sorting-game-free','FREE'],g:[['What Is AI, Really?','The first Awareness book, ages 8–11.','awareness-book1','USD 5'],['Aisyah\'s Discovery','The first storybook in the series.','awareness-book1-storybook','USD 5']],b:['Awareness Complete Bundle','All 12 books and 60 games, ages 8–11.','awareness-complete-bundle','USD 29']},
+    a1114:{f:['Ask Better Questions Starter Sheet','Better questions, better answers.','ask-better-questions-starter-free','FREE'],g:[['AI Thinking Systems','The first Thinking book, ages 11–14.','thinking-book1','USD 6'],['Kai\'s First Discovery','The first Thinking storybook.','thinking-storybook1','USD 6']],b:['Thinking Tier Games Bundle','All 50 games across 5 sets, ages 11–14.','kai-thinking-tier-bundle','USD 20']},
+    a1417:{f:['My AI Prompt Playbook','Write clear prompts that get useful answers.','my-ai-prompt-playbook-free','FREE'],g:[['Advanced Prompt Engineering','Go deeper with AI, ages 14–17.','leverage-book3','USD 7'],['AI Systems Design','How AI systems fit together.','leverage-book1','USD 7']],b:['Leverage Complete Bundle','All Leverage books and storybooks, ages 14–17.','leverage-bundle-complete','USD 39']},
+    all:{f:['Family Conversation Cards','Questions to talk about AI together.','ai-creator-lab-family-conversation-cards','FREE'],g:[['AI in Plain English','AI explained for parents, without jargon.','ai-in-plain-english','USD 7'],['Talking to Your Child About AI','What to say, at every age.','talking-to-your-child-about-ai','USD 7']],b:['AI for Parents Complete Bundle','3 parent guides in one.','ai-for-parents-bundle','USD 17']}},
+   money:{
+    a811:{f:null,g:[['My First Budget Planner','A first, simple budget for kids.','smart-money-01-my-first-budget-planner','USD 5'],['Needs vs Wants Sorter','Learn the difference, the fun way.','smart-money-04-needs-vs-wants-sorter','USD 5']],b:['Smart Money Kids Bundle','All 6 core money tools for ages 8–11.','smart-money-awareness-bundle','USD 24']},
+    a1114:{f:null,g:[['Kai\'s Budget Builder','A scored budget activity for ages 11–14.','kai-budget-builder','USD 5'],['Smart Budget Builder','Plan spending and saving.','smart-money-07-smart-budget-builder','USD 5']],b:null},
+    a1417:{f:null,g:[['Teen Budget and Cash Flow Planner','Plan real money as a teen.','smart-money-13-teen-budget-cash-flow-planner','USD 7'],['Side Hustle Profit Calculator','See what a side hustle really earns.','smart-money-15-side-hustle-profit-calculator','USD 7']],b:['Smart Money Teens Bundle','All 6 teen money tools, ages 13–17.','smart-money-leverage-bundle','USD 24']},
+    all:{f:null,g:[['The Family Money Playbook','Scripts and activities for ages 8–17.','the-family-money-playbook','USD 7']],b:null}},
+   feelings:{
+    a811:{f:['My Screen Time Rainbow','A colorful way to balance screen time.','my-screen-time-rainbow-free','FREE'],g:[['Screen Time and Me','Healthy screen habits, ages 8–11.','digital-smarts-lab-6-screen-time-and-me','USD 5']],b:['Digital Smarts Lab Bundle','All 6 Digital Smarts Lab books, ages 8–11.','digital-smarts-lab-awareness-bundle','USD 24']},
+    a1114:{f:['My Screen Time and Focus Planner','Plan screen time and focus.','screen-time-focus-planner-free','FREE'],g:[['AI Chatbots: Friend, Tool, or Neither?','Understand what a chatbot really is.','digital-smarts-lab-thinking-3-ai-chatbots-friend-tool-or-neither','USD 6'],['Screen Time and Focus','Take back your attention.','digital-smarts-lab-thinking-5-screen-time-and-focus','USD 6']],b:['Digital Smarts Lab Thinking Tier Bundle','All 6 books, ages 11–14.','digital-smarts-lab-thinking-tier-bundle','USD 24']},
+    a1417:{f:['The Emotional Check-In Toolkit','A gentle printable for checking in together.','emotional-checkin-toolkit-free','FREE'],g:[['Is My Child Too Attached to AI?','Healthy AI boundaries, a parent\'s guide.','is-my-child-too-attached-to-ai','USD 5'],['Raising a Human First','Keep real relationships at the center.','raising-a-human-first','USD 7']],b:['AI for Parents Complete Bundle','3 parent guides in one.','ai-for-parents-bundle','USD 17']},
+    all:{f:['The Emotional Check-In Toolkit','A gentle printable for checking in together.','emotional-checkin-toolkit-free','FREE'],g:[['Is My Child Too Attached to AI?','Healthy AI boundaries, a parent\'s guide.','is-my-child-too-attached-to-ai','USD 5'],['Our Family AI Journal','A weekly family conversation, including AI and our time.','our-family-ai-journal','USD 7']],b:['AI for Parents Complete Bundle','3 parent guides in one.','ai-for-parents-bundle','USD 17']}},
+   career:{
+    a811:{f:['My Career Explorer Planner','Explore jobs and the skills behind them.','my-career-explorer-planner-free','FREE'],g:[['AI Career Pathways: Foundations','Careers with AI, explained simply. Best for older children; read it together.','ai-career-pathways-foundations','USD 7']],b:null},
+    a1114:{f:['My Career Explorer Planner','Explore jobs and the skills behind them.','my-career-explorer-planner-free','FREE'],g:[['AI Career Pathways: Foundations','How AI is changing careers.','ai-career-pathways-foundations','USD 7']],b:null},
+    a1417:{f:['My Career Explorer Planner','Explore jobs and the skills behind them.','my-career-explorer-planner-free','FREE'],g:[['AI Career Pathways: Foundations','How AI is changing careers.','ai-career-pathways-foundations','USD 7'],['AI Skills Employers Actually Want, Teen Edition','The skills to build now.','ai-skills-employers-want','USD 7'],['The Non-Degree Path Explorer','Good paths that don\'t need a degree.','non-degree-path-explorer','USD 7']],b:null},
+    all:{f:['My Career Explorer Planner','Explore jobs and the skills behind them.','my-career-explorer-planner-free','FREE'],g:[['AI Career Pathways: Foundations','How AI is changing careers.','ai-career-pathways-foundations','USD 7'],['The Non-Degree Path Explorer','Good paths that don\'t need a degree.','non-degree-path-explorer','USD 7']],b:null}}
+  };
+  var a={}, step=0, card=document.getElementById('fdCard');
+  function esc(s){ return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  function link(x){ return x.charAt(0)==='#'||x.indexOf('http')===0 ? x : G+x; }
+  function tgt(x){ return x.charAt(0)==='#' ? '' : ' target="_blank" rel="noopener"'; }
+  function opts(list,key){ return '<div class="fd-opts">'+Object.keys(list).map(function(k){ var o=list[k]; return '<button type="button" class="fd-opt" data-key="'+key+'" data-v="'+k+'"><span class="fd-ic" aria-hidden="true">'+o.ic+'</span><span><b>'+esc(o.t)+'</b><small>'+esc(o.d)+'</small></span></button>'; }).join('')+'</div>'; }
+  function head(q){ return '<div class="fd-top"><span class="fd-stepno">Question '+(step+1)+' of 3</span><div class="fd-dots" aria-hidden="true">'+[0,1,2].map(function(i){return '<span'+(i<=step?' class="on"':'')+'></span>';}).join('')+'</div></div><h3 class="fd-q">'+q+'</h3>'; }
+  function pick(item,tag,top){
+    var inPage=item[2].charAt(0)==='#';
+    return '<div class="fd-pick'+(top?' top':'')+'">'+(top?'<span class="fd-best">Our top pick for you</span>':'')+'<span class="fd-tag">'+tag+'</span><b>'+esc(item[0])+'</b><p>'+esc(item[1])+'</p><div class="fd-foot"><span class="fd-price">'+esc(item[3])+'</span><a class="fd-go" href="'+link(item[2])+'"'+tgt(item[2])+'>'+(inPage?'Open it':(item[3]==='FREE'?'Get it free':'View'))+' →</a></div></div>';
+  }
+  function results(){
+    var r=M[a.topic][a.age], gd=r.g[0];
+    var cards=[['free',r.f,'Free start'],['single',gd,'Best-fit book'],['bundle',r.b,'Best value']].filter(function(c){ return c[1]; });
+    var hasPref=cards.some(function(c){ return c[0]===a.pref; });
+    var first=hasPref?a.pref:'single';
+    cards.sort(function(x,y){ return (y[0]===first)-(x[0]===first); });
+    var h='<div class="fd-top"><span class="fd-stepno">Your starting point</span></div><h3 class="fd-q">'+esc(TOPICS[a.topic].t)+' · '+esc(AGES[a.age].t)+'</h3>';
+    var note='';
+    if(!hasPref) note = a.pref==='free' ? ' We don\'t have a free item on this topic yet, so we\'ve started with the lowest-cost choice.' : ' We don\'t have a bundle on this topic yet, so here are the single best fits.';
+    h+='<p class="fd-res-intro">Your top pick is first.'+note+'</p><div class="fd-res">'+cards.map(function(c,i){ return pick(c[1],c[2],i===0); }).join('')+'</div>';
+    var extra=r.g.slice(1);
+    if(extra.length) h+='<div class="fd-more"><b>Also worth a look:</b> '+extra.map(function(x){ return '<a href="'+link(x[2])+'"'+tgt(x[2])+'>'+esc(x[0])+'</a> ('+esc(x[3])+')'; }).join(' · ')+'</div>';
+    if(r.f!==PLAN) h+='<div class="fd-more">New here? Try our free <a href="#familyplan">Family AI Plan</a> and make your family\'s AI rules together.</div>';
+    h+='<div class="fd-nav"><button type="button" class="fd-btn" id="fdBack">← Change my answers</button><button type="button" class="fd-btn pri" id="fdAgain">Start again</button></div>';
+    h+='<p class="fd-note">Suggestions are general, based only on your three answers. You know your child best.</p>';
+    return h;
+  }
+  function render(){
+    var h;
+    if(step===0) h=head('How old is your child?')+opts(AGES,'age');
+    else if(step===1) h=head('What matters most right now?')+opts(TOPICS,'topic');
+    else if(step===2) h=head('What would you like to see first?')+opts(PREFS,'pref');
+    else h=results();
+    if(step>0&&step<3) h+='<div class="fd-nav"><button type="button" class="fd-btn" id="fdBack">← Back</button><span></span></div>';
+    card.innerHTML=h; wire();
+  }
+  function wire(){
+    card.querySelectorAll('.fd-opt').forEach(function(b){ b.onclick=function(){ a[b.getAttribute('data-key')]=b.getAttribute('data-v'); step++; render(); }; });
+    var bk=document.getElementById('fdBack'); if(bk) bk.onclick=function(){ step=Math.max(0,step-1); render(); };
+    var ag=document.getElementById('fdAgain'); if(ag) ag.onclick=function(){ a={}; step=0; render(); };
+  }
+  render();
+})();
+</script>
+</div>
+
 <section class="about">
 <div class="about-inner">
 <div class="about-kicker">WHY AI CREATOR LAB</div>
@@ -1101,6 +1251,7 @@
 <div class="footer-nav">
 <a href="#">Home</a>
 <a class="footer-cta" href="#templates">Free Templates &amp; Tools</a>
+<a href="#finder">Start Here</a>
 <a href="#familyplan">Family AI Plan</a>
 <a href="#" onclick="document.querySelector('[data-tab=\'t1\']').click();document.querySelector('.catalog').scrollIntoView();return false;">Ages 8–11</a>
 <a href="#" onclick="document.querySelector('[data-tab=\'t2\']').click();document.querySelector('.catalog').scrollIntoView();return false;">Ages 11–14</a>
